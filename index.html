@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jess's Travel Plans</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+  :root { --navy: #1E2D40; --terracotta: #C4683A; --ivory: #FAF6F0; --gold: #C9A84C; --muted: #7A7267; --divider: #DDD5C8; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--ivory); color: var(--navy); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 8px; }
+  h1 em { font-style: italic; color: var(--terracotta); }
+  .sub { font-size: 14px; color: var(--muted); margin-bottom: 48px; }
+  .trips { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 480px; }
+  .trip-link { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid var(--divider); border-radius: 10px; padding: 16px 20px; text-decoration: none; color: var(--navy); transition: border-color 0.2s; }
+  .trip-link:hover { border-color: var(--terracotta); }
+  .trip-name { font-size: 15px; font-weight: 500; }
+  .trip-meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .trip-arrow { color: var(--terracotta); font-size: 18px; }
+  .empty { font-size: 14px; color: var(--muted); text-align: center; font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Travel Plans</div>
+  <h1>Jess's <em>Adventures</em></h1>
+  <p class="sub">Trip itineraries & travel docs</p>
+  <div class="trips">
+    <p class="empty">Trip docs will appear here as they're published.</p>
+  </div>
+</body>
+</html>
