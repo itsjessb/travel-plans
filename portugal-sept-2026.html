@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portugal — September 1–8, 2026</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
   :root {
@@ -167,10 +166,6 @@
   .page-tab-btn { flex:1; padding:16px 24px; background:var(--warm-beige); border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:var(--muted); text-align:center; transition:all 0.2s; }
   .page-tab-btn.active { background:var(--navy); color:var(--white); }
   .page-tab-btn:hover:not(.active) { background:var(--divider); }
-  /* MAP FILTERS */
-  .map-filter { padding:8px 16px; border-radius:100px; border:1px solid var(--divider); background:var(--white); cursor:pointer; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:var(--muted); transition:all 0.2s; }
-  .map-filter.active { background:var(--navy); color:var(--white); border-color:var(--navy); }
-  .map-filter:hover:not(.active) { background:var(--warm-beige); }
 
   .footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 40px 24px; font-size: 12px; margin-top: 64px; }
   .footer strong { color: var(--gold); }
@@ -219,24 +214,11 @@
 
   <!-- MAP VIEW -->
   <div id="page-map" style="display:none; padding:32px 0;">
-    <p style="font-size:13.5px;color:var(--muted);margin-bottom:16px;">All recommended hotels and beach clubs pinned. Click any marker for details and booking link.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
-      <button onclick="filterMap('all',this)" class="map-filter active">All</button>
-      <button onclick="filterMap('hotel',this)" class="map-filter">🏨 Hotels</button>
-      <button onclick="filterMap('restaurant',this)" class="map-filter">🍽 Restaurants</button>
-      <button onclick="filterMap('sight',this)" class="map-filter">📍 Sights & Beaches</button>
-      <button onclick="filterMap('train',this)" class="map-filter">🚂 Train Stations</button>
-      <button onclick="filterMap('club',this)" class="map-filter">🎶 Beach Clubs</button>
+    <p style="font-size:13.5px;color:var(--muted);margin-bottom:16px;">Live shared map — updates automatically as the group adds places. Toggle layers using the menu inside the map.</p>
+    <div style="border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1sc1WHyX-_G6VjHW_TvD9vfwthNKtI0k&ehbc=2E312F&noprof=1" width="100%" height="520" style="border:0;display:block;"></iframe>
     </div>
-    <div id="hotel-map" style="height:520px;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.1);"></div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--muted);">
-      <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C4683A;margin-right:5px;vertical-align:middle;"></span>Hotels</span>
-      <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C9A84C;margin-right:5px;vertical-align:middle;"></span>Points Hotels</span>
-      <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#7A4A8A;margin-right:5px;vertical-align:middle;"></span>Restaurants &amp; Fado</span>
-      <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1E2D40;margin-right:5px;vertical-align:middle;"></span>Sights &amp; Beaches</span>
-      <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#2E7D52;margin-right:5px;vertical-align:middle;"></span>Beach Clubs</span>
-      <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#888;margin-right:5px;vertical-align:middle;"></span>Train Stations</span>
-    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:12px;">Want to add a place? Open the <a href="https://www.google.com/maps/d/u/0/edit?mid=1sc1WHyX-_G6VjHW_TvD9vfwthNKtI0k" target="_blank" style="color:var(--terracotta);font-weight:600;">full map in Google My Maps →</a></p>
   </div>
 
   <!-- ITINERARY VIEW -->
@@ -654,7 +636,6 @@
   </div><!-- /page-itinerary -->
 </div><!-- /container (extra close) -->
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   // ── Page-level tab switching ──
   function switchPage(page, btn) {
@@ -662,7 +643,6 @@
     btn.classList.add('active');
     document.getElementById('page-itinerary').style.display = page === 'itinerary' ? '' : 'none';
     document.getElementById('page-map').style.display = page === 'map' ? '' : 'none';
-    if (page === 'map' && !window._mapInit) initMap();
   }
 
   // ── Itinerary option switching ──
@@ -673,139 +653,6 @@
     document.getElementById('panel-' + opt).classList.add('active');
   }
 
-  // ── Map ──
-  var map, allMarkers = [];
-
-  var places = [
-    // ── LAGOS HOTELS ──
-    { lat:37.1023, lng:-8.6760, type:'hotel', color:'#C4683A',
-      name:'Casa Mãe', desc:'Boutique · Pool · $160–220/night', url:'https://casa-mae.com/' },
-    { lat:37.0913, lng:-8.6793, type:'hotel', color:'#C4683A',
-      name:'Carvi Beach Hotel', desc:'4-star · Triple rooms ✓ · Steps from Praia Dona Ana · $100–180/night', url:'https://www.carvihotel.com/algarve/' },
-    { lat:37.0910, lng:-8.6800, type:'hotel', color:'#C4683A',
-      name:'Villa Doris Suites', desc:'4-star · 38 suites · Praia Dona Ana · Apartment-style', url:'https://www.tripadvisor.com/Hotel_Review-g189117-d1587011-Reviews-Villa_Doris_Suites-Lagos_Faro_District_Algarve.html' },
-    // ── LISBON HOTELS ──
-    { lat:38.7148, lng:-9.1473, type:'hotel', color:'#C4683A',
-      name:'Independente Príncipe Real', desc:'Boutique · Best neighborhood · ~$150/night', url:'https://www.independente.eu/principe-real/' },
-    { lat:38.7139, lng:-9.1334, type:'hotel', color:'#C4683A',
-      name:'Solar do Castelo', desc:'Inside castle walls · Only 15 rooms · $180–220/night', url:'https://lisbonheritagehotels.com/solar-do-castelo/' },
-    { lat:38.7118, lng:-9.1409, type:'hotel', color:'#C4683A',
-      name:'Hotel Borges Chiado', desc:'3-star · Chiado · 8.6 Excellent · 1,385 reviews', url:'https://www.hotelborges.com/' },
-    { lat:38.7121, lng:-9.1432, type:'hotel', color:'#C4683A',
-      name:'Teatro Boutique Rooms & Suites', desc:'4-star · Chiado/Bairro Alto · 8.4 Very Good', url:'https://www.teatrobbb.com/' },
-    { lat:38.7119, lng:-9.1413, type:'hotel', color:'#C4683A',
-      name:'Chiado 44', desc:'3-star guest house · Chiado · ~€97+/night', url:'http://www.chiado44.pt/english.php' },
-    { lat:38.7068, lng:-9.1504, type:'hotel', color:'#C4683A',
-      name:'Jam Hotel Lisbon', desc:'3-star · Estrela · Rooftop pool', url:'https://www.jamhotels.eu/lisbon' },
-    { lat:38.7266, lng:-9.1325, type:'hotel', color:'#C4683A',
-      name:'Numa Lisbon Anjos', desc:'4-star aparthotel · 8.8 Excellent · Anjos', url:'https://numastays.com/locations/portugal/lisbon/anjos/anjos' },
-    { lat:38.7194, lng:-9.1494, type:'hotel', color:'#C4683A',
-      name:'LX51 Lisbon Center', desc:'3-star · Near Marquês de Pombal · Studios & Suites', url:'https://www.aptiin.com/lx51/en/homepage' },
-    // ── POINTS HOTELS ──
-    { lat:38.7079, lng:-9.1363, type:'hotel', color:'#C9A84C',
-      name:'Andaz Lisbon (Hyatt)', desc:'Opened March 2026 · 21k–29k pts/night · Praça do Comércio', url:'https://www.hyatt.com/andaz/en-US/lisaz-andaz-lisbon' },
-    { lat:38.7196, lng:-9.1574, type:'hotel', color:'#C9A84C',
-      name:'InterContinental Lisbon', desc:'Luxury · River views · IHG points', url:'https://www.ihg.com/intercontinental/hotels/us/en/lisbon/lisha/hoteldetail' },
-    // ── LAGOS RESTAURANTS ──
-    { lat:38.7041, lng:-8.6736, type:'restaurant', color:'#7A4A8A',
-      name:'Don Sebastião', desc:'Classic Portuguese since 1979 · €30–40pp', url:'https://www.restaurantedonsebastiao.com/' },
-    { lat:37.1016, lng:-8.6731, type:'restaurant', color:'#7A4A8A',
-      name:'Casinha do Petisco', desc:'Legendary cataplana · Cash only · ⚠️ Call ahead for non-seafood', url:'https://casinhadopetisco.pt' },
-    { lat:37.1259, lng:-8.6447, type:'restaurant', color:'#7A4A8A',
-      name:'Casa Chico Zé', desc:'Legendary grill · Lunch only noon–4pm · €15–25pp', url:'https://www.tripadvisor.com/Restaurant_Review-g1190871-d2641409-Reviews-Chico_Ze-Odiaxere_Lagos_Faro_District_Algarve.html' },
-    { lat:37.1167, lng:-8.6565, type:'restaurant', color:'#7A4A8A',
-      name:'Tasca do Kiko', desc:'Modern seafood tapas · Meia-Praia · ⚠️ Call ahead non-seafood', url:'https://www.tripadvisor.com/Restaurant_Review-g189117-d7912856-Reviews-Tasca_Do_Kiko-Lagos_Faro_District_Algarve.html' },
-    // ── LISBON RESTAURANTS & FADO ──
-    { lat:38.7099, lng:-9.1393, type:'restaurant', color:'#7A4A8A',
-      name:'Taberna da Rua das Flores', desc:'Seasonal Portuguese · Cash only · No reservations · €35–45pp', url:'https://www.tripadvisor.com/Restaurant_Review-g189158-d2298218-Reviews-A_Taberna_da_Rua_das_Flores-Lisbon_Lisbon_District_Central_Portugal.html' },
-    { lat:38.7102, lng:-9.1307, type:'restaurant', color:'#7A4A8A',
-      name:'Clube de Fado', desc:'Top fado venue · 7 nights/week · €40–80pp', url:'https://www.clubedefado.pt' },
-    { lat:38.7109, lng:-9.1310, type:'restaurant', color:'#7A4A8A',
-      name:'Mesa de Frades', desc:'18th-century chapel fado · €40–80pp', url:'https://www.tripadvisor.com/Restaurant_Review-g189158-d1057399-Reviews-Mesa_de_Frades-Lisbon_Lisbon_District_Central_Portugal.html' },
-    { lat:38.7100, lng:-9.1298, type:'restaurant', color:'#7A4A8A',
-      name:'Parreirinha de Alfama', desc:'Historic fado since 1950 · Traditional', url:'http://www.parreirinhadedalfama.com' },
-    // ── SIGHTS & BEACHES ──
-    { lat:37.0917, lng:-8.6792, type:'sight', color:'#1E2D40',
-      name:'Praia de Dona Ana', desc:'Iconic Lagos beach · Golden cliffs · Calm water', url:'https://www.tripadvisor.com/Attraction_Review-g189117-d2358800-Reviews-Praia_Dona_Ana-Lagos_Faro_District_Algarve.html' },
-    { lat:37.0875, lng:-8.6858, type:'sight', color:'#1E2D40',
-      name:'Praia do Camilo', desc:'Dramatic cliff beach · Wooden staircase · Fewer crowds', url:'https://www.tripadvisor.com/Attraction_Review-g189117-d2358803-Reviews-Praia_do_Camilo-Lagos_Faro_District_Algarve.html' },
-    { lat:37.1193, lng:-8.6436, type:'sight', color:'#1E2D40',
-      name:'Meia Praia', desc:'4km uninterrupted beach · Uncrowded', url:'https://www.tripadvisor.com/Attraction_Review-g189117-d2358799-Reviews-Meia_Praia-Lagos_Faro_District_Algarve.html' },
-    { lat:37.0849, lng:-8.6907, type:'sight', color:'#1E2D40',
-      name:'Ponta da Piedade', desc:'Sea caves & cliffs · RIB boat tour departs Lagos Marina', url:'https://lagosboattours.com/' },
-    { lat:37.0157, lng:-7.9323, type:'sight', color:'#1E2D40',
-      name:'Ria Formosa / Formosamar', desc:'Top Faro experience · Boat tours · Ilha da Culatra', url:'https://formosamar.com' },
-    { lat:37.0147, lng:-7.9353, type:'sight', color:'#1E2D40',
-      name:'Faro Old Town', desc:'Walled historic center · Arco da Vila · Cathedral', url:'https://www.tripadvisor.com/Attraction_Review-g189116-d1102424-Reviews-Old_Town_Faro-Faro_Faro_District_Algarve.html' },
-    { lat:37.0196, lng:-7.9312, type:'sight', color:'#1E2D40',
-      name:'Bone Chapel (Igreja do Carmo)', desc:'Faro · Famous ossuary · Must-see', url:'https://www.tripadvisor.com/Attraction_Review-g189116-d2063861-Reviews-Bone_Chapel_of_Faro-Faro_Faro_District_Algarve.html' },
-    { lat:38.6977, lng:-9.2062, type:'sight', color:'#1E2D40',
-      name:'Mosteiro dos Jerónimos', desc:'Belém · Gothic monastery · ~€10 · Book ahead', url:'https://www.patrimoniocultural.gov.pt/en/museus-e-monumentos/dgpc/m/mosteiro-dos-jeronimos/' },
-    { lat:38.6976, lng:-9.2049, type:'sight', color:'#1E2D40',
-      name:'Pastéis de Belém', desc:'Original pastel de nata · A great suggestion from Emily', url:'https://pasteisdebelem.pt/en/' },
-    { lat:38.6916, lng:-9.2160, type:'sight', color:'#1E2D40',
-      name:'Torre de Belém', desc:'Iconic Belém tower · ⚠️ Interior closed 2026 — exterior accessible', url:'https://torrebelem.com/en/' },
-    { lat:38.7128, lng:-9.1288, type:'sight', color:'#1E2D40',
-      name:'Miradouro de Santa Luzia', desc:'Beautiful viewpoint · Alfama · Bougainvillea', url:'https://www.tripadvisor.com/Attraction_Review-g189158-d1850765-Reviews-Miradouro_de_Santa_Luzia-Lisbon_Lisbon_District_Central_Portugal.html' },
-    { lat:38.7174, lng:-9.1300, type:'sight', color:'#1E2D40',
-      name:'Miradouro da Senhora do Monte', desc:'Best Lisbon panorama · Arrive before sunset', url:'https://www.tripadvisor.com/Attraction_Review-g189158-d4370855-Reviews-Miradouro_da_Graca-Lisbon_Lisbon_District_Central_Portugal.html' },
-    // ── TRAIN STATIONS ──
-    { lat:37.1021, lng:-8.6747, type:'train', color:'#888888',
-      name:'Lagos Train Station', desc:'Regional trains to Faro (~1h 45min) · Alfa Pendular to Lisbon (~3h 15min)', url:'https://www.cp.pt/passageiros/pt/consultar-horarios' },
-    { lat:37.0193, lng:-7.9357, type:'train', color:'#888888',
-      name:'Faro Train Station', desc:'Alfa Pendular to Lisbon (~2h 45min) · Regional to Lagos (~1h 45min)', url:'https://www.cp.pt/passageiros/pt/consultar-horarios' },
-    { lat:38.7683, lng:-9.0992, type:'train', color:'#888888',
-      name:'Lisboa Oriente Station', desc:'Main Alfa Pendular terminus · Near airport · Luggage storage', url:'https://www.cp.pt/passageiros/pt/consultar-horarios' },
-    { lat:38.7385, lng:-9.1495, type:'train', color:'#888888',
-      name:'Lisboa Entrecampos', desc:'Alfa Pendular stop · Central Lisbon', url:'https://www.cp.pt/passageiros/pt/consultar-horarios' },
-    // ── BEACH CLUBS ──
-    { lat:37.1008, lng:-8.6723, type:'club', color:'#2E7D52',
-      name:'Duna Beach Lagos', desc:'Sunset parties · DJs · 6pm–10:30pm', url:'https://dunabeachlagos.com' },
-    { lat:37.1189, lng:-8.5352, type:'club', color:'#2E7D52',
-      name:'NoSoloÁgua Portimão', desc:'Daytime beach club · Sunbeds · DJs · ~20min from Lagos', url:'https://nosoloagua.com/nsaptm/en/homeen/' },
-  ];
-
-  function makeIcon(color, type) {
-    var shapes = { train:'▲', sight:'●', restaurant:'◆', club:'★', hotel:'●' };
-    var size = type === 'train' ? 14 : 14;
-    return L.divIcon({
-      className: '',
-      html: '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';border:2px solid white;box-shadow:0 1px 5px rgba(0,0,0,0.35);"></div>',
-      iconSize: [size, size],
-      iconAnchor: [size/2, size/2],
-      popupAnchor: [0, -10]
-    });
-  }
-
-  function initMap() {
-    window._mapInit = true;
-    // Fix Don Sebastião lat (typo in places array — correct lat for Lagos)
-    places[13].lat = 37.1041;
-    map = L.map('hotel-map').setView([38.3, -8.9], 7);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors', maxZoom: 18
-    }).addTo(map);
-    places.forEach(function(p) {
-      var m = L.marker([p.lat, p.lng], { icon: makeIcon(p.color, p.type) })
-        .bindPopup('<strong style="font-size:13px;">' + p.name + '</strong><br><span style="font-size:11.5px;color:#666;line-height:1.5;">' + p.desc + '</span>' + (p.url ? '<br><a href="' + p.url + '" target="_blank" style="font-size:11.5px;color:#C4683A;font-weight:600;">Open →</a>' : ''))
-        .addTo(map);
-      m._type = p.type;
-      allMarkers.push(m);
-    });
-  }
-
-  function filterMap(filter, btn) {
-    document.querySelectorAll('.map-filter').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    if (!window._mapInit) return;
-    var bounds = [];
-    allMarkers.forEach(function(m) {
-      var show = filter === 'all' || m._type === filter;
-      if (show) { m.addTo(map); bounds.push(m.getLatLng()); }
-      else map.removeLayer(m);
-    });
-    if (bounds.length) map.fitBounds(L.latLngBounds(bounds).pad(0.15));
-  }
 </script>
 </body>
 </html>
