@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal — August 31–September 8, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --terracotta: #C4683A;
+    --terracotta-light: #E8926A;
+    --navy: #1E2D40;
+    --navy-light: #2E4560;
+    --ivory: #FAF6F0;
+    --warm-beige: #EDE3D4;
+    --gold: #C9A84C;
+    --text: #2C2C2C;
+    --muted: #7A7267;
+    --white: #FFFFFF;
+    --divider: #DDD5C8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ivory);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 72px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(196,104,58,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 20%, rgba(201,168,76,0.15) 0%, transparent 50%);
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  .hero-dates {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+  }
+
+  .hero-pills {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  .pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.5px;
+  }
+
+  /* ROUTE BAR */
+  .route-bar {
+    background: var(--terracotta);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .route-stop {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .route-arrow {
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+  }
+
+  /* MAIN LAYOUT */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* SECTION HEADERS */
+  .section {
+    padding: 56px 0 16px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  /* GROUP NOTES */
+  .note-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .note-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px 24px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .note-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .note-card p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ITINERARY SPLIT TABLE */
+  .split-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .split-table th {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+  }
+
+  .split-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .split-table tr:last-child td { border-bottom: none; }
+
+  .split-table tr:hover td { background: var(--ivory); }
+
+  .nights-badge {
+    display: inline-block;
+    background: var(--warm-beige);
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* TRANSPORT CARDS */
+  .transport-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .transport-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px 24px;
+    border-top: 3px solid var(--navy);
+  }
+
+  .transport-card.highlight { border-top-color: var(--terracotta); }
+
+  .transport-route {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .transport-detail {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .transport-book {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    text-decoration: none;
+  }
+
+  .transport-book:hover { text-decoration: underline; }
+
+  /* ACCOMMODATION CARDS */
+  .accom-section { margin-bottom: 32px; }
+
+  .accom-city {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .accom-city::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  .accom-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .accom-card.pick { border-left: 4px solid var(--terracotta); }
+  .accom-card.alt { border-left: 4px solid var(--divider); }
+  .accom-card.points { border-left: 4px solid var(--gold); }
+
+  .accom-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .accom-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .tag-pick { background: rgba(196,104,58,0.12); color: var(--terracotta); }
+  .tag-alt { background: var(--warm-beige); color: var(--muted); }
+  .tag-points { background: rgba(201,168,76,0.15); color: #9A7A28; }
+
+  .accom-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .accom-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--terracotta);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  .accom-link:hover { text-decoration: underline; }
+
+  .accom-price {
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .accom-price .amount {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+  }
+
+  .accom-price .per {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* DAY CARDS */
+  .days-list { display: flex; flex-direction: column; gap: 0; }
+
+  .day-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--divider);
+    padding: 32px 0;
+  }
+
+  .day-card:last-child { border-bottom: none; }
+
+  .day-number {
+    padding-top: 2px;
+    padding-right: 24px;
+  }
+
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--divider);
+    line-height: 1;
+  }
+
+  .day-date {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .day-content {}
+
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .day-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .time-block { margin-bottom: 14px; }
+
+  .time-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+  }
+
+  .time-desc {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* VENUE BLOCKS */
+  .venue-block {
+    background: var(--warm-beige);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 14px;
+  }
+
+  .venue-block.call-ahead {
+    background: #FFF5EF;
+    border: 1px solid rgba(196,104,58,0.25);
+  }
+
+  .venue-block.book-ahead {
+    background: #EEF2F8;
+    border: 1px solid rgba(30,45,64,0.2);
+  }
+
+  .venue-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .venue-meta {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+
+  .venue-meta a { color: var(--terracotta); text-decoration: none; }
+  .venue-meta a:hover { text-decoration: underline; }
+
+  .venue-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .flag-call { background: rgba(196,104,58,0.12); color: var(--terracotta); }
+  .flag-book { background: rgba(30,45,64,0.1); color: var(--navy); }
+  .flag-cash { background: rgba(201,168,76,0.15); color: #9A7A28; }
+  .flag-lunch { background: rgba(196,104,58,0.12); color: var(--terracotta); }
+
+  /* WARNING BLOCKS */
+  .warning {
+    background: #FFF8EE;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .warning strong { color: #9A7A28; }
+
+  /* BOOKING CHECKLIST */
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .checklist-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 16px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--divider);
+    align-items: center;
+  }
+
+  .checklist-item:last-child { border-bottom: none; }
+
+  .checklist-item:nth-child(even) { background: var(--ivory); }
+
+  .checklist-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .checklist-when {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .checklist-urgent .checklist-when {
+    color: var(--terracotta);
+    font-weight: 700;
+  }
+
+  .checklist-how {
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  .checklist-how a { color: var(--terracotta); text-decoration: none; }
+  .checklist-how a:hover { text-decoration: underline; }
+
+  .checklist-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 16px;
+    padding: 12px 22px;
+    background: var(--navy);
+  }
+
+  .checklist-header span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* LOGISTICS */
+  .logistics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .logistics-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+
+  .logistics-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .logistics-value {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  .logistics-value a { color: var(--terracotta); text-decoration: none; }
+
+  .ees-block {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--navy);
+  }
+
+  .ees-block h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .ees-block p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .ees-block.ok { border-left-color: var(--gold); }
+
+  /* WARDROBE */
+  .wardrobe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .wardrobe-col {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 18px 18px;
+  }
+
+  .wardrobe-col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .wardrobe-item {
+    font-size: 13px;
+    color: var(--text);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--ivory);
+    line-height: 1.45;
+  }
+
+  .wardrobe-item:last-child { border-bottom: none; }
+
+  .wardrobe-bonus {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .wardrobe-bonus-item { font-size: 13.5px; }
+  .wardrobe-bonus-item strong { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+
+  .palette-swatches { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .swatch {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-block;
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px var(--divider);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 12px;
+    margin-top: 64px;
+  }
+
+  .footer strong { color: var(--gold); }
+
+  /* PRINT */
+  @media print {
+    .hero { background: var(--navy) !important; -webkit-print-color-adjust: exact; }
+    .route-bar { background: var(--terracotta) !important; -webkit-print-color-adjust: exact; }
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 36px; }
+    .note-cards, .transport-grid, .logistics-grid, .wardrobe-grid { grid-template-columns: 1fr; }
+    .checklist-item, .checklist-header { grid-template-columns: 1fr; }
+    .day-card { grid-template-columns: 1fr; }
+    .accom-card { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Girls Trip · September 2026</div>
+    <h1>Algarve &amp; <em>Lisboa</em></h1>
+    <div class="hero-dates">August 31 — September 8, 2026 &nbsp;·&nbsp; 3 Travelers</div>
+    <div class="hero-pills">
+      <span class="pill">✈ PHX → FAO via United</span>
+      <span class="pill">🏖 Beach + Culture</span>
+      <span class="pill">🚂 Scenic Train Routes</span>
+      <span class="pill">🍷 Local Food &amp; Fado</span>
+    </div>
+  </div>
+</div>
+
+<!-- ROUTE BAR -->
+<div class="route-bar">
+  <span class="route-stop">Faro</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Lagos</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Lisbon</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Lagos</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Faro (Depart)</span>
+</div>
+
+<div class="container">
+
+  <!-- GROUP NOTES -->
+  <div class="section">
+    <div class="section-label">Group Notes</div>
+    <div class="section-title">Before We Go</div>
+    <div class="note-cards">
+      <div class="note-card">
+        <h4>🥂 Non-Drinker</h4>
+        <p>One traveler doesn't drink. All selected venues have great non-alcoholic options — Sumol passionfruit soda, fresh-squeezed juices, sparkling water. Portugal makes it easy and nobody makes it weird.</p>
+      </div>
+      <div class="note-card">
+        <h4>🐟 Non-Seafood Eater</h4>
+        <p>One traveler doesn't eat seafood. Most Portuguese menus include strong meat dishes alongside seafood. See <strong>⚠️ CALL AHEAD</strong> flags in the itinerary for spots that need confirming before you arrive.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ITINERARY SPLIT -->
+  <div class="section">
+    <div class="section-label">Overview</div>
+    <div class="section-title">Itinerary at a Glance</div>
+    <table class="split-table">
+      <thead>
+        <tr>
+          <th>Dates</th>
+          <th>Location</th>
+          <th>Nights</th>
+          <th>Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aug 31</td>
+          <td><strong>Faro</strong></td>
+          <td><span class="nights-badge">1 night</span></td>
+          <td>Arrive, Old Town, decompress</td>
+        </tr>
+        <tr>
+          <td>Sept 1–4</td>
+          <td><strong>Lagos</strong></td>
+          <td><span class="nights-badge">4 nights</span></td>
+          <td>Beaches, sea caves, local dining</td>
+        </tr>
+        <tr>
+          <td>Sept 5–6</td>
+          <td><strong>Lisbon</strong></td>
+          <td><span class="nights-badge">2 nights</span></td>
+          <td>Alfama, Belém, fado, Bairro Alto</td>
+        </tr>
+        <tr>
+          <td>Sept 7</td>
+          <td><strong>Lagos</strong> (return)</td>
+          <td><span class="nights-badge">1 night</span></td>
+          <td>Easy departure morning</td>
+        </tr>
+        <tr>
+          <td>Sept 8</td>
+          <td>Depart FAO 11:40am</td>
+          <td>—</td>
+          <td>FAO → PHX via United</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TRANSPORT -->
+  <div class="section">
+    <div class="section-label">Getting Around</div>
+    <div class="section-title">Transportation</div>
+    <div class="transport-grid">
+      <div class="transport-card">
+        <div class="transport-route">Faro → Lagos</div>
+        <div class="transport-detail">CP Regional train · Direct · ~1h 45min · ~€8/person</div>
+        <div class="transport-detail">Take after Ria Formosa morning tour</div>
+        <a class="transport-book" href="https://www.cp.pt" target="_blank">Book at cp.pt →</a>
+      </div>
+      <div class="transport-card highlight">
+        <div class="transport-route">Lagos → Lisbon ⚡ Book Aug 6</div>
+        <div class="transport-detail">Alfa Pendular (not Intercidades) · ~3h 15min · ~€25–30/person</div>
+        <div class="transport-detail">Scenic: cork trees, Alentejo, whitewashed villages. Window seats.</div>
+        <a class="transport-book" href="https://www.cp.pt" target="_blank">Book at cp.pt →</a>
+      </div>
+      <div class="transport-card highlight">
+        <div class="transport-route">Lisbon → Lagos ⚡ Book Aug 6</div>
+        <div class="transport-detail">Alfa Pendular · ~3h 15min · ~€25–30/person · Evening train Sept 7</div>
+        <a class="transport-book" href="https://www.cp.pt" target="_blank">Book at cp.pt →</a>
+      </div>
+      <div class="transport-card">
+        <div class="transport-route">Lagos → Faro Airport</div>
+        <div class="transport-detail">Taxi/Uber · ~1 hour · ~€40–50 · Book night before</div>
+        <div class="transport-detail">Be at FAO by 10:00am for 11:40am departure</div>
+      </div>
+    </div>
+    <div class="warning">
+      <strong>⚡ Train tickets for the Alfa Pendular open 30 days out — set a reminder for August 6.</strong> These sell out in peak season.
+    </div>
+  </div>
+
+  <!-- ACCOMMODATIONS -->
+  <div class="section">
+    <div class="section-label">Where to Stay</div>
+    <div class="section-title">Accommodations</div>
+
+    <div class="accom-section">
+      <div class="accom-city">Faro — 1 night (Aug 31)</div>
+      <div class="accom-card pick">
+        <div>
+          <span class="accom-tag tag-pick">First Pick</span>
+          <div class="accom-name">Hotel Faro &amp; Beach Club</div>
+          <div class="accom-desc">Marina location, 124m from Old Town walls, rooftop pool with Ria Formosa views, eco-certified. Perfect arrival night hotel.</div>
+          <a class="accom-link" href="https://www.hotelfarobeachclub.com" target="_blank">hotelfarobeachclub.com →</a>
+        </div>
+        <div class="accom-price">
+          <span class="amount">$130–180</span>
+          <span class="per">per night</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="accom-section">
+      <div class="accom-city">Lagos — 5 nights (Sept 1–4 + Sept 7)</div>
+      <div class="accom-card pick">
+        <div>
+          <span class="accom-tag tag-pick">First Pick</span>
+          <div class="accom-name">Casa Mãe</div>
+          <div class="accom-desc">Boutique, 34 rooms, historic Lagos, 5-min walk to beaches, pool, garden terrace, restaurant. Local feel, great service.</div>
+          <a class="accom-link" href="https://www.casamaehotel.com" target="_blank">casamaehotel.com →</a>
+        </div>
+        <div class="accom-price">
+          <span class="amount">$160–220</span>
+          <span class="per">per night</span>
+        </div>
+      </div>
+      <div class="accom-card alt">
+        <div>
+          <span class="accom-tag tag-alt">Splurge Alternative</span>
+          <div class="accom-name">Vivenda Miranda</div>
+          <div class="accom-desc">4-star clifftop resort above Porto de Mós beach. Pool, spa, sea views. More resort-feel, slightly outside town center.</div>
+          <a class="accom-link" href="https://www.vivendamiranda.com" target="_blank">vivendamiranda.com →</a>
+        </div>
+        <div class="accom-price">
+          <span class="amount">$180–240</span>
+          <span class="per">per night</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="accom-section">
+      <div class="accom-city">Lisbon — 2 nights (Sept 5–6) · Stay in Príncipe Real or Chiado</div>
+      <div class="accom-card pick">
+        <div>
+          <span class="accom-tag tag-pick">Best Value</span>
+          <div class="accom-name">Independente Príncipe Real</div>
+          <div class="accom-desc">Stylish 19th-century building in one of Lisbon's best neighborhoods. Walkable to everything.</div>
+          <a class="accom-link" href="https://www.theindependente.pt" target="_blank">theindependente.pt →</a>
+        </div>
+        <div class="accom-price">
+          <span class="amount">~$150</span>
+          <span class="per">per night</span>
+        </div>
+      </div>
+      <div class="accom-card alt">
+        <div>
+          <span class="accom-tag tag-alt">Splurge</span>
+          <div class="accom-name">Solar do Castelo</div>
+          <div class="accom-desc">Only 15 rooms, inside the walls of Castelo de São Jorge. Genuinely unique and memorable.</div>
+          <a class="accom-link" href="https://www.solarcastelo.pt" target="_blank">solarcastelo.pt →</a>
+        </div>
+        <div class="accom-price">
+          <span class="amount">$180–220</span>
+          <span class="per">per night</span>
+        </div>
+      </div>
+      <div class="accom-card points">
+        <div>
+          <span class="accom-tag tag-points">Points Options</span>
+          <div class="accom-name">Andaz Lisbon (Hyatt) or InterContinental Lisbon</div>
+          <div class="accom-desc"><strong>Andaz:</strong> Transfer Chase UR 1:1 to Hyatt, ~12k–20k pts/night — check availability first.<br><strong>InterContinental:</strong> Friends' IHG points, luxury river-view hotel.</div>
+          <a class="accom-link" href="https://www.hyatt.com" target="_blank">hyatt.com</a> &nbsp;·&nbsp; <a class="accom-link" href="https://www.ihg.com" target="_blank">ihg.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="section">
+    <div class="section-label">Day by Day</div>
+    <div class="section-title">Full Itinerary</div>
+    <div class="days-list">
+
+      <!-- DAY 1 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">01</div>
+          <div class="day-date">Aug 31</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Arrive Faro</span>
+            <span class="day-subtitle">Easy arrival day</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc">Land at 9:10am. Check into Hotel Faro &amp; Beach Club, eat, decompress. You've been traveling since the night before — protect this morning.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Afternoon</div>
+            <div class="time-desc">Walk the <strong>Cidade Velha (Old Town)</strong> — enter via the Arco da Vila gateway (storks nest on top). Cobblestone lanes, azulejo tiles, Largo da Sé square. Climb the Cathedral bell tower for views over the Ria Formosa lagoon. Unhurried, ~2 hours.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Evening</div>
+            <div class="time-desc">Rooftop drinks at the hotel, then dinner at O Alminhas.</div>
+          </div>
+          <div class="venue-block">
+            <div class="venue-name">O Alminhas</div>
+            <div class="venue-meta">Traditional Portuguese · Rua do Alportel, Faro · Local crowd, no tourist markup</div>
+            <div class="venue-meta">Full menu with meat options ✓ &nbsp;·&nbsp; ~€20–30/person</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">02</div>
+          <div class="day-date">Sept 1</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Faro → Lagos</span>
+            <span class="day-subtitle">Ria Formosa · First swim</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc"><strong>Ria Formosa boat tour</strong> — barrier islands, flamingos, stop at Ilha Deserta or the Ilha do Farol fishing village. The most beautiful natural park in Portugal. ~2–3 hrs, ~€30–40/person.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Midday</div>
+            <div class="time-desc">Train Faro → Lagos. ~1h 45min, €8/person. Scenic Algarve coast.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Afternoon</div>
+            <div class="time-desc">Check in to Casa Mãe. Head straight to <strong>Praia de Dona Ana</strong> — golden cliffs, calm water, 10-min walk. First swim, first Portuguese wine on the sand.</div>
+          </div>
+          <div class="venue-block book-ahead">
+            <div class="venue-name">📍 Ria Formosa Boat Tour — Book in Advance</div>
+            <div class="venue-meta">Best operators: <a href="https://formosamar.com" target="_blank">formosamar.com</a> or <a href="https://lands.pt" target="_blank">lands.pt</a></div>
+            <div class="venue-meta">Meet at Cais das Portas do Mar, Faro marina</div>
+            <span class="venue-flag flag-book">📅 Book in advance</span>
+          </div>
+          <div class="venue-block">
+            <div class="venue-name">Don Sebastião</div>
+            <div class="venue-meta">Classic Portuguese since 1979 · Rua 25 de Abril 20-22, Lagos</div>
+            <div class="venue-meta">Phone: <a href="tel:+351282780480">+351 282 780 480</a> · <a href="http://www.restaurantedonsebastiao.com" target="_blank">restaurantedonsebastiao.com</a></div>
+            <div class="venue-meta">Piri piri chicken, grilled meats, full menu · Great for all dietary needs ✓ · ~€30–40/person</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">03</div>
+          <div class="day-date">Sept 2</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Sea Caves + Beach</span>
+            <span class="day-subtitle">Ponta da Piedade · Praia do Camilo</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc"><strong>Ponta da Piedade RIB boat tour</strong> — the unmissable Lagos experience. Dramatic orange sea cliffs, hidden grottos, arches, sea caves accessible only by water. Book a rigid inflatable boat (gets into tighter spots than pontoon boats). ~1.5 hrs, ~€25–35/person.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Afternoon</div>
+            <div class="time-desc"><strong>Praia do Camilo</strong> — smaller and more dramatic than Dona Ana, accessed via wooden staircase down the cliffs. Fewer crowds, stunning.</div>
+          </div>
+          <div class="venue-block book-ahead">
+            <div class="venue-name">📍 Ponta da Piedade RIB Tour — Book in Advance</div>
+            <div class="venue-meta">Best operator: <a href="https://lagosboattours.com" target="_blank">lagosboattours.com</a></div>
+            <div class="venue-meta">Also via <a href="https://www.getyourguide.com/lagos-portugal-l2896/" target="_blank">GetYourGuide</a> or <a href="https://www.viator.com/tours/Lagos" target="_blank">Viator</a></div>
+            <div class="venue-meta">Meet at Lagos Marina — white gate in front of Amuras Bar</div>
+            <span class="venue-flag flag-book">📅 Book in advance · Book RIB specifically</span>
+          </div>
+          <div class="venue-block call-ahead">
+            <div class="venue-name">⚠️ Casinha do Petisco</div>
+            <div class="venue-meta">Legendary cataplana (seafood stew) · Rua Oliveira 617, Lagos</div>
+            <div class="venue-meta">Phone: <a href="tel:+351282084285">+351 282 084 285</a> · <a href="https://casinhadopetisco.pt" target="_blank">casinhadopetisco.pt</a></div>
+            <div class="venue-meta">~€20–30/person</div>
+            <span class="venue-flag flag-call">⚠️ Call ahead — confirm meat cataplana for non-seafood eater</span>
+            <span class="venue-flag flag-cash" style="margin-left:6px">💵 Cash only · Reservations required</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">04</div>
+          <div class="day-date">Sept 3</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Meia Praia + Old Town</span>
+            <span class="day-subtitle">Long beach day · Historic Lagos</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc"><strong>Meia Praia</strong> — 4km of uninterrupted beach east of Lagos, far less crowded than the cliff beaches. Great for a long morning swim, no agenda. Beach bar breakfast.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Afternoon</div>
+            <div class="time-desc">Wander <strong>Lagos Old Town</strong> — Mercado de Escravos (historic slave market), Igreja de Santo António (extraordinary gold baroque interior), city walls, ceramic shops.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Lunch</div>
+            <div class="time-desc">Casa Chico Zé — <strong>lunch only, plan accordingly.</strong></div>
+          </div>
+          <div class="venue-block call-ahead">
+            <div class="venue-name">Casa Chico Zé</div>
+            <div class="venue-meta">Legendary local grill · EN-125, Sítio da Torre, Odiáxere (short drive from Lagos)</div>
+            <div class="venue-meta">Phone: <a href="tel:+351282798205">+351 282 798 205</a></div>
+            <div class="venue-meta">BBQ sardines + whole Dourada for seafood lovers · Grilled meats for all · ~€15–25/person</div>
+            <span class="venue-flag flag-lunch">🕛 Lunch only — open noon–4pm · Closed Sundays</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">05</div>
+          <div class="day-date">Sept 4</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Free Day</span>
+            <span class="day-subtitle">No agenda · Your choice</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">All Day</div>
+            <div class="time-desc">Sleep in. Beach of your choice. Optional: kayak rental (~€20–25/person, 2 hrs) to explore smaller grottos at your own pace. Afternoon cocktails on the water.</div>
+          </div>
+          <div class="venue-block call-ahead">
+            <div class="venue-name">⚠️ Tasca do Kiko</div>
+            <div class="venue-meta">Modern seafood tapas · Estrada de São Roque s/n (Meia-Praia), Lagos</div>
+            <div class="venue-meta">Reservations: <a href="tel:+351924104100">+351 924 104 100</a> · Instagram: <a href="https://www.instagram.com/tascadokiko/" target="_blank">@tascadokiko</a></div>
+            <div class="venue-meta">~€25–35/person</div>
+            <span class="venue-flag flag-call">⚠️ Call ahead — primarily seafood-focused, confirm non-seafood option</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">06</div>
+          <div class="day-date">Sept 5</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Lagos → Lisbon</span>
+            <span class="day-subtitle">Scenic train · Chiado evening</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc">Last Lagos swim. Pack up. Grab snacks at the station.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Late Morning</div>
+            <div class="time-desc"><strong>Alfa Pendular to Lisbon</strong> — ~3h 15min. Cork trees, rolling Alentejo hills, whitewashed villages. Get a window seat.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Arrive ~4–5pm</div>
+            <div class="time-desc">Check into Príncipe Real/Chiado hotel. Drop bags, get oriented. Walk Chiado.</div>
+          </div>
+          <div class="venue-block">
+            <div class="venue-name">Taberna da Rua das Flores</div>
+            <div class="venue-meta">Seasonal blackboard menu, traditional dishes with chef's touch · Rua das Flores 103, Lisboa</div>
+            <div class="venue-meta">Phone: <a href="tel:+351213479418">+351 213 479 418</a></div>
+            <div class="venue-meta">~€35–45/person</div>
+            <span class="venue-flag flag-cash">💵 Cash only</span>
+            <span class="venue-flag flag-call" style="margin-left:6px">⚠️ No reservations — arrive by 6:30–7pm</span>
+          </div>
+          <div class="warning">After dinner, bar-hop through <strong>Bairro Alto</strong> — one of the best bar streets in Europe for a girls night. Non-drinker will be totally comfortable; the scene is social and casual, not pressure-heavy.</div>
+        </div>
+      </div>
+
+      <!-- DAY 7 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">07</div>
+          <div class="day-date">Sept 6</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Full Lisbon Day</span>
+            <span class="day-subtitle">Belém · Alfama · Fado</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning — Belém</div>
+            <div class="time-desc">Take the 15E tram from Praça do Comércio along the river. Stop at <strong>Pastéis de Belém</strong> first — the original pastel de nata (yes, touristy, yes, worth it). Then <strong>Mosteiro dos Jerónimos</strong> (~€10, book online ahead), and a walk to the <strong>Torre de Belém</strong> for photos.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Midday</div>
+            <div class="time-desc">Tram back, lunch at a local tasca in Alfama — ask your hotel for a current recommendation the morning of.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Afternoon — Alfama</div>
+            <div class="time-desc">Get lost in Lisbon's oldest neighborhood. Narrow lanes, laundry strung between windows, fado drifting from doorways. Climb to <strong>Miradouro de Santa Luzia</strong>, then up to <strong>Miradouro da Senhora do Monte</strong> — the best panorama in the city. Arrive 30–45 min before sunset.</div>
+          </div>
+          <div class="warning"><strong>⚠️ Watch your pockets</strong> in Alfama and on Tram 28 — both are well-known pickpocket spots targeting tourists.</div>
+          <div class="venue-block book-ahead" style="margin-top:14px">
+            <div class="venue-name">📍 Fado Show — Book 1–2 Weeks in Advance</div>
+            <div class="venue-meta">Top Alfama venues:</div>
+            <div class="venue-meta"><strong>Clube de Fado</strong> — top-tier, 7 nights/week · <a href="https://www.clubedefado.pt" target="_blank">clubedefado.pt</a></div>
+            <div class="venue-meta"><strong>Mesa de Frades</strong> — 18th-century chapel setting, stunning · Book via GetYourGuide</div>
+            <div class="venue-meta"><strong>Parreirinha de Alfama</strong> — historic since 1950, most traditional · <a href="http://www.parreirinhadedalfama.com" target="_blank">parreirinhadedalfama.com</a></div>
+            <div class="venue-meta" style="margin-top:8px">Dinner + show: ~€40–80/person · Show only: ~€15–30/person · Full dinner menu at all venues ✓</div>
+            <span class="venue-flag flag-book">📅 Book ~Aug 20–25</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 8 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">08</div>
+          <div class="day-date">Sept 7</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Lisbon → Lagos</span>
+            <span class="day-subtitle">Final night · Wind down</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc">Sleep in. Coffee + pastel de nata at a neighborhood café. Browse the Príncipe Real antique market if you're up early enough.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Early Afternoon</div>
+            <div class="time-desc"><strong>Alfa Pendular back to Lagos</strong> — ~3h 15min. Arrive mid-afternoon. Last swim if you have time.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Evening</div>
+            <div class="time-desc">Easy final dinner. Return to a favorite or try somewhere new. Early night — departure morning tomorrow.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 9 -->
+      <div class="day-card">
+        <div class="day-number">
+          <div class="day-num">09</div>
+          <div class="day-date">Sept 8</div>
+        </div>
+        <div class="day-content">
+          <div class="day-header">
+            <span class="day-title">Departure</span>
+            <span class="day-subtitle">Lagos → FAO → PHX</span>
+          </div>
+          <div class="time-block">
+            <div class="time-label">Morning</div>
+            <div class="time-desc">Taxi or Uber from Lagos to Faro Airport. ~1 hour, ~€40–50. <strong>Book the night before.</strong> Be at FAO by <strong>10:00am</strong>.</div>
+          </div>
+          <div class="time-block">
+            <div class="time-label">11:40am</div>
+            <div class="time-desc">Depart FAO → PHX via United. Arrives PHX 6:53pm.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /days-list -->
+  </div>
+
+  <!-- BOOKING CHECKLIST -->
+  <div class="section">
+    <div class="section-label">Action Items</div>
+    <div class="section-title">Booking Checklist</div>
+    <div class="checklist">
+      <div class="checklist-header">
+        <span>Item</span>
+        <span>When</span>
+        <span>How</span>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">Hotel Faro — Hotel Faro &amp; Beach Club</div>
+        <div class="checklist-when">Now</div>
+        <div class="checklist-how"><a href="https://www.hotelfarobeachclub.com" target="_blank">hotelfarobeachclub.com</a></div>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">Hotel Lagos — Casa Mãe</div>
+        <div class="checklist-when">Now</div>
+        <div class="checklist-how"><a href="https://www.casamaehotel.com" target="_blank">casamaehotel.com</a></div>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">Hotel Lisbon (or check points first)</div>
+        <div class="checklist-when">Now</div>
+        <div class="checklist-how"><a href="https://www.hyatt.com" target="_blank">hyatt.com</a> / <a href="https://www.ihg.com" target="_blank">ihg.com</a></div>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">Ria Formosa boat tour</div>
+        <div class="checklist-when">ASAP</div>
+        <div class="checklist-how"><a href="https://formosamar.com" target="_blank">formosamar.com</a> or <a href="https://lands.pt" target="_blank">lands.pt</a></div>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">Ponta da Piedade RIB tour</div>
+        <div class="checklist-when">ASAP</div>
+        <div class="checklist-how"><a href="https://lagosboattours.com" target="_blank">lagosboattours.com</a></div>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">⚡ Alfa Pendular: Lagos → Lisbon (Sept 5)</div>
+        <div class="checklist-when">Aug 6 — set reminder</div>
+        <div class="checklist-how"><a href="https://www.cp.pt" target="_blank">cp.pt</a></div>
+      </div>
+      <div class="checklist-item checklist-urgent">
+        <div class="checklist-name">⚡ Alfa Pendular: Lisbon → Lagos (Sept 7)</div>
+        <div class="checklist-when">Aug 6 — set reminder</div>
+        <div class="checklist-how"><a href="https://www.cp.pt" target="_blank">cp.pt</a></div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-name">Mosteiro dos Jerónimos (Lisbon)</div>
+        <div class="checklist-when">Before trip</div>
+        <div class="checklist-how"><a href="https://www.patrimoniocultural.gov.pt" target="_blank">patrimoniocultural.gov.pt</a></div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-name">Fado show (Lisbon, Sept 6)</div>
+        <div class="checklist-when">~Aug 20–25</div>
+        <div class="checklist-how"><a href="https://www.clubedefado.pt" target="_blank">clubedefado.pt</a> or GetYourGuide</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-name">Faro → Lagos train (Sept 1)</div>
+        <div class="checklist-when">Anytime</div>
+        <div class="checklist-how"><a href="https://www.cp.pt" target="_blank">cp.pt</a></div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-name">⚠️ Call Casinha do Petisco re: meat option</div>
+        <div class="checklist-when">Before trip</div>
+        <div class="checklist-how">+351 282 084 285</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-name">⚠️ Call Tasca do Kiko re: non-seafood option</div>
+        <div class="checklist-when">Before trip</div>
+        <div class="checklist-how">+351 924 104 100</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-name">Lagos → FAO taxi/Uber</div>
+        <div class="checklist-when">Night of Sept 7</div>
+        <div class="checklist-how">Uber app or ask hotel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRY REQUIREMENTS -->
+  <div class="section">
+    <div class="section-label">Entry Requirements</div>
+    <div class="section-title">Docs &amp; Border Info</div>
+    <div class="ees-block">
+      <h4>🛂 EES — Active &amp; Affects Your Trip</h4>
+      <p>The EU Entry/Exit System launched April 10, 2026. On arrival at Faro, you'll submit <strong>fingerprints and a facial scan</strong> at passport control — nothing to do beforehand, it happens automatically. Expect slightly longer queues while the system is still new.</p>
+    </div>
+    <div class="ees-block ok">
+      <h4>✅ ETIAS — Not Required for September 2026</h4>
+      <p>The EU pre-travel authorization system (similar to the US ESTA, €20, valid 3 years) is expected to launch Q4 2026 with a 6-month transition period. Won't be mandatory until ~April 2027. No action needed for this trip.</p>
+    </div>
+    <div class="logistics-grid">
+      <div class="logistics-item">
+        <div class="logistics-label">Passport</div>
+        <div class="logistics-value">Verify valid through <strong>March 8, 2027</strong> (6 months past Sept 8 departure)</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Visa</div>
+        <div class="logistics-value">Not required for US passport holders (Schengen, up to 90 days)</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Currency</div>
+        <div class="logistics-value">Euro. Cards widely accepted. Bring cash for Casinha do Petisco and Taberna da Rua das Flores (cash only).</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Tipping</div>
+        <div class="logistics-value">Not expected. Rounding up or leaving €1–2 is appreciated.</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Rideshare</div>
+        <div class="logistics-value">Uber works in Lisbon and major Algarve towns.</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Language</div>
+        <div class="logistics-value">English widely spoken, especially in tourist areas and among younger Portuguese.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WARDROBE -->
+  <div class="section">
+    <div class="section-label">Packing</div>
+    <div class="section-title">Wardrobe — Jess</div>
+    <p style="font-size:13.5px; color:var(--muted); margin-bottom:20px;">Sudoku method — 3×3 grid, all natural fabrics (linen, cotton, Tencel). Carry-on + personal item only.</p>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">Color Palette</div>
+      <div class="palette-swatches">
+        <span class="swatch" style="background:#FAF6F0;" title="Ivory"></span>
+        <span class="swatch" style="background:#EDE3D4;" title="Warm Beige"></span>
+        <span class="swatch" style="background:#2C2C2C;" title="Black"></span>
+        <span class="swatch" style="background:#2D5A3D;" title="Forest Green"></span>
+        <span class="swatch" style="background:#C9A0A0;" title="Mauve"></span>
+        <span class="swatch" style="background:#6B3A5E;" title="Burgundy"></span>
+      </div>
+    </div>
+
+    <div class="wardrobe-grid">
+      <div class="wardrobe-col">
+        <div class="wardrobe-col-label">Tops</div>
+        <div class="wardrobe-item">Fitted ivory ribbed cotton scoop tank</div>
+        <div class="wardrobe-item">Fitted forest green/teal scoop tank</div>
+        <div class="wardrobe-item">Mauve/dusty rose cotton cami</div>
+      </div>
+      <div class="wardrobe-col">
+        <div class="wardrobe-col-label">Bottoms</div>
+        <div class="wardrobe-item">Ivory linen wide-leg trousers (mid-rise)</div>
+        <div class="wardrobe-item">Linen A-line knee skirt, warm beige</div>
+        <div class="wardrobe-item">Mid-rise denim shorts</div>
+      </div>
+      <div class="wardrobe-col">
+        <div class="wardrobe-col-label">Layers</div>
+        <div class="wardrobe-item">Cropped linen button-down, warm beige</div>
+        <div class="wardrobe-item">Black fitted scoop tee</div>
+        <div class="wardrobe-item">Lightweight linen scarf/wrap, ivory</div>
+      </div>
+    </div>
+
+    <div class="wardrobe-bonus">
+      <div class="wardrobe-bonus-item"><strong>Bonus Dress</strong>Floor-length maxi in forest green or burgundy — Lisbon evenings</div>
+      <div class="wardrobe-bonus-item"><strong>Swimwear</strong>1 bikini or one-piece (linen shorts + tank = coverup)</div>
+    </div>
+
+    <div style="background:var(--white); border-radius:10px; padding:18px 22px;">
+      <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">Shoes</div>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <div style="font-size:13.5px;"><strong>White leather sneakers</strong><br><span style="color:var(--muted); font-size:12px;">Mandatory for Lisbon cobblestones</span></div>
+        <div style="font-size:13.5px;"><strong>Flat tan leather sandal</strong><br><span style="color:var(--muted); font-size:12px;">Algarve daytime</span></div>
+        <div style="font-size:13.5px;"><strong>Strappy gold/tan heeled sandal</strong><br><span style="color:var(--muted); font-size:12px;">Evenings only</span></div>
+      </div>
+      <div class="warning" style="margin-top:14px;"><strong>⚠️ Church coverage:</strong> Covered shoulders required at Faro Cathedral, Igreja de Santo António, and Mosteiro dos Jerónimos. Your linen scarf handles all three.</div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <strong>Portugal · August 31 – September 8, 2026</strong><br>
+  <span style="margin-top:6px; display:block;">Created with your Travel Agent · Last updated May 2026</span>
+</div>
+
+</body>
+</html>
