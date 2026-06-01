@@ -231,7 +231,8 @@
   <div class="page-tabs-bar">
     <button class="page-tab-btn active" onclick="switchPage('itinerary', this)">📋 Itinerary</button>
     <button class="page-tab-btn" onclick="switchPage('map', this)">🗺️ Hotels &amp; Map</button>
-    <button class="page-tab-btn" onclick="switchPage('guide', this)">🌍 Know Before You Go</button>
+    <button class="page-tab-btn" onclick="switchPage('beforeyougo', this)">✅ Before You Go</button>
+    <button class="page-tab-btn" onclick="switchPage('ontheground', this)">🌍 On the Ground</button>
   </div>
 
   <!-- MAP VIEW -->
@@ -243,24 +244,174 @@
     <p style="font-size:12px;color:var(--muted);margin-top:12px;">Want to add a place? Open the <a href="https://www.google.com/maps/d/u/0/edit?mid=1sc1WHyX-_G6VjHW_TvD9vfwthNKtI0k" target="_blank" style="color:var(--terracotta);font-weight:600;">full map in Google My Maps →</a></p>
   </div>
 
-  <!-- GUIDE VIEW -->
-  <div id="page-guide" style="display:none; padding:32px 0;">
+  <!-- BEFORE YOU GO VIEW -->
+  <div id="page-beforeyougo" style="display:none; padding:32px 0;">
 
-    <!-- GUIDE JUMP NAV -->
     <div class="jump-nav" style="margin-bottom:8px;">
-      <a href="#guide-language" class="jump-btn">🗣 Language</a>
-      <a href="#guide-phrases" class="jump-btn">💬 Phrases</a>
-      <a href="#guide-etiquette" class="jump-btn">🤝 Etiquette</a>
-      <a href="#guide-food" class="jump-btn">🍽 Food & Drinks</a>
-      <a href="#guide-transport" class="jump-btn">🚂 Getting Around</a>
-      <a href="#guide-apps" class="jump-btn">📱 Apps</a>
-      <a href="#guide-health" class="jump-btn">💊 Health & Entry</a>
-      <a href="#guide-events" class="jump-btn">🌍 Current Events</a>
-      <a href="#guide-shopping" class="jump-btn">🛍 Shopping</a>
-      <a href="#guide-packing" class="jump-btn">🎒 Packing</a>
+      <a href="#byg-health" class="jump-btn">💊 Health &amp; Meds</a>
+      <a href="#byg-packing" class="jump-btn">🎒 Packing</a>
+      <a href="#byg-apps" class="jump-btn">📱 Apps</a>
+      <a href="#byg-events" class="jump-btn">🌍 Current Events</a>
     </div>
 
-    <div class="guide-section" id="guide-language">
+    <!-- HEALTH & ENTRY — Before You Go tab -->
+    <div class="guide-section" id="byg-health">
+      <div class="guide-label">Health &amp; Entry</div>
+      <div class="guide-title">Medications &amp; Entry Requirements</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+
+        <div class="guide-card">
+          <strong>✅ Common OTC Meds — All Fine to Bring</strong>
+          <p style="margin-top:6px;font-size:13.5px;">These are unrestricted. Personal-use quantities, no documentation needed:</p>
+          <ul style="margin-top:8px;font-size:13.5px;padding-left:18px;line-height:1.9;">
+            <li><strong>Ibuprofen</strong> (Advil, Motrin) — OTC in Portugal too</li>
+            <li><strong>Loperamide</strong> (Imodium) — OTC, no issues</li>
+            <li><strong>Acetaminophen/paracetamol</strong> (Tylenol) — OTC everywhere</li>
+            <li><strong>Diphenhydramine</strong> (Benadryl, ZzzQuil, Unisom) — fine to bring</li>
+            <li><strong>Bismuth subsalicylate</strong> (Pepto-Bismol) — fine</li>
+            <li><strong>Melatonin</strong> — great for jet lag, no restrictions</li>
+          </ul>
+          <p style="margin-top:8px;font-size:13px;color:var(--muted);">Tip: Portugal pharmacies (farmácias) stock most of these anyway, often cheaper than the US. Look for the green cross sign.</p>
+        </div>
+
+        <div class="guide-card guide-warning">
+          <strong>⚠️ Meloxicam (Mobic) — Prescription NSAID, Fine to Bring</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Meloxicam is prescription-only in the EU — same as in the US. It is <strong>not</strong> a controlled substance. No special documentation required. Just bring it in the original Rx bottle with your name, prescribing doctor, and dosage on the label. No customs concerns.</p>
+        </div>
+
+        <div class="guide-card guide-warning">
+          <strong>⚠️ Sudafed (Pseudoephedrine) — Keep Original US Packaging</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Pseudoephedrine is technically <strong>prescription-only in Portugal and the EU</strong> due to its use as a meth precursor. In practice, customs enforcement on personal travel amounts is essentially zero. Keep it in the original US box — do not decant into a pill organizer. Bringing a personal supply for an 8-day trip is not a real risk, but being caught with unmarked pills is asking for questions.</p>
+        </div>
+
+        <div class="guide-card guide-warning">
+          <strong>⚠️ DayQuil / NyQuil / Products Containing Dextromethorphan (DXM)</strong>
+          <p style="margin-top:6px;font-size:13.5px;">DXM is controlled in some EU countries. Portugal is relatively relaxed, but the same rule applies: <strong>original packaging only</strong>, personal amounts, clearly labeled. If your cold medicine contains DXM, make sure the product box comes with you — not just loose pills.</p>
+        </div>
+
+        <div class="guide-card guide-warning">
+          <strong>⚠️ THC / Cannabis</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal decriminalized personal drug use in 2001, but that applies to possession within Portugal — <strong>bringing THC products from the US is illegal and a customs offense</strong>. Do not travel internationally with any cannabis products, even from a legal US state. Leave it home.</p>
+        </div>
+
+        <div class="guide-card guide-warning">
+          <strong>⚠️ Adderall / Amphetamines</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Adderall is not approved for use in Portugal and is classified as a controlled substance. If anyone in the group takes Adderall, carry the original prescription bottle, a letter from your doctor on letterhead, and keep amounts consistent with personal use only. Technically there can be complications at customs — carry documentation.</p>
+        </div>
+
+        <div class="guide-card">
+          <strong>✅ Vaccines</strong>
+          <p style="margin-top:6px;font-size:13.5px;">No specific vaccines are required to enter Portugal from the US. Routine vaccines (COVID up to date, hepatitis A/B, tetanus) are recommended as general travel practice. No malaria risk in Portugal.</p>
+        </div>
+
+        <div class="guide-card">
+          <strong>✅ No ETIAS Required for Your Trip</strong>
+          <p style="margin-top:6px;font-size:13.5px;">The EU's new ETIAS pre-travel authorization (like the US ESTA) is expected to launch Q4 2026 with a 6-month grace period — won't be required until ~April 2027. September 2026 is clear.</p>
+        </div>
+
+        <div class="guide-card">
+          <strong>🛂 EES — Active at the Border</strong>
+          <p style="margin-top:6px;font-size:13.5px;">The EU Entry/Exit System launched April 2026. You'll give fingerprints and a face scan at Faro passport control on arrival. Nothing to prepare — happens automatically. Allow extra time in the immigration queue.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PACKING — Before You Go tab -->
+    <div class="guide-section" id="byg-packing">
+      <div class="guide-label">Packing &amp; Practical</div>
+      <div class="guide-title">Weather, Packing &amp; Practical Tips</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card">
+          <strong>☀️ September Weather</strong>
+          <p style="margin-top:6px;font-size:13.5px;"><strong>Algarve (Lagos/Faro):</strong> 82–90°F days, 65–70°F evenings. Virtually zero rain. Low humidity. Strong sun — sunscreen is not optional.<br><strong>Lisbon:</strong> Slightly cooler — 75–85°F days, 62–68°F evenings. Coastal breeze. An occasional light rain is possible but unlikely. Evenings can feel genuinely cool — a layer is useful.</p>
+        </div>
+        <div class="guide-card">
+          <strong>👗 How Locals Dress</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portuguese dress well — they don't tend to wear resort wear outside of the actual beach/pool. In Lisbon especially, smart casual is the standard. In Lagos it's more relaxed. Avoid wearing swimwear into restaurants or shops — throw on a cover-up or change first.</p>
+        </div>
+        <div class="guide-card guide-warning">
+          <strong>🔌 Power Adapters — Type F Plug Required</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal uses <strong>Type C/F plugs</strong> (same as most of mainland Europe). Voltage is 230V/50Hz — US is 110V/60Hz. <strong>Most modern devices</strong> (phones, laptops, cameras) are dual voltage — just check the label on your charger for "100-240V." If it says that, you only need an adapter (not a converter). Hair tools are often NOT dual voltage — check before you pack yours.<br><a href="https://www.amazon.com/s?k=europe+type+f+plug+adapter" target="_blank" style="color:var(--terracotta);font-weight:600;">Shop adapters on Amazon →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong>💇 Hair Dryers</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Most hotels provide hair dryers. Guesthouses and boutique properties (like Casa Mãe) typically do too — but worth confirming at booking if it's important. Don't bring a US hair dryer without a voltage converter — it will burn out immediately.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🏖 Towels at the Beach</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portuguese beaches do <strong>not</strong> provide towels — you bring your own or rent a sun lounger (which comes with a towel in some cases). If you're staying at a hotel like Carvi Beach Hotel or Hotel Faro, ask at check-in whether you can take hotel towels to the beach — most allow it. Otherwise, a compact travel towel is a good backup to pack.</p>
+        </div>
+        <div class="guide-card">
+          <strong>💧 Tap Water</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Tap water is safe to drink throughout Portugal. Bring a reusable water bottle — it saves money and the Algarve heat means you'll be drinking a lot of water.</p>
+        </div>
+        <div class="guide-card">
+          <strong>💰 Cash vs. Card</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Cards are accepted almost everywhere. However, a few places on this itinerary are <strong>cash only</strong>: Casinha do Petisco (Lagos) and Taberna da Rua das Flores (Lisbon). Bring some euro cash — ATMs are widely available and give the best exchange rates. Avoid airport currency exchange booths.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🎒 Carry-On Packing Tips</strong>
+          <p style="margin-top:6px;font-size:13.5px;">• <strong>Linen and cotton only</strong> — synthetics are miserable in 90°F heat<br>• <strong>Layers for Lisbon evenings</strong> — a linen button-down or light scarf does the job<br>• <strong>Comfortable walking shoes are non-negotiable</strong> — Lisbon's cobblestones are steep and slippery. White sneakers that look good are your best friend<br>• <strong>Small crossbody bag</strong> for daytime in Lisbon — keeps hands free and harder to pickpocket than a tote<br>• <strong>Sunscreen</strong> — the Algarve sun is intense, bring more than you think you need<br>• <strong>Portable charger</strong> — long beach and sightseeing days drain your phone<br>• <strong>Scarf</strong> — doubles as church coverage, beach wrap, and Lisbon evening layer</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPS — Before You Go tab -->
+    <div class="guide-section" id="byg-apps">
+      <div class="guide-label">Apps</div>
+      <div class="guide-title">Apps to Download Before You Go</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="guide-card"><strong>Bolt</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Rideshare — Portugal's #1. Set up payment before you arrive.</div><a href="https://bolt.eu" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">bolt.eu →</a></div>
+        <div class="guide-card"><strong>CP — Comboios de Portugal</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Book train tickets directly. Download before trip.</div><a href="https://www.cp.pt" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">cp.pt →</a></div>
+        <div class="guide-card"><strong>Google Maps</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Download offline maps for Lisbon, Lagos, and Faro before you fly — saves data.</div></div>
+        <div class="guide-card"><strong>Google Translate</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Download Portuguese offline language pack. The camera translation feature is great for menus.</div></div>
+        <div class="guide-card"><strong>Wise or Revolut</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Best exchange rates for spending in euros. Far better than airport currency exchange.</div><a href="https://wise.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">wise.com →</a></div>
+        <div class="guide-card"><strong>WhatsApp</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Universally used in Portugal for communication. Restaurants and tour operators often use it for bookings.</div></div>
+        <div class="guide-card"><strong>GetYourGuide</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Book boat tours, workshops, day trips. Better cancellation policies than most direct bookings.</div><a href="https://www.getyourguide.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">getyourguide.com →</a></div>
+        <div class="guide-card"><strong>Lisbon Metro App</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Official app for Lisbon subway — maps, hours, trip planning.</div><a href="https://www.metrolisboa.pt/en/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">metrolisboa.pt →</a></div>
+      </div>
+    </div>
+
+    <!-- CURRENT EVENTS — Before You Go tab -->
+    <div class="guide-section" id="byg-events">
+      <div class="guide-label">Current Events</div>
+      <div class="guide-title">World Awareness</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card guide-warning">
+          <strong>⚠️ Portugal Transport Strike — June 2026</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal experienced a major nationwide transport strike in June 2026, affecting trains, metro, flights, and public transport. Labor unrest around working condition reforms has been ongoing. <strong>Check for any planned strikes in August/September before you travel</strong> — particularly for CP train routes and TAP/connecting airlines. <a href="https://www.theportugalnews.com" target="_blank" style="color:var(--terracotta);">theportugalnews.com</a> is a good English-language source to monitor.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🏳️‍🌈 LGBTQ+ Safety</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal is one of the most progressive countries in Europe on LGBTQ+ rights — consistently ranked in the top 5 in Europe. No concerns for any traveler.</p>
+        </div>
+        <div class="guide-card">
+          <strong>📱 US Social Media Screening (Return)</strong>
+          <p style="margin-top:6px;font-size:13.5px;">When returning to the US, Customs and Border Protection has expanded social media screening programs. This is a US re-entry policy, not a Portugal issue, but worth being aware of before your return.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🏠 Overtourism Awareness</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lisbon has seen growing local frustration with mass tourism's impact on housing costs. Be a respectful traveler — shop local, eat at local spots (which we've already built into the itinerary), and be mindful of noise in residential neighborhoods.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page-beforeyougo -->
+
+  <!-- ON THE GROUND VIEW -->
+  <div id="page-ontheground" style="display:none; padding:32px 0;">
+
+    <div class="jump-nav" style="margin-bottom:8px;">
+      <a href="#otg-language" class="jump-btn">🗣 Language</a>
+      <a href="#otg-phrases" class="jump-btn">💬 Phrases</a>
+      <a href="#otg-etiquette" class="jump-btn">🤝 Etiquette</a>
+      <a href="#otg-transport" class="jump-btn">🚂 Getting Around</a>
+      <a href="#otg-food" class="jump-btn">🍽 Food &amp; Drinks</a>
+      <a href="#otg-shopping" class="jump-btn">🛍 Shopping</a>
+    </div>
+
+    <div class="guide-section" id="otg-language">
       <div class="guide-label">Native Language</div>
       <div class="guide-title">Language</div>
       <div class="guide-card">
@@ -269,8 +420,8 @@
       </div>
     </div>
 
-    <div class="guide-section">
-      <div class="guide-label" id="guide-phrases">Phrases</div>
+    <div class="guide-section" id="otg-phrases">
+      <div class="guide-label">Phrases</div>
       <div class="guide-title">Useful Phrases</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
         <div class="phrase-card"><div class="phrase-en">Hello / Good morning</div><div class="phrase-pt">Olá / Bom dia</div><div class="phrase-phonetic">oh-LAH / bom JEE-ah</div></div>
@@ -290,7 +441,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label" id="guide-etiquette">Etiquette</div>
+      <div class="guide-label" id="otg-etiquette">Etiquette</div>
       <div class="guide-title">Culture &amp; Etiquette</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card guide-tip">
@@ -320,8 +471,40 @@
       </div>
     </div>
 
+    <!-- TRANSPORT inserted before Food per requested order -->
+    <div class="guide-section" id="otg-transport">
+      <div class="guide-label">Transport</div>
+      <div class="guide-title">Getting Around</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚂 Trains (CP)</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Intercity travel is all on CP (Comboios de Portugal). Clean, punctual, affordable. Book ahead for the Alfa Pendular routes. <a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank" style="color:var(--terracotta);">cp.pt →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚗 Rideshare: Bolt &gt; Uber in Portugal</strong>
+          <p style="margin-top:6px;font-size:13.5px;"><strong>Download Bolt</strong> — it's the dominant rideshare app in Portugal, typically 20–30% cheaper than Uber and drivers prefer it. Uber works too, especially in Lisbon, but Bolt is the local standard. Both operate in Lisbon and the Algarve. <a href="https://bolt.eu" target="_blank" style="color:var(--terracotta);">bolt.eu →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚃 Lisbon Trams</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Tram 15E (to Belém) and Tram 28 (Alfama) are iconic but <strong>notorious for pickpockets</strong>. Keep bags in front of you, hands on your phone. The 15E is worth it for the Belém ride — it's scenic. The 28 is beautiful but can be skipped in favor of a taxi/Bolt if security is a concern.</p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚇 Lisbon Metro</strong>
+          <p style="margin-top:6px;font-size:13.5px;">The metro is easy, clean, and cheap. Buy a rechargeable Viva Viagem card (€0.50) at any station and load trips onto it. Far better value than single tickets. <a href="https://www.metrolisboa.pt/en/" target="_blank" style="color:var(--terracotta);">metrolisboa.pt →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🛺 Tuk-Tuks (Lisbon Only)</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Electric tuk-tuks are a Lisbon staple — best for exploring hilly neighborhoods like Alfama, Mouraria, and Bairro Alto where walking uphill gets old fast. They're more sightseeing than transit: most operate as 1–2 hour neighborhood tours. Book in advance on GetYourGuide or Viator, or find driver stands near Praça do Comércio and Alfama. Expect €15–30/person depending on tour length. Not practical for cross-city trips — use Bolt for that.</p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚕 Lagos &amp; Algarve</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lagos is very walkable for beaches and Old Town. Bolt/Uber available for the short trips (Casa Chico Zé, Meia Praia). No public transit network worth using in the Algarve — taxis or rideshare is the move.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="guide-section">
-      <div class="guide-label" id="guide-food">Food Culture</div>
+      <div class="guide-label" id="otg-food">Food Culture</div>
       <div class="guide-title">Food — What to Expect</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
 
@@ -477,100 +660,9 @@
       </div>
     </div>
 
-    <div class="guide-section">
-      <div class="guide-label" id="guide-transport">Transport</div>
-      <div class="guide-title">Getting Around</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="guide-card">
-          <strong style="font-size:14px;">🚂 Trains (CP)</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Intercity travel is all on CP (Comboios de Portugal). Clean, punctual, affordable. Book ahead for the Alfa Pendular routes. <a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank" style="color:var(--terracotta);">cp.pt →</a></p>
-        </div>
-        <div class="guide-card">
-          <strong style="font-size:14px;">🚗 Rideshare: Bolt &gt; Uber in Portugal</strong>
-          <p style="margin-top:6px;font-size:13.5px;"><strong>Download Bolt</strong> — it's the dominant rideshare app in Portugal, typically 20–30% cheaper than Uber and drivers prefer it. Uber works too, especially in Lisbon, but Bolt is the local standard. Both operate in Lisbon and the Algarve. <a href="https://bolt.eu" target="_blank" style="color:var(--terracotta);">bolt.eu →</a></p>
-        </div>
-        <div class="guide-card">
-          <strong style="font-size:14px;">🚃 Lisbon Trams</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Tram 15E (to Belém) and Tram 28 (Alfama) are iconic but <strong>notorious for pickpockets</strong>. Keep bags in front of you, hands on your phone. The 15E is worth it for the Belém ride — it's scenic. The 28 is beautiful but can be skipped in favor of a taxi/Bolt if security is a concern.</p>
-        </div>
-        <div class="guide-card">
-          <strong style="font-size:14px;">🚇 Lisbon Metro</strong>
-          <p style="margin-top:6px;font-size:13.5px;">The metro is easy, clean, and cheap. Buy a rechargeable Viva Viagem card (€0.50) at any station and load trips onto it. Far better value than single tickets. <a href="https://www.metrolisboa.pt/en/" target="_blank" style="color:var(--terracotta);">metrolisboa.pt →</a></p>
-        </div>
-        <div class="guide-card">
-          <strong style="font-size:14px;">🚕 Lagos &amp; Algarve</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Lagos is very walkable for beaches and Old Town. Bolt/Uber available for the short trips (Casa Chico Zé, Meia Praia). No public transit network worth using in the Algarve — taxis or rideshare is the move.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="guide-section">
-      <div class="guide-label" id="guide-apps">Apps</div>
-      <div class="guide-title">Apps to Download Before You Go</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-        <div class="guide-card"><strong>Bolt</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Rideshare — Portugal's #1. Set up payment before you arrive.</div><a href="https://bolt.eu" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">bolt.eu →</a></div>
-        <div class="guide-card"><strong>CP — Comboios de Portugal</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Book train tickets directly. Download before trip.</div><a href="https://www.cp.pt" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">cp.pt →</a></div>
-        <div class="guide-card"><strong>Google Maps</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Download offline maps for Lisbon, Lagos, and Faro before you fly — saves data.</div></div>
-        <div class="guide-card"><strong>Google Translate</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Download Portuguese offline language pack. The camera translation feature is great for menus.</div></div>
-        <div class="guide-card"><strong>Wise or Revolut</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Best exchange rates for spending in euros. Far better than airport currency exchange.</div><a href="https://wise.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">wise.com →</a></div>
-        <div class="guide-card"><strong>WhatsApp</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Universally used in Portugal for communication. Restaurants and tour operators often use it for bookings.</div></div>
-        <div class="guide-card"><strong>GetYourGuide</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Book boat tours, workshops, day trips. Better cancellation policies than most direct bookings.</div><a href="https://www.getyourguide.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">getyourguide.com →</a></div>
-        <div class="guide-card"><strong>Lisbon Metro App</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Official app for Lisbon subway — maps, hours, trip planning.</div><a href="https://www.metrolisboa.pt/en/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">metrolisboa.pt →</a></div>
-      </div>
-    </div>
-
-    <div class="guide-section">
-      <div class="guide-label" id="guide-health">Health &amp; Entry</div>
-      <div class="guide-title">Medications &amp; Entry Requirements</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="guide-card guide-warning">
-          <strong>⚠️ THC / Cannabis</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portugal decriminalized personal drug use in 2001, but that applies to possession within Portugal — <strong>bringing THC products from the US is illegal and a customs offense</strong>. Do not travel internationally with any cannabis products, even from a legal US state. Leave it home.</p>
-        </div>
-        <div class="guide-card guide-warning">
-          <strong>⚠️ Adderall / Amphetamines</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Adderall is not approved for use in Portugal and is classified as a controlled substance. If anyone in the group takes Adderall, carry the original prescription bottle, a letter from your doctor on letterhead, and keep amounts consistent with personal use only. Technically there can be complications at customs — carry documentation.</p>
-        </div>
-        <div class="guide-card">
-          <strong>✅ Vaccines</strong>
-          <p style="margin-top:6px;font-size:13.5px;">No specific vaccines are required to enter Portugal from the US. Routine vaccines (COVID up to date, hepatitis A/B, tetanus) are recommended as general travel practice. No malaria risk in Portugal.</p>
-        </div>
-        <div class="guide-card">
-          <strong>✅ No ETIAS Required for Your Trip</strong>
-          <p style="margin-top:6px;font-size:13.5px;">The EU's new ETIAS pre-travel authorization (like the US ESTA) is expected to launch Q4 2026 with a 6-month grace period — won't be required until ~April 2027. September 2026 is clear.</p>
-        </div>
-        <div class="guide-card">
-          <strong>🛂 EES — Active at the Border</strong>
-          <p style="margin-top:6px;font-size:13.5px;">The EU Entry/Exit System launched April 2026. You'll give fingerprints and a face scan at Faro passport control on arrival. Nothing to prepare — happens automatically. Allow extra time in the immigration queue.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="guide-section">
-      <div class="guide-label" id="guide-events">Current Events</div>
-      <div class="guide-title">World Awareness</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="guide-card guide-warning">
-          <strong>⚠️ Portugal Transport Strike — June 2026</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portugal experienced a major nationwide transport strike in June 2026, affecting trains, metro, flights, and public transport. Labor unrest around working condition reforms has been ongoing. <strong>Check for any planned strikes in August/September before you travel</strong> — particularly for CP train routes and TAP/connecting airlines. <a href="https://www.theportugalnews.com" target="_blank" style="color:var(--terracotta);">theportugalnews.com</a> is a good English-language source to monitor.</p>
-        </div>
-        <div class="guide-card">
-          <strong>🏳️‍🌈 LGBTQ+ Safety</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portugal is one of the most progressive countries in Europe on LGBTQ+ rights — consistently ranked in the top 5 in Europe. No concerns for any traveler.</p>
-        </div>
-        <div class="guide-card">
-          <strong>📱 US Social Media Screening (Return)</strong>
-          <p style="margin-top:6px;font-size:13.5px;">When returning to the US, Customs and Border Protection has expanded social media screening programs. This is a US re-entry policy, not a Portugal issue, but worth being aware of before your return.</p>
-        </div>
-        <div class="guide-card">
-          <strong>🏠 Overtourism Awareness</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Lisbon has seen growing local frustration with mass tourism's impact on housing costs. Be a respectful traveler — shop local, eat at local spots (which we've already built into the itinerary), and be mindful of noise in residential neighborhoods.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="guide-section">
-      <div class="guide-label" id="guide-shopping">Shopping &amp; Experiences</div>
+    <!-- SHOPPING — On the Ground tab, with links and new clothing/shoe cards -->
+    <div class="guide-section" id="otg-shopping">
+      <div class="guide-label">Shopping &amp; Experiences</div>
       <div class="guide-title">Unique Experiences &amp; Shopping</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card">
@@ -585,12 +677,28 @@
         </div>
         <div class="guide-card">
           <strong>🛍 LX Factory — Lisbon</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Former industrial complex turned creative market. Local designers, handmade jewelry, vintage clothing, art, and great cafés. Best on Sundays when the market runs. Príncipe Real neighborhood is also excellent for boutiques.</p>
+          <p style="margin-top:6px;font-size:13.5px;">Former industrial complex turned creative market. Local designers, handmade jewelry, vintage clothing, art, and great cafés. Best on Sundays when the market runs.</p>
           <a href="https://www.lxfactory.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">lxfactory.com →</a>
         </div>
         <div class="guide-card">
+          <strong>🏛 Chiado — Lisbon's Shopping District</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lisbon's main upscale shopping neighborhood. Mix of international brands (Zara, Mango) and local Portuguese boutiques. Príncipe Real nearby is better for independent designers and slower browsing. Best street: Rua do Carmo and surrounding lanes.</p>
+          <a href="https://www.google.com/maps/place/Chiado,+Lisbon,+Portugal" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Chiado on Google Maps →</a>
+        </div>
+        <div class="guide-card">
+          <strong>👠 Josefinas — Portuguese Women's Shoes</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lisbon-based brand making beautifully crafted flats, loafers, and boots. Portuguese leather, thoughtful design, and prices that undercut comparable European brands. Great gift or splurge. Boutique in Chiado and online.</p>
+          <a href="https://josefinas.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">josefinas.com →</a>
+        </div>
+        <div class="guide-card">
+          <strong>👖 Salsa Jeans — Portuguese Denim Brand</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal's most successful homegrown fashion brand — known for great-fitting jeans at mid-range prices. Multiple locations in Lisbon. Worth a look if you're in the market for denim; quality is noticeably better than fast fashion at similar prices.</p>
+          <a href="https://www.salsa-jeans.com/en-pt/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">salsa-jeans.com →</a>
+        </div>
+        <div class="guide-card">
           <strong>🏺 Feira da Ladra — Lisbon Flea Market</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Lisbon's oldest flea market in Alfama — Tuesdays and Saturdays. Antiques, vintage clothing, vinyl records, quirky souvenirs. Perfect before or after the miradouros.</p>
+          <p style="margin-top:6px;font-size:13.5px;">Lisbon's oldest flea market at Campo de Santa Clara in Alfama — Tuesdays and Saturdays. Antiques, vintage clothing, vinyl records, quirky souvenirs. Perfect before or after the miradouros.</p>
+          <a href="https://www.visitlisboa.com/en/places/feira-da-ladra-flea-market" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Visit Lisboa info →</a>
         </div>
         <div class="guide-card">
           <strong>🪴 Ceramics &amp; Craft Workshops — Lisbon</strong>
@@ -604,55 +712,18 @@
         </div>
         <div class="guide-card">
           <strong>🏺 Local Ceramics &amp; Cork Shopping — Lagos</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portugal is the world's #1 cork producer — the Algarve has beautiful cork products (bags, hats, wallets, coasters) that are genuinely local and make excellent gifts. Look for shops in Lagos Old Town. Also: hand-painted ceramics are everywhere and high quality.</p>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal is the world's #1 cork producer — the Algarve has beautiful cork products (bags, hats, wallets, coasters) that are genuinely local and make excellent gifts. Look for shops in Lagos Old Town.</p>
+          <a href="https://www.google.com/maps/search/cork+shops+Lagos+Old+Town+Portugal" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Find shops on Google Maps →</a>
         </div>
         <div class="guide-card">
           <strong>🍷 Wine Tasting — Algarve or Lisbon</strong>
           <p style="margin-top:6px;font-size:13.5px;">Portuguese wine is excellent and underrated internationally. Vinho verde (crisp, slightly sparkling white) is perfect for summer. Local Algarve wines are worth trying. Ginjinha — a sour cherry liqueur — is Lisbon's signature shot, sold in tiny kiosks in Alfama for €1.</p>
+          <a href="https://www.getyourguide.com/lisbon-l42/wine-tours-tc4/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Browse wine experiences on GetYourGuide →</a>
         </div>
       </div>
     </div>
 
-    <div class="guide-section">
-      <div class="guide-label" id="guide-packing">Packing &amp; Practical</div>
-      <div class="guide-title">Weather, Packing &amp; Practical Tips</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="guide-card">
-          <strong>☀️ September Weather</strong>
-          <p style="margin-top:6px;font-size:13.5px;"><strong>Algarve (Lagos/Faro):</strong> 82–90°F days, 65–70°F evenings. Virtually zero rain. Low humidity. Strong sun — sunscreen is not optional.<br><strong>Lisbon:</strong> Slightly cooler — 75–85°F days, 62–68°F evenings. Coastal breeze. An occasional light rain is possible but unlikely. Evenings can feel genuinely cool — a layer is useful.</p>
-        </div>
-        <div class="guide-card">
-          <strong>👗 How Locals Dress</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portuguese dress well — they don't tend to wear resort wear outside of the actual beach/pool. In Lisbon especially, smart casual is the standard. In Lagos it's more relaxed. Avoid wearing swimwear into restaurants or shops — throw on a cover-up or change first.</p>
-        </div>
-        <div class="guide-card guide-warning">
-          <strong>🔌 Power Adapters — Type F Plug Required</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portugal uses <strong>Type C/F plugs</strong> (same as most of mainland Europe). Voltage is 230V/50Hz — US is 110V/60Hz. <strong>Most modern devices</strong> (phones, laptops, cameras) are dual voltage — just check the label on your charger for "100-240V." If it says that, you only need an adapter (not a converter). Hair tools are often NOT dual voltage — check before you pack yours.<br><a href="https://www.amazon.com/s?k=europe+type+f+plug+adapter" target="_blank" style="color:var(--terracotta);font-weight:600;">Shop adapters on Amazon →</a></p>
-        </div>
-        <div class="guide-card">
-          <strong>💇 Hair Dryers</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Most hotels provide hair dryers. Guesthouses and boutique properties (like Casa Mãe) typically do too — but worth confirming at booking if it's important. Don't bring a US hair dryer without a voltage converter — it will burn out immediately.</p>
-        </div>
-        <div class="guide-card">
-          <strong>🏖 Towels at the Beach</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Portuguese beaches do <strong>not</strong> provide towels — you bring your own or rent a sun lounger (which comes with a towel in some cases). If you're staying at a hotel like Carvi Beach Hotel or Hotel Faro, ask at check-in whether you can take hotel towels to the beach — most allow it. Otherwise, a compact travel towel is a good backup to pack.</p>
-        </div>
-        <div class="guide-card">
-          <strong>💧 Tap Water</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Tap water is safe to drink throughout Portugal. Bring a reusable water bottle — it saves money and the Algarve heat means you'll be drinking a lot of water.</p>
-        </div>
-        <div class="guide-card">
-          <strong>💰 Cash vs. Card</strong>
-          <p style="margin-top:6px;font-size:13.5px;">Cards are accepted almost everywhere. However, a few places on this itinerary are <strong>cash only</strong>: Casinha do Petisco (Lagos) and Taberna da Rua das Flores (Lisbon). Bring some euro cash — ATMs are widely available and give the best exchange rates. Avoid airport currency exchange booths.</p>
-        </div>
-        <div class="guide-card">
-          <strong>🎒 Carry-On Packing Tips</strong>
-          <p style="margin-top:6px;font-size:13.5px;">• <strong>Linen and cotton only</strong> — synthetics are miserable in 90°F heat<br>• <strong>Layers for Lisbon evenings</strong> — a linen button-down or light scarf does the job<br>• <strong>Comfortable walking shoes are non-negotiable</strong> — Lisbon's cobblestones are steep and slippery. White sneakers that look good are your best friend<br>• <strong>Small crossbody bag</strong> for daytime in Lisbon — keeps hands free and harder to pickpocket than a tote<br>• <strong>Sunscreen</strong> — the Algarve sun is intense, bring more than you think you need<br>• <strong>Portable charger</strong> — long beach and sightseeing days drain your phone<br>• <strong>Scarf</strong> — doubles as church coverage, beach wrap, and Lisbon evening layer</p>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /page-guide -->
+  </div><!-- /page-ontheground -->
 
   <!-- ITINERARY VIEW -->
   <div id="page-itinerary">
@@ -1077,7 +1148,8 @@
     btn.classList.add('active');
     document.getElementById('page-itinerary').style.display = page === 'itinerary' ? '' : 'none';
     document.getElementById('page-map').style.display = page === 'map' ? '' : 'none';
-    document.getElementById('page-guide').style.display = page === 'guide' ? '' : 'none';
+    document.getElementById('page-beforeyougo').style.display = page === 'beforeyougo' ? '' : 'none';
+    document.getElementById('page-ontheground').style.display = page === 'ontheground' ? '' : 'none';
   }
 
   // ── Itinerary option switching ──
