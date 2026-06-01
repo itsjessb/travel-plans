@@ -161,6 +161,26 @@
   .palette-swatches { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
   .swatch { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--white); box-shadow: 0 0 0 1px var(--divider); }
 
+  /* JUMP NAV */
+  .jump-nav { display:flex; gap:8px; flex-wrap:wrap; padding:20px 0 4px; margin-bottom:8px; }
+  .jump-btn { padding:7px 14px; border-radius:100px; background:var(--white); border:1px solid var(--divider); font-size:12px; font-weight:600; color:var(--navy); text-decoration:none; transition:all 0.15s; white-space:nowrap; }
+  .jump-btn:hover { background:var(--navy); color:var(--white); border-color:var(--navy); }
+
+  /* GUIDE TAB */
+  .guide-section { padding:44px 0 8px; }
+  .guide-label { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--terracotta); margin-bottom:8px; }
+  .guide-title { font-family:'Playfair Display',serif; font-size:28px; font-weight:400; color:var(--navy); margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--divider); }
+  .guide-card { background:var(--white); border-radius:10px; padding:18px 20px; font-size:13.5px; line-height:1.65; }
+  .guide-card a { color:var(--terracotta); text-decoration:none; }
+  .guide-card a:hover { text-decoration:underline; }
+  .guide-tip { display:flex; gap:14px; align-items:flex-start; }
+  .guide-tip-icon { font-size:20px; flex-shrink:0; margin-top:2px; }
+  .guide-warning { border-left:3px solid var(--terracotta); }
+  .phrase-card { background:var(--white); border-radius:10px; padding:14px 16px; }
+  .phrase-en { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+  .phrase-pt { font-size:15px; font-weight:700; color:var(--navy); }
+  .phrase-phonetic { font-size:11.5px; color:var(--terracotta); margin-top:3px; font-style:italic; }
+
   /* PAGE TABS */
   .page-tabs-bar { display:flex; gap:0; margin:32px 0 0; border-radius:12px 12px 0 0; overflow:hidden; }
   .page-tab-btn { flex:1; padding:16px 24px; background:var(--warm-beige); border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:var(--muted); text-align:center; transition:all 0.2s; }
@@ -184,7 +204,7 @@
 
 <div class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">Girls Trip · September 2026</div>
+    <div class="hero-eyebrow">Portugal · September 2026</div>
     <h1>Algarve &amp; <em>Lisboa</em></h1>
     <div class="hero-dates">September 1 — 8, 2026 &nbsp;·&nbsp; 3 Travelers</div>
     <div class="hero-pills">
@@ -192,6 +212,7 @@
       <span class="pill">🏖 Beach + Culture</span>
       <span class="pill">🚂 Scenic Train Routes</span>
       <span class="pill">🍷 Local Food &amp; Fado</span>
+      <span class="pill">📅 Sept 1–8, 2026</span>
     </div>
   </div>
 </div>
@@ -210,6 +231,7 @@
   <div class="page-tabs-bar">
     <button class="page-tab-btn active" onclick="switchPage('itinerary', this)">📋 Itinerary</button>
     <button class="page-tab-btn" onclick="switchPage('map', this)">🗺️ Hotels &amp; Map</button>
+    <button class="page-tab-btn" onclick="switchPage('guide', this)">🌍 Know Before You Go</button>
   </div>
 
   <!-- MAP VIEW -->
@@ -221,11 +243,265 @@
     <p style="font-size:12px;color:var(--muted);margin-top:12px;">Want to add a place? Open the <a href="https://www.google.com/maps/d/u/0/edit?mid=1sc1WHyX-_G6VjHW_TvD9vfwthNKtI0k" target="_blank" style="color:var(--terracotta);font-weight:600;">full map in Google My Maps →</a></p>
   </div>
 
+  <!-- GUIDE VIEW -->
+  <div id="page-guide" style="display:none; padding:32px 0;">
+
+    <div class="guide-section">
+      <div class="guide-label">Native Language</div>
+      <div class="guide-title">Language</div>
+      <div class="guide-card">
+        <p style="font-size:14px;line-height:1.7;margin-bottom:12px;"><strong>Portuguese (Português)</strong> is the official language. The good news: English is widely spoken in tourist areas, especially in Lisbon, Lagos, and anywhere near the coast. Younger Portuguese people (under ~45) are generally comfortable in English. In smaller towns, rural areas, and older generations you'll encounter less English — but even then, a smile and a few Portuguese words go a long way.</p>
+        <p style="font-size:13.5px;color:var(--muted);">Note: Portuguese and Spanish are related but <em>not</em> interchangeable. Don't assume a Portuguese speaker understands your Spanish — some do, but it's not a given and can feel dismissive to try.</p>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Phrases</div>
+      <div class="guide-title">Useful Phrases</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="phrase-card"><div class="phrase-en">Hello / Good morning</div><div class="phrase-pt">Olá / Bom dia</div><div class="phrase-phonetic">oh-LAH / bom JEE-ah</div></div>
+        <div class="phrase-card"><div class="phrase-en">Good afternoon / Good evening</div><div class="phrase-pt">Boa tarde / Boa noite</div><div class="phrase-phonetic">BOH-ah TAR-day / BOH-ah NOY-tay</div></div>
+        <div class="phrase-card"><div class="phrase-en">Please</div><div class="phrase-pt">Por favor</div><div class="phrase-phonetic">por fah-VOR</div></div>
+        <div class="phrase-card"><div class="phrase-en">Thank you</div><div class="phrase-pt">Obrigada <span style="font-size:11px;color:var(--muted);">(women say this)</span></div><div class="phrase-phonetic">oh-bree-GAH-dah</div></div>
+        <div class="phrase-card"><div class="phrase-en">Excuse me / Sorry</div><div class="phrase-pt">Com licença / Desculpe</div><div class="phrase-phonetic">com lee-SEN-sah / desh-KUL-pay</div></div>
+        <div class="phrase-card"><div class="phrase-en">Do you speak English?</div><div class="phrase-pt">Fala inglês?</div><div class="phrase-phonetic">FAH-lah een-GLESH</div></div>
+        <div class="phrase-card"><div class="phrase-en">I don't understand</div><div class="phrase-pt">Não entendo</div><div class="phrase-phonetic">nowng en-TEN-doh</div></div>
+        <div class="phrase-card"><div class="phrase-en">One coffee, please</div><div class="phrase-pt">Um café, por favor</div><div class="phrase-phonetic">oom kah-FAY por fah-VOR</div></div>
+        <div class="phrase-card"><div class="phrase-en">Coffee with milk</div><div class="phrase-pt">Um café com leite</div><div class="phrase-phonetic">oom kah-FAY com LAY-tay</div></div>
+        <div class="phrase-card"><div class="phrase-en">The bill, please</div><div class="phrase-pt">A conta, por favor</div><div class="phrase-phonetic">ah KON-tah por fah-VOR</div></div>
+        <div class="phrase-card"><div class="phrase-en">Where is the train station?</div><div class="phrase-pt">Onde fica a estação?</div><div class="phrase-phonetic">ON-day FEE-kah ah esh-tah-SOWNG</div></div>
+        <div class="phrase-card"><div class="phrase-en">Cheers!</div><div class="phrase-pt">Saúde!</div><div class="phrase-phonetic">sah-OO-day</div></div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Etiquette</div>
+      <div class="guide-title">Culture &amp; Etiquette</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">🍞</div>
+          <div><strong>The Couvert Charge — Read This First</strong><br>When you sit down at a Portuguese restaurant, the waiter often places bread, olives, butter, or small appetizers on the table without being asked. <strong>These are not free.</strong> They'll appear on your bill as "couvert." If you don't want them, push them back or say "Não, obrigada." Once you eat them, you're paying for them — typically €1–4/person.</div>
+        </div>
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">🕐</div>
+          <div><strong>Meal Times Are Different</strong><br>Lunch (1–3pm) is the main meal of the day. Dinner typically starts at 8–10pm. If you show up at a restaurant at 6pm you may find it closed or half-empty. Plan accordingly, especially in Lisbon.</div>
+        </div>
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">⛪</div>
+          <div><strong>Dress for Churches</strong><br>Covered shoulders and no shorts required at Mosteiro dos Jerónimos, Igreja de Santo António (Lagos), and Faro Cathedral. Your linen scarf handles this — keep it accessible.</div>
+        </div>
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">🤫</div>
+          <div><strong>Portuguese Are Reserved, Not Rude</strong><br>Portuguese culture is warm but not outwardly exuberant. Don't mistake quiet politeness for coldness. Greet with "Olá" or "Bom dia" when entering any shop, café, or restaurant — it matters.</div>
+        </div>
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">🌊</div>
+          <div><strong>Saudade</strong><br>There's a beautiful, untranslatable Portuguese word — <em>saudade</em> (sow-DAH-day) — meaning a deep nostalgic longing for something or someone. It's central to Portuguese soul and why fado music exists. You'll feel it when you're there.</div>
+        </div>
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">🏳️‍🌈</div>
+          <div><strong>LGBTQ+</strong><br>Portugal is one of the most LGBTQ+-friendly countries in Europe. Same-sex marriage has been legal since 2010. Lisbon in particular is very open and welcoming. No concerns for anyone in the group.</div>
+        </div>
+        <div class="guide-card guide-tip">
+          <div class="guide-tip-icon">⚠️</div>
+          <div><strong>Word to Know: "Bica"</strong><br>In Lisbon, locals call espresso a <em>bica</em>, not a café. Ordering "um café" works everywhere, but asking for a "bica" in Lisbon will make you sound like you've done your homework.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Transport</div>
+      <div class="guide-title">Getting Around</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚂 Trains (CP)</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Intercity travel is all on CP (Comboios de Portugal). Clean, punctual, affordable. Book ahead for the Alfa Pendular routes. <a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank" style="color:var(--terracotta);">cp.pt →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚗 Rideshare: Bolt &gt; Uber in Portugal</strong>
+          <p style="margin-top:6px;font-size:13.5px;"><strong>Download Bolt</strong> — it's the dominant rideshare app in Portugal, typically 20–30% cheaper than Uber and drivers prefer it. Uber works too, especially in Lisbon, but Bolt is the local standard. Both operate in Lisbon and the Algarve. <a href="https://bolt.eu" target="_blank" style="color:var(--terracotta);">bolt.eu →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚃 Lisbon Trams</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Tram 15E (to Belém) and Tram 28 (Alfama) are iconic but <strong>notorious for pickpockets</strong>. Keep bags in front of you, hands on your phone. The 15E is worth it for the Belém ride — it's scenic. The 28 is beautiful but can be skipped in favor of a taxi/Bolt if security is a concern.</p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚇 Lisbon Metro</strong>
+          <p style="margin-top:6px;font-size:13.5px;">The metro is easy, clean, and cheap. Buy a rechargeable Viva Viagem card (€0.50) at any station and load trips onto it. Far better value than single tickets. <a href="https://www.metrolisboa.pt/en/" target="_blank" style="color:var(--terracotta);">metrolisboa.pt →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong style="font-size:14px;">🚕 Lagos &amp; Algarve</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lagos is very walkable for beaches and Old Town. Bolt/Uber available for the short trips (Casa Chico Zé, Meia Praia). No public transit network worth using in the Algarve — taxis or rideshare is the move.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Apps</div>
+      <div class="guide-title">Apps to Download Before You Go</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="guide-card"><strong>Bolt</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Rideshare — Portugal's #1. Set up payment before you arrive.</div><a href="https://bolt.eu" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">bolt.eu →</a></div>
+        <div class="guide-card"><strong>CP — Comboios de Portugal</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Book train tickets directly. Download before trip.</div><a href="https://www.cp.pt" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">cp.pt →</a></div>
+        <div class="guide-card"><strong>Google Maps</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Download offline maps for Lisbon, Lagos, and Faro before you fly — saves data.</div></div>
+        <div class="guide-card"><strong>Google Translate</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Download Portuguese offline language pack. The camera translation feature is great for menus.</div></div>
+        <div class="guide-card"><strong>Wise or Revolut</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Best exchange rates for spending in euros. Far better than airport currency exchange.</div><a href="https://wise.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">wise.com →</a></div>
+        <div class="guide-card"><strong>WhatsApp</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Universally used in Portugal for communication. Restaurants and tour operators often use it for bookings.</div></div>
+        <div class="guide-card"><strong>GetYourGuide</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Book boat tours, workshops, day trips. Better cancellation policies than most direct bookings.</div><a href="https://www.getyourguide.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">getyourguide.com →</a></div>
+        <div class="guide-card"><strong>Lisbon Metro App</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Official app for Lisbon subway — maps, hours, trip planning.</div><a href="https://www.metrolisboa.pt/en/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">metrolisboa.pt →</a></div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Health &amp; Entry</div>
+      <div class="guide-title">Medications &amp; Entry Requirements</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card guide-warning">
+          <strong>⚠️ THC / Cannabis</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal decriminalized personal drug use in 2001, but that applies to possession within Portugal — <strong>bringing THC products from the US is illegal and a customs offense</strong>. Do not travel internationally with any cannabis products, even from a legal US state. Leave it home.</p>
+        </div>
+        <div class="guide-card guide-warning">
+          <strong>⚠️ Adderall / Amphetamines</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Adderall is not approved for use in Portugal and is classified as a controlled substance. If anyone in the group takes Adderall, carry the original prescription bottle, a letter from your doctor on letterhead, and keep amounts consistent with personal use only. Technically there can be complications at customs — carry documentation.</p>
+        </div>
+        <div class="guide-card">
+          <strong>✅ Vaccines</strong>
+          <p style="margin-top:6px;font-size:13.5px;">No specific vaccines are required to enter Portugal from the US. Routine vaccines (COVID up to date, hepatitis A/B, tetanus) are recommended as general travel practice. No malaria risk in Portugal.</p>
+        </div>
+        <div class="guide-card">
+          <strong>✅ No ETIAS Required for Your Trip</strong>
+          <p style="margin-top:6px;font-size:13.5px;">The EU's new ETIAS pre-travel authorization (like the US ESTA) is expected to launch Q4 2026 with a 6-month grace period — won't be required until ~April 2027. September 2026 is clear.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🛂 EES — Active at the Border</strong>
+          <p style="margin-top:6px;font-size:13.5px;">The EU Entry/Exit System launched April 2026. You'll give fingerprints and a face scan at Faro passport control on arrival. Nothing to prepare — happens automatically. Allow extra time in the immigration queue.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Current Events</div>
+      <div class="guide-title">World Awareness</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card guide-warning">
+          <strong>⚠️ Portugal Transport Strike — June 2026</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal experienced a major nationwide transport strike in June 2026, affecting trains, metro, flights, and public transport. Labor unrest around working condition reforms has been ongoing. <strong>Check for any planned strikes in August/September before you travel</strong> — particularly for CP train routes and TAP/connecting airlines. <a href="https://www.theportugalnews.com" target="_blank" style="color:var(--terracotta);">theportugalnews.com</a> is a good English-language source to monitor.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🏳️‍🌈 LGBTQ+ Safety</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal is one of the most progressive countries in Europe on LGBTQ+ rights — consistently ranked in the top 5 in Europe. No concerns for any traveler.</p>
+        </div>
+        <div class="guide-card">
+          <strong>📱 US Social Media Screening (Return)</strong>
+          <p style="margin-top:6px;font-size:13.5px;">When returning to the US, Customs and Border Protection has expanded social media screening programs. This is a US re-entry policy, not a Portugal issue, but worth being aware of before your return.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🏠 Overtourism Awareness</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lisbon has seen growing local frustration with mass tourism's impact on housing costs. Be a respectful traveler — shop local, eat at local spots (which we've already built into the itinerary), and be mindful of noise in residential neighborhoods.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Shopping &amp; Experiences</div>
+      <div class="guide-title">Unique Experiences &amp; Shopping</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card">
+          <strong>🎨 Azulejo Tile Painting Workshop — Lisbon</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Paint your own hand-painted Portuguese tile (azulejo) — one of the best souvenirs you can make. Workshops run 1–2 hours and the tile gets fired and shipped to your home. Multiple operators in Lisbon.</p>
+          <a href="https://www.getyourguide.com/lisbon-l42/azulejos-tours-workshops-tc2374/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Browse workshops on GetYourGuide →</a>
+        </div>
+        <div class="guide-card">
+          <strong>🍮 Pastel de Nata Baking Class — Lisbon</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Learn to make Portugal's most iconic pastry from a local chef. Fun group activity and you eat everything you make.</p>
+          <a href="https://www.getyourguide.com/lisbon-l42/cooking-classes-tc5/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Browse on GetYourGuide →</a>
+        </div>
+        <div class="guide-card">
+          <strong>🛍 LX Factory — Lisbon</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Former industrial complex turned creative market. Local designers, handmade jewelry, vintage clothing, art, and great cafés. Best on Sundays when the market runs. Príncipe Real neighborhood is also excellent for boutiques.</p>
+          <a href="https://www.lxfactory.com" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">lxfactory.com →</a>
+        </div>
+        <div class="guide-card">
+          <strong>🏺 Feira da Ladra — Lisbon Flea Market</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Lisbon's oldest flea market in Alfama — Tuesdays and Saturdays. Antiques, vintage clothing, vinyl records, quirky souvenirs. Perfect before or after the miradouros.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🪴 Ceramics &amp; Craft Workshops — Lisbon</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Beyond tiles — pottery, screen printing, botanical printing, handmade paper. FICA Oficina Criativa offers a range of creative workshops for tourists.</p>
+          <a href="https://www.withlocals.com/experiences/portugal/lisbon/activities/workshops/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Browse workshops →</a>
+        </div>
+        <div class="guide-card">
+          <strong>🌊 Kayak the Sea Caves — Lagos</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Rent a kayak or join a guided tour to paddle into the smaller grottos around Ponta da Piedade — reachable on your own, goes places the big boats can't. Great for a free day activity.</p>
+          <a href="https://www.getyourguide.com/lagos-portugal-l2896/" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">Browse on GetYourGuide →</a>
+        </div>
+        <div class="guide-card">
+          <strong>🏺 Local Ceramics &amp; Cork Shopping — Lagos</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal is the world's #1 cork producer — the Algarve has beautiful cork products (bags, hats, wallets, coasters) that are genuinely local and make excellent gifts. Look for shops in Lagos Old Town. Also: hand-painted ceramics are everywhere and high quality.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🍷 Wine Tasting — Algarve or Lisbon</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portuguese wine is excellent and underrated internationally. Vinho verde (crisp, slightly sparkling white) is perfect for summer. Local Algarve wines are worth trying. Ginjinha — a sour cherry liqueur — is Lisbon's signature shot, sold in tiny kiosks in Alfama for €1.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-label">Packing &amp; Practical</div>
+      <div class="guide-title">Weather, Packing &amp; Practical Tips</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="guide-card">
+          <strong>☀️ September Weather</strong>
+          <p style="margin-top:6px;font-size:13.5px;"><strong>Algarve (Lagos/Faro):</strong> 82–90°F days, 65–70°F evenings. Virtually zero rain. Low humidity. Strong sun — sunscreen is not optional.<br><strong>Lisbon:</strong> Slightly cooler — 75–85°F days, 62–68°F evenings. Coastal breeze. An occasional light rain is possible but unlikely. Evenings can feel genuinely cool — a layer is useful.</p>
+        </div>
+        <div class="guide-card">
+          <strong>👗 How Locals Dress</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portuguese dress well — they don't tend to wear resort wear outside of the actual beach/pool. In Lisbon especially, smart casual is the standard. In Lagos it's more relaxed. Avoid wearing swimwear into restaurants or shops — throw on a cover-up or change first.</p>
+        </div>
+        <div class="guide-card guide-warning">
+          <strong>🔌 Power Adapters — Type F Plug Required</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portugal uses <strong>Type C/F plugs</strong> (same as most of mainland Europe). Voltage is 230V/50Hz — US is 110V/60Hz. <strong>Most modern devices</strong> (phones, laptops, cameras) are dual voltage — just check the label on your charger for "100-240V." If it says that, you only need an adapter (not a converter). Hair tools are often NOT dual voltage — check before you pack yours.<br><a href="https://www.amazon.com/s?k=europe+type+f+plug+adapter" target="_blank" style="color:var(--terracotta);font-weight:600;">Shop adapters on Amazon →</a></p>
+        </div>
+        <div class="guide-card">
+          <strong>💇 Hair Dryers</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Most hotels provide hair dryers. Guesthouses and boutique properties (like Casa Mãe) typically do too — but worth confirming at booking if it's important. Don't bring a US hair dryer without a voltage converter — it will burn out immediately.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🏖 Towels at the Beach</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Portuguese beaches do <strong>not</strong> provide towels — you bring your own or rent a sun lounger (which comes with a towel in some cases). If you're staying at a hotel like Carvi Beach Hotel or Hotel Faro, ask at check-in whether you can take hotel towels to the beach — most allow it. Otherwise, a compact travel towel is a good backup to pack.</p>
+        </div>
+        <div class="guide-card">
+          <strong>💧 Tap Water</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Tap water is safe to drink throughout Portugal. Bring a reusable water bottle — it saves money and the Algarve heat means you'll be drinking a lot of water.</p>
+        </div>
+        <div class="guide-card">
+          <strong>💰 Cash vs. Card</strong>
+          <p style="margin-top:6px;font-size:13.5px;">Cards are accepted almost everywhere. However, a few places on this itinerary are <strong>cash only</strong>: Casinha do Petisco (Lagos) and Taberna da Rua das Flores (Lisbon). Bring some euro cash — ATMs are widely available and give the best exchange rates. Avoid airport currency exchange booths.</p>
+        </div>
+        <div class="guide-card">
+          <strong>🎒 Carry-On Packing Tips</strong>
+          <p style="margin-top:6px;font-size:13.5px;">• <strong>Linen and cotton only</strong> — synthetics are miserable in 90°F heat<br>• <strong>Layers for Lisbon evenings</strong> — a linen button-down or light scarf does the job<br>• <strong>Comfortable walking shoes are non-negotiable</strong> — Lisbon's cobblestones are steep and slippery. White sneakers that look good are your best friend<br>• <strong>Small crossbody bag</strong> for daytime in Lisbon — keeps hands free and harder to pickpocket than a tote<br>• <strong>Sunscreen</strong> — the Algarve sun is intense, bring more than you think you need<br>• <strong>Portable charger</strong> — long beach and sightseeing days drain your phone<br>• <strong>Scarf</strong> — doubles as church coverage, beach wrap, and Lisbon evening layer</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page-guide -->
+
   <!-- ITINERARY VIEW -->
   <div id="page-itinerary">
 
+  <!-- JUMP NAVIGATION -->
+  <div class="jump-nav">
+    <a href="#route-options" class="jump-btn">🗺 Route Options</a>
+    <a href="#option-a" class="jump-btn">Option A Days</a>
+    <a href="#option-b" class="jump-btn">Option B Days</a>
+    <a href="#accommodations" class="jump-btn">🏨 Hotels</a>
+    <a href="#beach-clubs" class="jump-btn">🎶 Beach Clubs</a>
+    <a href="#checklist" class="jump-btn">✅ Booking Checklist</a>
+    <a href="#entry" class="jump-btn">🛂 Entry Docs</a>
+  </div>
+
   <!-- TWO ITINERARY OPTIONS -->
-  <div class="section">
+  <div class="section" id="route-options">
     <div class="section-label">Route Options</div>
     <div class="section-title">Choose Your Route</div>
 
@@ -293,7 +569,7 @@
   </div>
 
   <!-- DAY BY DAY: OPTION A -->
-  <div class="section">
+  <div class="section" id="option-a">
     <div class="section-label">Day by Day — Option A</div>
     <div class="section-title">Lisbon First</div>
     <div class="days-list">
@@ -390,7 +666,7 @@
   </div>
 
   <!-- DAY BY DAY: OPTION B -->
-  <div class="section">
+  <div class="section" id="option-b">
     <div class="section-label">Day by Day — Option B</div>
     <div class="section-title">Lagos First</div>
     <div class="days-list">
@@ -480,7 +756,7 @@
   </div>
 
   <!-- ACCOMMODATIONS -->
-  <div class="section">
+  <div class="section" id="accommodations">
     <div class="section-label">Where to Stay</div>
     <div class="section-title">Accommodations</div>
     <div class="warning" style="margin-bottom:24px;">💡 <strong>Budget note:</strong> Emily's share of $100–125/night means the group can stretch to ~$300–375/night total for the room split 3 ways — opens up nicer options if desired.</div>
@@ -551,7 +827,7 @@
   </div>
 
   <!-- BEACH CLUBS -->
-  <div class="section">
+  <div class="section" id="beach-clubs">
     <div class="section-label">Nightlife &amp; Beach Clubs</div>
     <div class="section-title">Beach Club Options</div>
     <p style="font-size:13.5px;color:var(--muted);margin-bottom:24px;">One sunset club in Lagos, one daytime beach club a short trip away in Portimão. Group decides which (or both).</p>
@@ -579,7 +855,7 @@
   </div>
 
   <!-- BOOKING CHECKLIST -->
-  <div class="section">
+  <div class="section" id="checklist">
     <div class="section-label">Action Items</div>
     <div class="section-title">Booking Checklist</div>
     <div class="checklist">
@@ -602,7 +878,7 @@
   </div>
 
   <!-- ENTRY REQUIREMENTS -->
-  <div class="section">
+  <div class="section" id="entry">
     <div class="section-label">Entry Requirements</div>
     <div class="section-title">Docs &amp; Border Info</div>
     <div class="ees-block"><h4>🛂 EES — Active &amp; Affects Your Trip</h4><p>Launched April 10, 2026. On arrival at FAO, all 3 travelers submit <strong>fingerprints + facial scan</strong> at passport control. Nothing to prep — happens automatically. Allow extra queue time. Check all 3 passports are valid through <strong>March 8, 2027</strong>.</p></div>
@@ -615,28 +891,6 @@
     </div>
   </div>
 
-  <!-- WARDROBE -->
-  <div class="section">
-    <div class="section-label">Packing</div>
-    <div class="section-title">Wardrobe — Jess</div>
-    <p style="font-size:13.5px;color:var(--muted);margin-bottom:20px;">Sudoku method — 3×3 grid, all natural fabrics. Carry-on + personal item only.</p>
-    <div style="margin-bottom:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Color Palette</div><div class="palette-swatches"><span class="swatch" style="background:#FAF6F0;" title="Ivory"></span><span class="swatch" style="background:#EDE3D4;" title="Warm Beige"></span><span class="swatch" style="background:#2C2C2C;" title="Black"></span><span class="swatch" style="background:#2D5A3D;" title="Forest Green"></span><span class="swatch" style="background:#C9A0A0;" title="Mauve"></span><span class="swatch" style="background:#6B3A5E;" title="Burgundy"></span></div></div>
-    <div class="wardrobe-grid">
-      <div class="wardrobe-col"><div class="wardrobe-col-label">Tops</div><div class="wardrobe-item">Fitted ivory ribbed cotton scoop tank</div><div class="wardrobe-item">Fitted forest green/teal scoop tank</div><div class="wardrobe-item">Mauve/dusty rose cotton cami</div></div>
-      <div class="wardrobe-col"><div class="wardrobe-col-label">Bottoms</div><div class="wardrobe-item">Ivory linen wide-leg trousers (mid-rise)</div><div class="wardrobe-item">Linen A-line knee skirt, warm beige</div><div class="wardrobe-item">Mid-rise denim shorts</div></div>
-      <div class="wardrobe-col"><div class="wardrobe-col-label">Layers</div><div class="wardrobe-item">Cropped linen button-down, warm beige</div><div class="wardrobe-item">Black fitted scoop tee</div><div class="wardrobe-item">Lightweight linen scarf/wrap, ivory</div></div>
-    </div>
-    <div class="wardrobe-bonus"><div class="wardrobe-bonus-item"><strong>Bonus Dress</strong>Floor-length maxi, forest green or burgundy</div><div class="wardrobe-bonus-item"><strong>Swimwear</strong>1 bikini/one-piece (linen shorts + tank = coverup)</div></div>
-    <div style="background:var(--white);border-radius:10px;padding:18px 22px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Shoes</div>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;">
-        <div style="font-size:13.5px;"><strong>White leather sneakers</strong><br><span style="color:var(--muted);font-size:12px;">Mandatory for Lisbon cobblestones</span></div>
-        <div style="font-size:13.5px;"><strong>Flat tan leather sandal</strong><br><span style="color:var(--muted);font-size:12px;">Algarve daytime</span></div>
-        <div style="font-size:13.5px;"><strong>Strappy gold/tan heeled sandal</strong><br><span style="color:var(--muted);font-size:12px;">Evenings only</span></div>
-      </div>
-      <div class="warning" style="margin-top:14px;"><strong>⚠️ Church coverage required:</strong> Mosteiro dos Jerónimos, Igreja de Santo António, Faro Cathedral (if stopping). Linen scarf covers all.</div>
-    </div>
-  </div>
 
 </div>
 
@@ -655,6 +909,7 @@
     btn.classList.add('active');
     document.getElementById('page-itinerary').style.display = page === 'itinerary' ? '' : 'none';
     document.getElementById('page-map').style.display = page === 'map' ? '' : 'none';
+    document.getElementById('page-guide').style.display = page === 'guide' ? '' : 'none';
   }
 
   // ── Itinerary option switching ──
