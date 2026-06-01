@@ -246,7 +246,21 @@
   <!-- GUIDE VIEW -->
   <div id="page-guide" style="display:none; padding:32px 0;">
 
-    <div class="guide-section">
+    <!-- GUIDE JUMP NAV -->
+    <div class="jump-nav" style="margin-bottom:8px;">
+      <a href="#guide-language" class="jump-btn">🗣 Language</a>
+      <a href="#guide-phrases" class="jump-btn">💬 Phrases</a>
+      <a href="#guide-etiquette" class="jump-btn">🤝 Etiquette</a>
+      <a href="#guide-food" class="jump-btn">🍽 Food & Drinks</a>
+      <a href="#guide-transport" class="jump-btn">🚂 Getting Around</a>
+      <a href="#guide-apps" class="jump-btn">📱 Apps</a>
+      <a href="#guide-health" class="jump-btn">💊 Health & Entry</a>
+      <a href="#guide-events" class="jump-btn">🌍 Current Events</a>
+      <a href="#guide-shopping" class="jump-btn">🛍 Shopping</a>
+      <a href="#guide-packing" class="jump-btn">🎒 Packing</a>
+    </div>
+
+    <div class="guide-section" id="guide-language">
       <div class="guide-label">Native Language</div>
       <div class="guide-title">Language</div>
       <div class="guide-card">
@@ -256,7 +270,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Phrases</div>
+      <div class="guide-label" id="guide-phrases">Phrases</div>
       <div class="guide-title">Useful Phrases</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
         <div class="phrase-card"><div class="phrase-en">Hello / Good morning</div><div class="phrase-pt">Olá / Bom dia</div><div class="phrase-phonetic">oh-LAH / bom JEE-ah</div></div>
@@ -266,8 +280,9 @@
         <div class="phrase-card"><div class="phrase-en">Excuse me / Sorry</div><div class="phrase-pt">Com licença / Desculpe</div><div class="phrase-phonetic">com lee-SEN-sah / desh-KUL-pay</div></div>
         <div class="phrase-card"><div class="phrase-en">Do you speak English?</div><div class="phrase-pt">Fala inglês?</div><div class="phrase-phonetic">FAH-lah een-GLESH</div></div>
         <div class="phrase-card"><div class="phrase-en">I don't understand</div><div class="phrase-pt">Não entendo</div><div class="phrase-phonetic">nowng en-TEN-doh</div></div>
-        <div class="phrase-card"><div class="phrase-en">One coffee, please</div><div class="phrase-pt">Um café, por favor</div><div class="phrase-phonetic">oom kah-FAY por fah-VOR</div></div>
-        <div class="phrase-card"><div class="phrase-en">Coffee with milk</div><div class="phrase-pt">Um café com leite</div><div class="phrase-phonetic">oom kah-FAY com LAY-tay</div></div>
+        <div class="phrase-card"><div class="phrase-en">One espresso, please (works everywhere)</div><div class="phrase-pt">Um café, por favor</div><div class="phrase-phonetic">oom kah-FAY por fah-VOR · In Lisbon locals say: uma bica (OO-mah BEE-kah)</div></div>
+        <div class="phrase-card"><div class="phrase-en">Large milky coffee (like a latte)</div><div class="phrase-pt">Um galão, por favor</div><div class="phrase-phonetic">oom gah-LOWNG por fah-VOR</div></div>
+        <div class="phrase-card"><div class="phrase-en">Coffee to take away</div><div class="phrase-pt">Para levar, por favor</div><div class="phrase-phonetic">PAH-rah leh-VAR por fah-VOR</div></div>
         <div class="phrase-card"><div class="phrase-en">The bill, please</div><div class="phrase-pt">A conta, por favor</div><div class="phrase-phonetic">ah KON-tah por fah-VOR</div></div>
         <div class="phrase-card"><div class="phrase-en">Where is the train station?</div><div class="phrase-pt">Onde fica a estação?</div><div class="phrase-phonetic">ON-day FEE-kah ah esh-tah-SOWNG</div></div>
         <div class="phrase-card"><div class="phrase-en">Cheers!</div><div class="phrase-pt">Saúde!</div><div class="phrase-phonetic">sah-OO-day</div></div>
@@ -275,7 +290,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Etiquette</div>
+      <div class="guide-label" id="guide-etiquette">Etiquette</div>
       <div class="guide-title">Culture &amp; Etiquette</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card guide-tip">
@@ -302,15 +317,11 @@
           <div class="guide-tip-icon">🏳️‍🌈</div>
           <div><strong>LGBTQ+</strong><br>Portugal is one of the most LGBTQ+-friendly countries in Europe. Same-sex marriage has been legal since 2010. Lisbon in particular is very open and welcoming. No concerns for anyone in the group.</div>
         </div>
-        <div class="guide-card guide-tip">
-          <div class="guide-tip-icon">⚠️</div>
-          <div><strong>Word to Know: "Bica"</strong><br>In Lisbon, locals call espresso a <em>bica</em>, not a café. Ordering "um café" works everywhere, but asking for a "bica" in Lisbon will make you sound like you've done your homework.</div>
-        </div>
       </div>
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Food Culture</div>
+      <div class="guide-label" id="guide-food">Food Culture</div>
       <div class="guide-title">Food — What to Expect</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
 
@@ -354,6 +365,56 @@
           <div><strong>Milk Alternatives — Patchy Outside Lisbon</strong><br>Oat milk (<em>leite de aveia</em>), almond milk (<em>leite de amêndoa</em>), and soy (<em>leite de soja</em>) are available in modern specialty coffee shops in Lisbon — look for places with flat whites and lattes on the menu. In traditional pastelarias, smaller Lagos cafés, and most Faro spots, don't count on it. Ask: <em>"Tem leite de aveia?"</em> (Do you have oat milk?) Supermarkets stock them widely if you want to pick some up.</div>
         </div>
 
+        <div class="guide-card">
+          <strong style="font-size:15px;">☕ Portuguese Coffee Guide — For the Coffee People</strong>
+          <p style="font-size:13px;color:var(--muted);margin:6px 0 14px;">Portuguese coffee is strong, cheap, and served in tiny ceramic cups. It is nothing like American drip coffee. Here's what you'll see on menus:</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Bica / Café</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Espresso shot. "Bica" in Lisbon, "cimbalino" in Porto, "café" everywhere. The standard. Strong, short, served in a ceramic cup. €0.65–1.00 at the counter.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Café Duplo</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Double espresso. Two shots in a standard cup.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Abatanado</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Espresso with extra hot water — the closest thing to an Americano. Served in a larger cup. Good if you find espresso too intense.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Garoto</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Espresso with just a small splash of milk — like a macchiato. Served in an espresso cup. Literally means "little boy." Great middle ground between black and milky.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Meia de Leite</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Half coffee, half steamed milk in a medium glass. Closest to an American latte. Typically a morning drink — ordering at night may get a look.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Galão ⭐ Try This</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">¼ espresso + ¾ foamy milk, served in a tall glass. Portugal's most iconic coffee. Similar to a large latte. Beautiful to look at. ~€1.20–1.80. Morning drink.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Descafeinado</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Decaf espresso. Available at most places — just ask.</div>
+            </div>
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">Café com Gelo</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">"Iced coffee" — but not really. They bring a hot espresso and a glass of ice. You pour it yourself. It works but it's not cold brew. Modern Lisbon shops increasingly offer proper iced lattes.</div>
+            </div>
+          </div>
+
+          <div style="background:#FFF8EE;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:10px;">
+            <strong style="color:#9A7A28;">💡 Counter vs. Table Pricing</strong><br>
+            <span style="font-size:13px;">Standing at the counter (<em>ao balcão</em>) is cheaper than sitting at a table (<em>à mesa</em>), which is cheaper than sitting outside (<em>na esplanada</em>). A €0.80 espresso at the counter might be €1.20 at a table and €1.50 outside. The price difference is usually posted on the menu — look for three columns. It's not a trick, it's just how it works.</span>
+          </div>
+
+          <div style="background:#FFF8EE;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;">
+            <strong style="color:#9A7A28;">💡 Takeaway Is Not the Default</strong><br>
+            <span style="font-size:13px;">Walking around with a paper cup of coffee is not a thing in traditional Portuguese culture. Most pastelarias don't stock paper cups. If you want to take it with you, say <strong>"para levar, por favor"</strong> (to take away) — a modern café may accommodate, a traditional one may just hand you a ceramic cup and assume you'll drink it at the counter. Plan to stand and enjoy it rather than walk with it.</span>
+          </div>
+        </div>
+
         <div class="guide-card guide-tip">
           <div class="guide-tip-icon">💧</div>
           <div><strong>Still vs. Sparkling Water</strong><br>In restaurants you'll often be asked <em>"com gás ou sem gás?"</em> (sparkling or still?). Sparkling (<em>com gás</em>) is popular in Portugal — don't be surprised if it arrives automatically. If you want still, say <em>"sem gás, por favor."</em></div>
@@ -369,11 +430,55 @@
           <div><strong>Ginjinha — Try It</strong><br>A sour cherry liqueur sold for €1–2 a shot from tiny kiosks in Lisbon's Alfama. It's Portugal's unofficial shot and a genuine local experience. You'll find vendors near Largo de São Domingos in Lisbon. Served in a tiny ceramic cup, sometimes with a preserved cherry at the bottom.</div>
         </div>
 
+        <div class="guide-card">
+          <strong style="font-size:15px;">🥂 Drinks Guide — What to Order</strong>
+          <p style="font-size:13px;color:var(--muted);margin:6px 0 14px;">From regional spirits to wine to non-alcoholic options — what's worth trying and what to ask for.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">🌿 Medronho — The Algarve Spirit</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">This is the local spirit for the region you're visiting. Made from the medronho berry (strawberry tree fruit) — a clear, strong, slightly fruity digestif. Traditional Algarve restaurants often bring a small glass free at the end of a meal without being asked. Sip it, don't shoot it.</div>
+            </div>
+
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">🍷 Vinho Verde</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Portugal's most refreshing wine — young, slightly sparkling, crisp, low alcohol (8–11%). Named "green wine" because it's bottled young, not because of the color. White vinho verde is perfect for the Algarve heat. Usually under €15 for a bottle.</div>
+            </div>
+
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">🍷 Algarve Wines</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">The Algarve now has a growing local wine scene — look for regional wines on menus (often just labeled "vinho regional Algarve"). They tend to be bold reds and fruity whites that pair well with grilled fish and meat. Excellent value.</div>
+            </div>
+
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">🍺 Beer — Super Bock vs. Sagres</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">Portugal's two national beers. Super Bock (from Porto) and Sagres (from Lisbon) are the default lagers everywhere. Light, cold, and perfect with seafood. Ask for "uma imperial" (draft, ~25cl) or "uma caneca" (larger draft). Super Bock is generally the better beer.</div>
+            </div>
+
+            <div style="background:var(--ivory);border-radius:8px;padding:12px 14px;">
+              <div style="font-weight:700;font-size:13.5px;color:var(--navy);">ℹ️ What About Poncha?</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">You may have seen Poncha mentioned in Portugal content — it's actually a Madeira island specialty (aguardente + honey + lemon), not a mainland drink. Some tourist bars in the Algarve now serve it because it's become widely known, so you might see it on a menu. If you do, it's worth trying — but it's not a local tradition for where you're going.</div>
+            </div>
+
+            <div style="background:#F0F7F2;border-radius:8px;padding:12px 14px;border-left:3px solid #3A7D55;">
+              <div style="font-weight:700;font-size:13.5px;color:#2A6040;">🌿 Non-Alcoholic Options — For the Non-Drinker</div>
+              <div style="font-size:12.5px;color:var(--muted);margin-top:3px;">
+                <strong>Sumol</strong> — Portugal's beloved fruit soda. Passionfruit (<em>maracujá</em>) is the iconic flavor. Widely available everywhere, feels local and intentional rather than a "I don't drink" order.<br><br>
+                <strong>Sumo natural</strong> — fresh-squeezed orange juice, pressed to order at most cafés. Excellent and cheap (~€2–3).<br><br>
+                <strong>Água com gás e limão</strong> — sparkling water with lemon. The go-to elegant non-alcoholic order at dinner or a bar. Nobody blinks.<br><br>
+                <strong>Mocktails</strong> — Modern cocktail bars in Lisbon increasingly offer dedicated mocktail menus. In Lagos, hit or miss — a good bar will accommodate if asked ("cocktail sem álcool, por favor"). Don't expect it at traditional restaurants.<br><br>
+                <strong>O%riginal</strong> — a Portuguese brand making 0% wine (white, red, rosé) that's widely available in supermarkets if she wants to match the table at dinner.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Transport</div>
+      <div class="guide-label" id="guide-transport">Transport</div>
       <div class="guide-title">Getting Around</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card">
@@ -400,7 +505,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Apps</div>
+      <div class="guide-label" id="guide-apps">Apps</div>
       <div class="guide-title">Apps to Download Before You Go</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
         <div class="guide-card"><strong>Bolt</strong><div style="font-size:12.5px;color:var(--muted);margin-top:4px;">Rideshare — Portugal's #1. Set up payment before you arrive.</div><a href="https://bolt.eu" target="_blank" style="font-size:12px;color:var(--terracotta);font-weight:600;">bolt.eu →</a></div>
@@ -415,7 +520,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Health &amp; Entry</div>
+      <div class="guide-label" id="guide-health">Health &amp; Entry</div>
       <div class="guide-title">Medications &amp; Entry Requirements</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card guide-warning">
@@ -442,7 +547,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Current Events</div>
+      <div class="guide-label" id="guide-events">Current Events</div>
       <div class="guide-title">World Awareness</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card guide-warning">
@@ -465,7 +570,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Shopping &amp; Experiences</div>
+      <div class="guide-label" id="guide-shopping">Shopping &amp; Experiences</div>
       <div class="guide-title">Unique Experiences &amp; Shopping</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card">
@@ -509,7 +614,7 @@
     </div>
 
     <div class="guide-section">
-      <div class="guide-label">Packing &amp; Practical</div>
+      <div class="guide-label" id="guide-packing">Packing &amp; Practical</div>
       <div class="guide-title">Weather, Packing &amp; Practical Tips</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="guide-card">
@@ -665,7 +770,7 @@
         <div class="day-content">
           <div class="day-header"><span class="day-title">Lisbon → Lagos</span><span class="day-subtitle">Scenic train · First beach</span></div>
           <div class="time-block"><div class="time-label">Morning</div><div class="time-desc">Sleep in, last Lisbon coffee, browse Príncipe Real.</div></div>
-          <div class="time-block"><div class="time-label">Midday</div><div class="time-desc"><a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank"><strong>Alfa Pendular</strong></a> to Lagos (~3h 15min, ~€25–30). Window seats. Cork trees, rolling hills, whitewashed villages.</div></div>
+          <div class="time-block"><div class="time-label">Midday</div><div class="time-desc"><a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank"><strong>Alfa Pendular</strong></a> to Lagos (~3h 45min–4hrs, ~€25–30). Window seats. Cork trees, rolling hills, whitewashed villages.</div></div>
           <div class="time-block"><div class="time-label">~4–5pm</div><div class="time-desc">Check into your Lagos hotel — <a href="https://casa-mae.com/" target="_blank"><strong>Casa Mãe</strong></a> or <a href="https://www.carvihotel.com/algarve/" target="_blank"><strong>Carvi Beach Hotel</strong></a>. Head straight to <a href="https://www.tripadvisor.com/Attraction_Review-g189117-d2358800-Reviews-Praia_Dona_Ana-Lagos_Faro_District_Algarve.html" target="_blank"><strong>Praia de Dona Ana</strong></a> — first swim.</div></div>
           <div class="venue-block"><div class="venue-name">Don Sebastião ✅ Great for all</div><div class="venue-meta">Classic Portuguese since 1979 · Rua 25 de Abril 20-22, Lagos · <a href="tel:+351282780480">+351 282 780 480</a></div><div class="venue-meta"><a href="http://www.restaurantedonsebastiao.com" target="_blank">restaurantedonsebastiao.com</a> · ~€30–40/person</div></div>
         </div>
@@ -788,7 +893,7 @@
         <div class="day-number"><div class="day-num">06</div><div class="day-date">Sept 6</div></div>
         <div class="day-content">
           <div class="day-header"><span class="day-title">Lagos → Lisbon</span><span class="day-subtitle">Scenic train · Chiado evening</span></div>
-          <div class="time-block"><div class="time-label">Morning</div><div class="time-desc"><a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank"><strong>Alfa Pendular</strong></a> to Lisbon (~3h 15min, ~€25–30). Window seats.</div></div>
+          <div class="time-block"><div class="time-label">Morning</div><div class="time-desc"><a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank"><strong>Alfa Pendular</strong></a> to Lisbon (~3h 45min–4hrs, ~€25–30). Window seats.</div></div>
           <div class="time-block"><div class="time-label">~1–2pm</div><div class="time-desc">Check into your Lisbon hotel — <a href="https://www.independente.eu/principe-real/" target="_blank"><strong>Independente Príncipe Real</strong></a> or <a href="https://lisbonheritagehotels.com/solar-do-castelo/" target="_blank"><strong>Solar do Castelo</strong></a> (or Hyatt/IHG if using points). Walk Chiado, get oriented.</div></div>
           <div class="venue-block"><div class="venue-name">Taberna da Rua das Flores</div><div class="venue-meta">Rua das Flores 103, Lisboa · <a href="tel:+351213479418">+351 213 479 418</a> · <a href="https://www.tripadvisor.com/Restaurant_Review-g189158-d2298218-Reviews-A_Taberna_da_Rua_das_Flores-Lisbon_Lisbon_District_Central_Portugal.html" target="_blank">Reviews</a> · ~€35–45/person</div><span class="venue-flag flag-cash">💵 Cash only</span><span class="venue-flag flag-call" style="margin-left:6px">⚠️ No reservations — arrive by 6:30–7pm</span></div>
           <div class="warning" style="margin-top:12px">After dinner, bar-hop <strong>Bairro Alto</strong> — one of the best bar streets in Europe for a girls night.</div>
@@ -809,7 +914,7 @@
         <div class="day-number"><div class="day-num">08</div><div class="day-date">Sept 8</div></div>
         <div class="day-content">
           <div class="day-header"><span class="day-title">Departure — Early Start</span><span class="day-subtitle">⚠️ 7am train required</span></div>
-          <div class="time-block"><div class="time-label">7:00am</div><div class="time-desc"><a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank"><strong>Alfa Pendular</strong></a> Lisbon → Faro (~2h 45min, ~€25). Book this when Sept tickets open (~Aug 8).</div></div>
+          <div class="time-block"><div class="time-label">7:00am</div><div class="time-desc"><a href="https://www.cp.pt/passageiros/pt/consultar-horarios" target="_blank"><strong>Alfa Pendular</strong></a> Lisbon → Faro (~3hrs, ~€25). Book this when Sept tickets open (~Aug 8).</div></div>
           <div class="time-block"><div class="time-label">~9:45am</div><div class="time-desc">Arrive Faro. Get to airport. Be at FAO check-in by 10:30am.</div></div>
           <div class="time-block"><div class="time-label">11:40am</div><div class="time-desc">Depart FAO → PHX via United. ✈️</div></div>
         </div>
