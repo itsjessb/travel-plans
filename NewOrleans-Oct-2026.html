@@ -227,8 +227,9 @@
   <!-- STICKY PAGE TABS -->
   <div class="page-tabs-sticky">
     <button class="page-tab-btn active" onclick="switchPage('itinerary',this)">📋 Itinerary</button>
-    <button class="page-tab-btn" onclick="switchPage('flights',this)">✈️ Flights for Friends</button>
-    <button class="page-tab-btn" onclick="switchPage('shops',this)">🛍 Shops & Vibe</button>
+    <button class="page-tab-btn" onclick="switchPage('map',this)">🗺️ Map</button>
+    <button class="page-tab-btn" onclick="switchPage('flights',this)">✈️ Flights</button>
+    <button class="page-tab-btn" onclick="switchPage('shops',this)">🛍 Shops</button>
     <button class="page-tab-btn" onclick="switchPage('logistics',this)">✅ Logistics</button>
   </div>
 
@@ -854,7 +855,7 @@
                 <div class="venue-block book-ahead">
                   <div class="venue-name">Commander's Palace</div>
                   <div class="venue-meta">1403 Washington Ave · Garden District · <a href="https://www.commanderspalace.com/" target="_blank">commanderspalace.com</a></div>
-                  <div class="venue-meta">Saturday jazz brunch. Dress code. The 25¢ martinis are real. Book early — this is among the hardest tables to get on a Saturday in NOLA.</div>
+                  <div class="venue-meta">Saturday jazz brunch. Dress code. The 25¢ martinis are real. Book in July — Tock opens ~30–60 days out. Saturday brunch is among the hardest tables in the city.</div>
                   <span class="venue-flag flag-book">📅 <a href="https://www.exploretock.com/commanderspalace" target="_blank" style="color:var(--navy);">exploretock.com/commanderspalace</a></span>
                 </div>
               </div>
@@ -955,6 +956,83 @@
 
   </div><!-- /#page-itinerary -->
 
+  <!-- ═══════════════════════ MAP PAGE ═══════════════════════ -->
+  <div id="page-map" style="display:none;padding:32px 0;">
+
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+      <div>
+        <div class="section-label">French Quarter · New Orleans</div>
+        <div style="font-size:13.5px;color:var(--muted);margin-top:4px;">Live custom map. <a href="https://www.google.com/maps/d/u/0/edit?mid=1PDx-jZUVoccsVYmQ6i-D0OjYMJo9y0w" target="_blank" style="color:var(--terracotta);font-weight:600;">Edit in Google My Maps →</a></div>
+      </div>
+    </div>
+
+    <!-- Custom My Maps embed -->
+    <div style="border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.1);margin-bottom:20px;">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1PDx-jZUVoccsVYmQ6i-D0OjYMJo9y0w&ehbc=2E312F&noprof=1" width="100%" height="500" style="border:0;display:block;" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <!-- Quick venue links -->
+    <div class="section-label" style="margin-bottom:12px;">Quick Links — Open in Google Maps</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <a href="https://www.google.com/maps/search/The+Roosevelt+New+Orleans+123+Baronne+St" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Hotel</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">The Roosevelt</div>
+        <div style="font-size:12px;color:var(--muted);">123 Baronne St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Commander's+Palace+1403+Washington+Ave+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Brunch</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Commander's Palace</div>
+        <div style="font-size:12px;color:var(--muted);">1403 Washington Ave</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Irene's+529+Bienville+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Dinner</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Irene's</div>
+        <div style="font-size:12px;color:var(--muted);">529 Bienville St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Bayona+430+Dauphine+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Dinner</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Bayona</div>
+        <div style="font-size:12px;color:var(--muted);">430 Dauphine St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Carousel+Bar+Hotel+Monteleone+214+Royal+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Bar</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Carousel Bar</div>
+        <div style="font-size:12px;color:var(--muted);">214 Royal St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Bottom+of+the+Cup+Tea+Room+327+Chartres+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Readings</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Bottom of the Cup</div>
+        <div style="font-size:12px;color:var(--muted);">327 Chartres St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/JAMNOLA+940+Frenchmen+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Art</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">JAMNOLA</div>
+        <div style="font-size:12px;color:var(--muted);">940 Frenchmen St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Sylvain+625+Chartres+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Dinner</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Sylvain</div>
+        <div style="font-size:12px;color:var(--muted);">625 Chartres St</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Lafayette+Cemetery+No+1+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Cemetery</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Lafayette Cemetery No. 1</div>
+        <div style="font-size:12px;color:var(--muted);">1400 Washington Ave</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Boutique+du+Vampyre+709+St+Ann+St+New+Orleans" target="_blank" style="background:var(--white);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;border:1px solid var(--divider);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Shop / Bar</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--navy);">Boutique du Vampyre</div>
+        <div style="font-size:12px;color:var(--muted);">709½ St. Ann St</div>
+      </a>
+    </div>
+
+    <div style="background:var(--navy);border-radius:12px;padding:18px 22px;color:var(--white);margin-top:20px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Add venues to your map</div>
+      <p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.85);">Import the <strong style="color:var(--gold);">NOLA-venues.csv</strong> file (in your Travel Agent folder) directly into your Google My Maps — it has every venue, address, category, and website pre-loaded. In My Maps: click <em>Add layer → Import → upload the CSV</em>.</p>
+    </div>
+
+  </div>
+
   <!-- ═══════════════════════ FLIGHTS PAGE ═══════════════════════ -->
   <div id="page-flights" style="display:none;padding:32px 0;">
 
@@ -1040,12 +1118,29 @@
       </div>
     </div>
 
-    <div class="section-label" style="margin-top:32px;">Clothing &amp; Boutiques</div>
+    <div class="section-label" style="margin-top:32px;">Shoes</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">New Orleans has a legitimate shoe scene — two of these are right on Chartres in the Quarter.</div>
+    <div class="shops-grid">
+      <div class="shop-card">
+        <div class="shop-name">Shoe Be Do</div>
+        <div class="shop-meta">324 Chartres St · French Quarter · <a href="https://www.shoebedousa.com/" target="_blank">shoebedousa.com</a><br>"Fearless Footwear" — independent boutique since 1992. Eclectic, bold, wearable. One of the most distinctive shoe shops in the city. Right in the Quarter.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">New Orleans Shoe Company</div>
+        <div class="shop-meta">541 Chartres St · French Quarter · <a href="https://orleansshoes.com/" target="_blank">orleansshoes.com</a><br>Also on Magazine St (3112). Comfort-forward with style — On Running, quality arch-support brands. If your feet start talking by Day 2, this is the fix.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Trashy Diva</div>
+        <div class="shop-meta">Royal St (French Quarter) + Magazine St · <a href="https://www.google.com/maps/search/Trashy+Diva+New+Orleans" target="_blank">Locations</a><br>NOLA's most iconic women's boutique. Retro-inspired silhouettes, heels and accessories that match the dramatic pieces. Great for a statement shoe alongside a new piece.</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:32px;">Clothing &amp; Local Boutiques</div>
     <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">Royal Street (French Quarter) and Magazine Street (Uptown) are the two best shopping corridors.</div>
     <div class="shops-grid">
       <div class="shop-card">
-        <div class="shop-name">Trashy Diva</div>
-        <div class="shop-meta">Royal St (French Quarter) + Magazine St locations<br>NOLA's most iconic women's boutique. Retro-inspired pieces, dramatic silhouettes, perfect for the group's aesthetic.</div>
+        <div class="shop-name">Fleurty Girl</div>
+        <div class="shop-meta">617 Chartres St · French Quarter · <a href="https://fleurtygirl.com/" target="_blank">fleurtygirl.com</a><br>Also on Magazine St (3137). The quintessential NOLA local brand — t-shirts, totes, accessories, gifts. Thoughtfully curated with local vendors and Southern artisans. The Chartres location is in the Quarter and easy to hit.</div>
       </div>
       <div class="shop-card">
         <div class="shop-name">Hemline</div>
@@ -1061,13 +1156,22 @@
       </div>
     </div>
 
-    <div class="section-label" style="margin-top:32px;">Bourbon Street — Yes, There Are Actually Shops</div>
-    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">Worth a daylight stroll even if nighttime Bourbon isn't your thing. These are the non-bar stops worth noting.</div>
+    <div class="section-label" style="margin-top:32px;">Fragrance</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">New Orleans takes fragrance seriously. These two are both worth the stop.</div>
     <div class="shops-grid">
       <div class="shop-card">
-        <div class="shop-name">Bourbon French Parfums</div>
-        <div class="shop-meta">Bourbon St · French Quarter<br>Custom fragrances and skincare inspired by New Orleans history. One of the oldest perfumeries in America. Worth 20 minutes regardless of whether you buy anything.</div>
+        <div class="shop-name">Hové Parfumeur</div>
+        <div class="shop-meta">434 Chartres St · French Quarter · <a href="https://hoveparfumeur.com/" target="_blank">hoveparfumeur.com</a><br>NOLA institution since 1931 — the oldest continuous perfumer manufacturer in the city. House-made fragrances using essential oils from around the world. Open Mon–Sat 10am–5pm, Sun 11am–5pm. This one has real history.</div>
       </div>
+      <div class="shop-card">
+        <div class="shop-name">Bourbon French Parfums</div>
+        <div class="shop-meta">Bourbon St · French Quarter<br>Custom fragrances and skincare rooted in New Orleans history. More tourist-facing than Hové but still a solid stop. Both are worth a visit if fragrance is your thing — they have completely different vibes.</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:32px;">Bourbon Street — Non-Bar Stops Worth Noting</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">Daylight only. Vibe shifts around 6pm.</div>
+    <div class="shops-grid">
       <div class="shop-card">
         <div class="shop-name">Goorin Bros. Hat Shop</div>
         <div class="shop-meta">Bourbon St · French Quarter<br>Excellent hat selection — fedoras, vintage styles, very wearable. If you've been looking for a great hat, this is the place.</div>
@@ -1105,7 +1209,7 @@
         <div class="checklist-header"><span>What</span><span>When to Book</span><span>How</span></div>
         <div class="checklist-item checklist-urgent">
           <div class="checklist-name">Commander's Palace — Saturday Brunch</div>
-          <div class="checklist-when">ASAP — fills weeks out</div>
+          <div class="checklist-when">Book in July — opens ~30–60 days out</div>
           <div class="checklist-how"><a href="https://www.exploretock.com/commanderspalace" target="_blank">exploretock.com/commanderspalace</a></div>
         </div>
         <div class="checklist-item checklist-urgent">
@@ -1174,7 +1278,7 @@
         </div>
         <div class="logistics-item">
           <div class="logistics-label">Reservation Timing</div>
-          <div class="logistics-value">Book via Tock as soon as possible. Saturday brunch is among the hardest reservations in the city. 10am slot is ideal.</div>
+          <div class="logistics-value">Book via Tock in July — they open reservations ~30–60 days in advance. Saturday brunch is among the hardest tables in the city. Target the 10am slot.</div>
         </div>
       </div>
     </div>
