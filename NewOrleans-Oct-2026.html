@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Orleans — October 22–26, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+  :root {
+    --terracotta:#1D7A44;--terracotta-light:#3EA86A;--navy:#3D1A6E;--navy-light:#5A2D9A;
+    --ivory:#FAF6F0;--warm-beige:#F0EAF8;--gold:#C9A020;--text:#2C2C2C;
+    --muted:#7A7267;--white:#FFFFFF;--divider:#D5C5E8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--text);line-height:1.7;}
+
+  /* HERO */
+  .hero{background:var(--navy);color:var(--white);padding:72px 40px 60px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(29,122,68,0.25) 0%,transparent 60%),radial-gradient(ellipse at 75% 20%,rgba(201,160,32,0.15) 0%,transparent 50%);}
+  .hero-content{position:relative;z-index:1;max-width:700px;margin:0 auto;}
+  .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;line-height:1.15;margin-bottom:20px;}
+  .hero h1 em{font-style:italic;color:var(--terracotta-light);}
+  .hero-dates{font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:1px;}
+  .hero-pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px;}
+  .pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.85);}
+
+  /* ROUTE BAR */
+  .route-bar{background:var(--terracotta);padding:20px 40px;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;}
+  .route-stop{color:var(--white);font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+  .route-arrow{color:rgba(255,255,255,0.5);font-size:16px;}
+
+  /* CONTAINER */
+  .container{max-width:880px;margin:0 auto;padding:0 24px;}
+
+  /* STICKY PAGE TABS */
+  .page-tabs-sticky{position:sticky;top:0;z-index:100;background:var(--ivory);border-bottom:1px solid var(--divider);display:flex;gap:0;}
+  .page-tab-btn{flex:1;padding:16px 12px;background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--muted);text-align:center;transition:all 0.2s;white-space:nowrap;}
+  .page-tab-btn.active{color:var(--navy);border-bottom-color:var(--terracotta);}
+  .page-tab-btn:hover:not(.active){color:var(--text);background:var(--warm-beige);}
+
+  /* OPTION SELECTOR */
+  .option-selector{display:flex;gap:0;flex-wrap:nowrap;margin:28px 0 0;border-radius:12px 12px 0 0;overflow:hidden;}
+  .option-tab{flex:1;padding:16px 12px;background:var(--warm-beige);border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--muted);text-align:center;transition:all 0.2s;border-right:1px solid var(--divider);}
+  .option-tab:last-child{border-right:none;}
+  .option-tab.active{background:var(--navy);color:var(--white);}
+  .option-tab:hover:not(.active){background:var(--divider);}
+
+  /* OPTION CONTENT */
+  .option-content{display:none;}
+  .option-content.active{display:block;}
+
+  /* OPTION SUMMARY PANEL */
+  .option-panel{background:var(--white);border-radius:0 0 12px 12px;padding:28px;margin-bottom:32px;}
+  .option-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+  .option-meta-item{background:var(--ivory);border-radius:8px;padding:14px 16px;}
+  .option-meta-item .label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  .option-meta-item .value{font-size:14px;font-weight:600;color:var(--navy);}
+  .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+  .pros{background:#F0F7F2;border-radius:8px;padding:14px 16px;}
+  .cons{background:#FFF8EE;border-radius:8px;padding:14px 16px;}
+  .pros-cons h5{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+  .pros h5{color:#3A7D55;}.cons h5{color:#9A7A28;}
+  .pros-cons p{font-size:13px;color:var(--text);line-height:1.55;}
+  .verdict{background:var(--navy);color:var(--white);border-radius:8px;padding:14px 18px;font-size:13.5px;line-height:1.6;}
+  .verdict strong{color:var(--gold);}
+
+  /* SECTION */
+  .section{padding:40px 0 16px;}
+  .section-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:400;color:var(--navy);margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--divider);}
+
+  /* DAYS */
+  .days-list{display:flex;flex-direction:column;}
+  .day-card{display:grid;grid-template-columns:80px 1fr;gap:0;border-bottom:1px solid var(--divider);padding:32px 0;}
+  .day-card:last-child{border-bottom:none;}
+  .day-number{padding-top:2px;padding-right:24px;}
+  .day-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:var(--divider);line-height:1;}
+  .day-date{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+  .day-header{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+  .day-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);}
+  .day-subtitle{font-size:12px;font-weight:500;color:var(--muted);}
+  .time-block{margin-bottom:14px;}
+  .time-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terracotta);margin-bottom:4px;}
+  .time-desc{font-size:14px;color:var(--text);line-height:1.65;}
+
+  /* VENUE BLOCKS */
+  .venue-block{background:var(--warm-beige);border-radius:10px;padding:16px 20px;margin-top:14px;}
+  .venue-block.call-ahead{background:#FFF5EF;border:1px solid rgba(29,122,68,0.25);}
+  .venue-block.book-ahead{background:#EEF2F8;border:1px solid rgba(61,26,110,0.2);}
+  .venue-block.alert{background:#FFF8EE;border:1px solid rgba(201,160,32,0.35);}
+  .venue-name{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:4px;}
+  .venue-meta{font-size:12.5px;color:var(--muted);margin-bottom:2px;}
+  .venue-meta a{color:var(--terracotta);text-decoration:none;}
+  .venue-meta a:hover{text-decoration:underline;}
+  .venue-flag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:8px;padding:4px 10px;border-radius:4px;}
+  .flag-call{background:rgba(29,122,68,0.12);color:var(--terracotta);}
+  .flag-book{background:rgba(61,26,110,0.1);color:var(--navy);}
+  .flag-cash{background:rgba(201,160,32,0.15);color:#9A7A28;}
+  .flag-alt{background:rgba(201,160,32,0.15);color:#7A6020;}
+  .flag-alert{background:rgba(201,160,32,0.2);color:#9A7A28;}
+  .warning{background:#FFF8EE;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:12px;font-size:13px;color:var(--text);}
+  .warning strong{color:#9A7A28;}
+  .alert-block{background:#FFF8EE;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;font-size:13px;line-height:1.65;}
+  .alert-block strong{color:#9A7A28;}
+
+  /* FLIGHTS TABLE */
+  .flights-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:20px;}
+  .flights-table th{background:var(--navy);color:rgba(255,255,255,0.7);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:14px 18px;text-align:left;}
+  .flights-table td{padding:13px 18px;font-size:13.5px;border-bottom:1px solid var(--divider);}
+  .flights-table tr:last-child td{border-bottom:none;}
+  .flights-table tr.highlight td{background:rgba(29,122,68,0.05);}
+  .airline-badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;}
+  .badge-sw{background:rgba(61,26,110,0.1);color:var(--navy);}
+  .badge-aa{background:rgba(29,122,68,0.1);color:var(--terracotta);}
+  .badge-breeze{background:rgba(201,160,32,0.15);color:#7A6020;}
+
+  /* ACCOMMODATIONS */
+  .accom-card{background:var(--white);border-radius:12px;padding:22px 26px;margin-bottom:16px;border-left:4px solid var(--terracotta);}
+  .accom-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:6px;}
+  .accom-desc{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:10px;}
+  .accom-link{font-size:12px;font-weight:600;color:var(--terracotta);text-decoration:none;}
+  .accom-link:hover{text-decoration:underline;}
+  .accom-detail{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+  .accom-detail-item{background:var(--ivory);border-radius:8px;padding:12px 14px;}
+  .accom-detail-item .label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+  .accom-detail-item .value{font-size:13px;font-weight:600;color:var(--navy);}
+
+  /* CHECKLIST */
+  .checklist{display:flex;flex-direction:column;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:20px;}
+  .checklist-header{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:16px;padding:12px 22px;background:var(--navy);}
+  .checklist-header span{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+  .checklist-item{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:16px;padding:14px 22px;border-bottom:1px solid var(--divider);align-items:center;}
+  .checklist-item:last-child{border-bottom:none;}
+  .checklist-item:nth-child(even){background:var(--ivory);}
+  .checklist-name{font-size:13.5px;font-weight:600;color:var(--text);}
+  .checklist-when{font-size:12px;color:var(--muted);}
+  .checklist-urgent .checklist-when{color:var(--terracotta);font-weight:700;}
+  .checklist-how{font-size:12px;}
+  .checklist-how a{color:var(--terracotta);text-decoration:none;}
+  .checklist-how a:hover{text-decoration:underline;}
+
+  /* LOGISTICS */
+  .logistics-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+  .logistics-item{background:var(--white);border-radius:10px;padding:18px 20px;}
+  .logistics-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+  .logistics-value{font-size:13.5px;color:var(--text);line-height:1.55;}
+  .logistics-value a{color:var(--terracotta);text-decoration:none;}
+  .logistics-value a:hover{text-decoration:underline;}
+
+  /* SHOPS GRID */
+  .shops-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+  .shop-card{background:var(--white);border-radius:10px;padding:16px 18px;}
+  .shop-name{font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:3px;}
+  .shop-meta{font-size:12px;color:var(--muted);line-height:1.5;}
+  .shop-meta a{color:var(--terracotta);text-decoration:none;}
+  .shop-meta a:hover{text-decoration:underline;}
+
+  /* JUMP NAV */
+  .jump-nav{display:flex;gap:8px;flex-wrap:wrap;padding:20px 0 4px;margin-bottom:8px;}
+  .jump-btn{padding:7px 14px;border-radius:100px;background:var(--white);border:1px solid var(--divider);font-size:12px;font-weight:600;color:var(--navy);text-decoration:none;transition:all 0.15s;white-space:nowrap;}
+  .jump-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  /* FOOTER */
+  .footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:40px 24px;font-size:12px;margin-top:64px;}
+  .footer strong{color:var(--gold);}
+
+  /* MOBILE */
+  @media(max-width:640px){
+    .hero h1{font-size:32px;}
+    .hero{padding:48px 20px 40px;}
+    .route-bar{padding:14px 20px;gap:8px;}
+    .container{padding:0 16px;}
+    .page-tab-btn{font-size:11px;padding:12px 6px;}
+    .option-selector{flex-direction:column;border-radius:12px;overflow:visible;gap:6px;margin-top:20px;}
+    .option-tab{border-radius:10px !important;border-right:none !important;text-align:left;padding:14px 18px;}
+    .option-tab.active{border-radius:10px !important;}
+    .option-meta{grid-template-columns:1fr 1fr;}
+    .pros-cons{grid-template-columns:1fr;}
+    .logistics-grid{grid-template-columns:1fr;}
+    .shops-grid{grid-template-columns:1fr;}
+    .checklist-item,.checklist-header{grid-template-columns:1fr;}
+    .day-card{grid-template-columns:1fr;}
+    .day-number{padding-right:0;margin-bottom:8px;}
+    .accom-detail{grid-template-columns:1fr 1fr;}
+    .flights-table{font-size:12px;}
+    .flights-table th,.flights-table td{padding:10px 12px;}
+  }
+  @media(max-width:480px){
+    .page-tabs-sticky{flex-wrap:wrap;}
+    .page-tab-btn{flex:1 1 50%;font-size:11px;padding:11px 4px;}
+  }
+  @media print{
+    .page-tabs-sticky{display:none;}
+    .option-selector{display:none;}
+    .option-content{display:block!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">New Orleans · October 2026</div>
+    <h1>The <em>Crescent City</em></h1>
+    <div class="hero-dates">October 22 — 26, 2026 &nbsp;·&nbsp; Jess + 2 Friends &nbsp;·&nbsp; French Quarter</div>
+    <div class="hero-pills">
+      <span class="pill">✈ WN 3819 · PHX → MSY</span>
+      <span class="pill">🏨 The Roosevelt · King Suite</span>
+      <span class="pill">🎃 Halloween Season</span>
+      <span class="pill">🔮 Voodoo · Tarot · History</span>
+      <span class="pill">🌿 Swamp + Ghost Tours</span>
+    </div>
+  </div>
+</div>
+
+<div class="route-bar">
+  <span class="route-stop">Phoenix</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">New Orleans</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Phoenix</span>
+</div>
+
+<div class="container">
+
+  <!-- STICKY PAGE TABS -->
+  <div class="page-tabs-sticky">
+    <button class="page-tab-btn active" onclick="switchPage('itinerary',this)">📋 Itinerary</button>
+    <button class="page-tab-btn" onclick="switchPage('flights',this)">✈️ Flights for Friends</button>
+    <button class="page-tab-btn" onclick="switchPage('shops',this)">🛍 Shops & Vibe</button>
+    <button class="page-tab-btn" onclick="switchPage('logistics',this)">✅ Logistics</button>
+  </div>
+
+  <!-- ═══════════════════════ ITINERARY PAGE ═══════════════════════ -->
+  <div id="page-itinerary">
+
+    <!-- OPTION SELECTOR -->
+    <div class="option-selector">
+      <button class="option-tab active" onclick="switchOption('a',this)">Option A — French Quarter First</button>
+      <button class="option-tab" onclick="switchOption('b',this)">Option B — Swamp Tour First</button>
+      <button class="option-tab" onclick="switchOption('c',this)">Option C — Explore NOLA</button>
+    </div>
+
+    <!-- ─── OPTION A ─── -->
+    <div id="opt-a" class="option-content active">
+      <div class="option-panel">
+        <div class="option-meta">
+          <div class="option-meta-item"><div class="label">Flow</div><div class="value">Your original plan</div></div>
+          <div class="option-meta-item"><div class="label">Swamp Tour</div><div class="value">Sunday, Day 4</div></div>
+          <div class="option-meta-item"><div class="label">Pace</div><div class="value">Easy arrival, builds in</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros"><h5>Works Well</h5><p>Gentle Day 1 — you land and ease into the city. Swamp tour on Day 4 means a full last full day.</p></div>
+          <div class="cons"><h5>Trade-off</h5><p>Day 3 can feel packed (brunch + cemetery + streetcar + rest + dinner). Build in buffer time.</p></div>
+        </div>
+        <div class="verdict"><strong>Best for:</strong> Those who want a familiar NOLA rhythm. Stick with this if the group is flexible on timing and doesn't need to "check the box" on the swamp tour early.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Option A</div>
+        <div class="section-title">Day-by-Day Itinerary</div>
+        <div class="days-list">
+
+          <!-- DAY 1 -->
+          <div class="day-card" id="a-day1">
+            <div class="day-number"><div class="day-num">01</div><div class="day-date">Thu · Oct 22</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Arrival Day</span>
+                <span class="day-subtitle">Settle in · Wander · Haunted Tour</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">1:10pm</div>
+                <div class="time-desc">Land at MSY. Grab bags, Uber/Lyft to The Roosevelt (~$25–35, 25 min). Drop bags with bell staff if suite isn't ready.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~2:00pm · Late Lunch</div>
+                <div class="time-desc">Two solid options depending on how hungry you are when you arrive:</div>
+                <div class="venue-block">
+                  <div class="venue-name">Napoleon House</div>
+                  <div class="venue-meta">500 Chartres St · French Quarter · <a href="https://www.napoleonhouse.com/" target="_blank">napoleonhouse.com</a></div>
+                  <div class="venue-meta">Muffalettas, gumbo, Pimm's Cups. A 200-year-old bar in a National Historic Landmark. Casual, no wait, open all day. Perfect first stop.</div>
+                </div>
+                <div class="venue-block call-ahead">
+                  <div class="venue-name">Café Amelie</div>
+                  <div class="venue-meta">900 Royal St · French Quarter · <a href="https://cafeamelie.com/" target="_blank">cafeamelie.com</a></div>
+                  <div class="venue-meta">Beautiful courtyard, seasonal small plates, cocktails. Thu lunch until 3pm. Arrive by 2pm or you'll be cutting it close.</div>
+                  <span class="venue-flag flag-call">📞 Check hours Day of</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">3:00pm–4:00pm</div>
+                <div class="time-desc">Wander Royal Street and Chartres — boutiques, galleries, antiques. Bourbon Street is two blocks over; there are a few shops worth a peek (see Shops tab). Check in at 4pm.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">4:00pm · Check-In</div>
+                <div class="time-desc">Roosevelt check-in. King Suite. Drop bags, freshen up, change.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">4:30pm · Pre-Tour Drinks</div>
+                <div class="time-desc">You're already at The Roosevelt — walk downstairs.</div>
+                <div class="venue-block">
+                  <div class="venue-name">Sazerac Bar · The Roosevelt</div>
+                  <div class="venue-meta">123 Baronne St (hotel lobby) · Opens 4pm Thursday</div>
+                  <div class="venue-meta">One of the most iconic hotel bars in America. The Sazerac cocktail was invented here. Small bites available. Walk out the door and go directly to the haunted tour from here.</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">6:00pm · Haunted Tour</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Haunted History Tours — French Quarter Ghosts &amp; Legends</div>
+                  <div class="venue-meta"><a href="https://hauntedhistorytours.com/" target="_blank">hauntedhistorytours.com</a> · ~$25/person · 2 hours</div>
+                  <div class="venue-meta">The longest-running ghost tour company in NOLA (since 1995). Historically grounded, not just jump scares. Meeting point in front of St. Louis Cathedral, Jackson Square area.</div>
+                  <span class="venue-flag flag-book">📅 Book ahead online</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~8:30pm · Late Bite</div>
+                <div class="time-desc">Post-tour you'll be near Jackson Square. Grab light food and drinks at whichever bar feels right — you'll be in the thick of it. Or head back to the Sazerac Bar for a nightcap.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DAY 2 -->
+          <div class="day-card" id="a-day2">
+            <div class="day-number"><div class="day-num">02</div><div class="day-date">Fri · Oct 23</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Readings, Carousel Bar &amp; The Quarter</span>
+                <span class="day-subtitle">Breakfast · Carousel Bar · Readings · Shopping · Speakeasy · Irene's</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Morning · Breakfast</div>
+                <div class="venue-block">
+                  <div class="venue-name">Stanley</div>
+                  <div class="venue-meta">Jackson Square · French Quarter · <a href="https://www.google.com/maps/search/Stanley+Restaurant+New+Orleans+Jackson+Square" target="_blank">Google Maps</a></div>
+                  <div class="venue-meta">Locally loved breakfast spot facing the square. Open early, generous portions, NOLA comfort food. Gets busy — go when it opens.</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">11:00am · Carousel Bar</div>
+                <div class="time-desc">Go when it opens — you'll get a seat on the carousel without waiting. The crowd builds fast once it fills.</div>
+                <div class="venue-block">
+                  <div class="venue-name">The Carousel Bar · Hotel Monteleone</div>
+                  <div class="venue-meta">214 Royal St · French Quarter · <a href="https://www.hotelmonteleone.com/dine-drink/carousel-bar/" target="_blank">hotelmonteleone.com</a> · Opens 11am</div>
+                  <div class="venue-meta">The only rotating bar in New Orleans. 25 carousel seats, slow-spinning, live jazz. Order a Vieux Carré — it was invented here. This is the play: arrive at 11am, get your seat, enjoy it before the lunch crowd shows.</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~12:30pm · Readings</div>
+                <div class="time-desc">Pick one — these are two very different experiences:</div>
+                <div class="venue-block call-ahead">
+                  <div class="venue-name">Bottom of the Cup Tea Room</div>
+                  <div class="venue-meta">327 Chartres St · French Quarter · <a href="https://www.bottomofthecup.com/" target="_blank">bottomofthecup.com</a></div>
+                  <div class="venue-meta">Tea leaf readings in a 100-year-old tearoom. The most NOLA reading experience you can get — intimate, atmospheric, old-world. Open daily 10am–6pm. Book a private reading in The Adaire Room for the best experience: call 504-875-5900.</div>
+                  <span class="venue-flag flag-book">📅 Book ahead for The Adaire Room · <a href="https://square.site/book/377VNJEMVTAPP/bottom-of-the-cup-tearoom-new-orleans-la" target="_blank" style="color:var(--navy);">Book online</a></span>
+                </div>
+                <div class="venue-block call-ahead">
+                  <div class="venue-name">Voodoo Bone Lady</div>
+                  <div class="venue-meta">807 Royal St · French Quarter · <a href="https://www.google.com/maps/search/Voodoo+Bone+Lady+807+Royal+Street+New+Orleans" target="_blank">Google Maps</a></div>
+                  <div class="venue-meta">Bone readings, tarot, and voodoo spiritual work. The original 628 Royal St location shows as closed — the current address is 807 Royal St. Call ahead before going: (504) 323-5828.</div>
+                  <span class="venue-flag flag-call">📞 Call ahead to confirm open: (504) 323-5828</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Afternoon · Quarter Shopping</div>
+                <div class="time-desc">Walk Royal and Chartres at your own pace. Boutique du Vampyre is on St. Ann — worth stopping in whether or not you do Potions Lounge later. Voodoo Authentica on Dumaine if anyone wants to go deeper on the voodoo side.</div>
+                <div class="venue-block">
+                  <div class="venue-name">Boutique du Vampyre</div>
+                  <div class="venue-meta">709½ St. Ann St · <a href="https://www.feelthebite.com/" target="_blank">feelthebite.com</a> · Also your entry to Potions Lounge tonight</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Evening · Speakeasy Tour</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">No Secrets Tours — New Orleans Cocktail Tour</div>
+                  <div class="venue-meta"><a href="https://nosecretstours.com/product/new-orleans-cocktail-tour/" target="_blank">nosecretstours.com</a> · French Quarter</div>
+                  <div class="venue-meta">Insider walking tour of French Quarter bars with historic backstories and cocktails included. Much more curated than just bar-hopping.</div>
+                  <span class="venue-flag flag-book">📅 Book ahead</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Post-Tour Drinks</div>
+                <div class="venue-block">
+                  <div class="venue-name">Potions Lounge (via Boutique du Vampyre)</div>
+                  <div class="venue-meta">709½ St. Ann St · French Quarter · <a href="https://www.feelthebite.com/" target="_blank">feelthebite.com</a></div>
+                  <div class="venue-meta">Hidden speakeasy accessed through the vampire boutique. Staff give you the password and secret entrance. Handcrafted cocktails, intimate atmosphere, very much in the voodoo-and-mystery spirit of the trip.</div>
+                  <span class="venue-flag flag-alt">🔮 Ask at Boutique du Vampyre for access</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Irene's</div>
+                  <div class="venue-meta">529 Bienville St · French Quarter · <a href="https://irenesnola.com/" target="_blank">irenesnola.com</a></div>
+                  <div class="venue-meta">Sicilian-Creole Italian. One of the most loved neighborhood restaurants in the Quarter. Piano bar vibe, dimly lit, feels like you found it by accident. Go for the roasted chicken and anything with crabmeat.</div>
+                  <span class="venue-flag flag-book">📅 Reserve in advance — fills fast on weekends</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DAY 3 -->
+          <div class="day-card" id="a-day3">
+            <div class="day-number"><div class="day-num">03</div><div class="day-date">Sat · Oct 24</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Commander's, Cemeteries &amp; Uptown</span>
+                <span class="day-subtitle">Garden District · St. Charles Streetcar · Dinner</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">10:00am · Brunch</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Commander's Palace</div>
+                  <div class="venue-meta">1403 Washington Ave · Garden District · <a href="https://www.commanderspalace.com/" target="_blank">commanderspalace.com</a></div>
+                  <div class="venue-meta">One of the great American restaurant experiences. Saturday jazz brunch is the move. Dress code applies — see Logistics tab. The 25¢ martinis at brunch are a NOLA legend.</div>
+                  <span class="venue-flag flag-book">📅 Book via Tock — <a href="https://www.exploretock.com/commanderspalace" target="_blank" style="color:var(--navy);">exploretock.com/commanderspalace</a></span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~Noon · Cemetery Walk</div>
+                <div class="time-desc">Two options right after brunch. Choose one:</div>
+                <div class="venue-block">
+                  <div class="venue-name">Lafayette Cemetery No. 1 — Free Option</div>
+                  <div class="venue-meta">1400 Washington Ave · Garden District · Right next to Commander's</div>
+                  <div class="venue-meta">Walk out the door of Commander's and you're at the gate. Self-guided, free entry, tips appreciated if you get a guide. Beautiful, shaded, very atmospheric. Perfect post-brunch wander.</div>
+                  <span class="venue-flag flag-cash">💵 Free · Tips welcome</span>
+                </div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">St. Louis Cemetery No. 1 — Guided Option</div>
+                  <div class="venue-meta">425 Basin St · French Quarter · <a href="https://cemeterytourneworleans.com/" target="_blank">cemeterytourneworleans.com</a> · ~9 min drive from Commander's</div>
+                  <div class="venue-meta">$25/person · 45-min guided tour. The oldest surviving cemetery in New Orleans, including Marie Laveau's tomb. More historically significant than Lafayette but requires booking and a short Uber.</div>
+                  <span class="venue-flag flag-book">📅 Book in advance at cemeterytourneworleans.com</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Afternoon · Uptown by Streetcar</div>
+                <div class="time-desc">Take the St. Charles streetcar line from Washington Ave toward Uptown to see the Halloween decorations. The mansions go all out in October. Get off and wander a few blocks, then re-board back toward the Quarter. ~$1.25/ride or grab an all-day Jazzy Pass ($3).</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Late Afternoon</div>
+                <div class="time-desc">Return to hotel. Rest, refresh, change for dinner.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Bayona</div>
+                  <div class="venue-meta">430 Dauphine St · French Quarter · <a href="https://www.bayona.com/" target="_blank">bayona.com</a></div>
+                  <div class="venue-meta">Seasonal New American menu that changes almost daily. Set in a beautiful historic cottage with a courtyard. Susan Spicer's food is deeply NOLA in spirit without being a tourist trap. Book 2–3 weeks out.</div>
+                  <span class="venue-flag flag-book">📅 Reserve online at bayona.com or call 504-525-4455</span>
+                </div>
+                <div class="venue-block" style="margin-top:10px;">
+                  <div class="venue-name">Backup: Sylvain</div>
+                  <div class="venue-meta">625 Chartres St · French Quarter · <a href="https://www.sylvainnola.com/" target="_blank">sylvainnola.com</a></div>
+                  <div class="venue-meta">If Bayona is full — dark carriage house bar, Southern menu, great cocktails, kitchen open late (Fri/Sat until midnight). More casual, walk-in friendly.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DAY 4 -->
+          <div class="day-card" id="a-day4">
+            <div class="day-number"><div class="day-num">04</div><div class="day-date">Sun · Oct 25</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Swamp Tour Day</span>
+                <span class="day-subtitle">Breakfast · Swamp · Magazine St or Quarter · Last Dinner</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Morning · Breakfast</div>
+                <div class="venue-block">
+                  <div class="venue-name">Stanley</div>
+                  <div class="venue-meta">Jackson Square · French Quarter · <a href="https://www.google.com/maps/search/Stanley+Restaurant+Jackson+Square+New+Orleans" target="_blank">Google Maps</a></div>
+                  <div class="venue-meta">Faces Jackson Square, open early, locally loved. Classic New Orleans comfort breakfast — eggs Sardou, bananas Foster french toast. Generous portions, fair prices.</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">10:15am · Hotel Pickup</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Swamp Tour (with transportation)</div>
+                  <div class="venue-meta">Pick up at hotel 10:15am · Tour starts 12:15pm · 2 hours · Return ~3:00pm</div>
+                  <div class="venue-meta">Transportation included from the hotel. Alligators, cypress swamps, local wildlife. Compare operators: <a href="https://www.cajunprideswamptours.com/" target="_blank">cajunprideswamptours.com</a> or <a href="https://www.viator.com/tours/New-Orleans/Honey-Island-Swamp-Tour-With-Transport/d675-6953SWAMPTRANS" target="_blank">Viator (Honey Island)</a>. ~$45–75/person.</div>
+                  <span class="venue-flag flag-book">📅 Book in advance — confirm pickup at Roosevelt</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~3:00pm · Back in the City</div>
+                <div class="time-desc">Option A: Take the streetcar to Magazine Street for a last round of shopping (6 miles of boutiques — see Shops tab). Option B: Stay in the French Quarter and explore anywhere you haven't hit yet.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner · Last Night</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Sylvain</div>
+                  <div class="venue-meta">625 Chartres St · French Quarter · <a href="https://www.sylvainnola.com/" target="_blank">sylvainnola.com</a></div>
+                  <div class="venue-meta">Perfect send-off. Dark, moody carriage house dating to the 1790s. Great cocktails, elevated Southern comfort food. Order the burger — it's genuinely famous. Reserve or arrive by 6pm.</div>
+                  <span class="venue-flag flag-book">📅 Reserve via Resy or walk in early</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Tonight · Before Bed</div>
+                <div class="time-desc">Arrange your Uber for morning pickup. 6:20am flight means leaving the hotel no later than 4:30am. Set pickup for 4:15am to have a buffer.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DAY 5 -->
+          <div class="day-card" id="a-day5">
+            <div class="day-number"><div class="day-num">05</div><div class="day-date">Mon · Oct 26</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Departure</span>
+                <span class="day-subtitle">WN 3133 · MSY 6:20am → PHX 7:45am</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">4:15am</div>
+                <div class="time-desc">Uber/Lyft to MSY. Book this the night before. ~25 min to airport.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">5:00am</div>
+                <div class="time-desc">Arrive MSY. TSA PreCheck helps here — go straight to security.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">6:20am</div>
+                <div class="time-desc">WN 3133 departs MSY. Arrives PHX 7:45am.</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.days-list -->
+      </div>
+    </div><!-- /#opt-a -->
+
+    <!-- ─── OPTION B ─── -->
+    <div id="opt-b" class="option-content">
+      <div class="option-panel">
+        <div class="option-meta">
+          <div class="option-meta-item"><div class="label">Flow</div><div class="value">Swamp tour first</div></div>
+          <div class="option-meta-item"><div class="label">Swamp Tour</div><div class="value">Thursday, Day 1</div></div>
+          <div class="option-meta-item"><div class="label">Pace</div><div class="value">Hit the ground running</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros"><h5>Works Well</h5><p>Swamp tour checked off immediately. Sunday becomes a free, leisurely final full day with no big obligation — perfect for a slow morning, last shopping, and a proper goodbye dinner.</p></div>
+          <div class="cons"><h5>Trade-off</h5><p>Day 1 is rushed — land at 1:10pm, eat quickly, and be ready for a 3pm pickup. Not much margin if your flight is delayed or bags take a while.</p></div>
+        </div>
+        <div class="verdict"><strong>Best for:</strong> You want Day 4 Sunday totally open and don't mind a quick-turnaround on arrival day. If your bags take 30+ minutes or your flight delays, the 3pm pickup gets stressful.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Option B</div>
+        <div class="section-title">Day-by-Day Itinerary</div>
+        <div class="days-list">
+
+          <!-- B DAY 1 -->
+          <div class="day-card">
+            <div class="day-number"><div class="day-num">01</div><div class="day-date">Thu · Oct 22</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Arrival + Swamp Day</span>
+                <span class="day-subtitle">Land → Quick Lunch → Swamp Tour → Dinner at Irene's</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">1:10pm</div>
+                <div class="time-desc">Land MSY. Bags, Uber to Roosevelt. Drop bags with bell staff — <strong>no time to check in yet.</strong></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~1:45pm · Quick Bite</div>
+                <div class="time-desc">You have about an hour. Napoleon House is 10 minutes from the Roosevelt — muffaletta and a Pimm's Cup, in and out.</div>
+                <div class="venue-block">
+                  <div class="venue-name">Napoleon House</div>
+                  <div class="venue-meta">500 Chartres St · <a href="https://www.napoleonhouse.com/" target="_blank">napoleonhouse.com</a></div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">3:00pm · Hotel Pickup</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Swamp Tour (with transportation)</div>
+                  <div class="venue-meta">Pick up at Roosevelt 3:00pm · Tour starts 5:00pm · 2 hours · Return ~7:30pm</div>
+                  <div class="venue-meta"><a href="https://www.cajunprideswamptours.com/" target="_blank">cajunprideswamptours.com</a> or <a href="https://www.viator.com/tours/New-Orleans/Honey-Island-Swamp-Tour-With-Transport/d675-6953SWAMPTRANS" target="_blank">Viator</a>. Book operator with 5pm afternoon tour option. Confirm the pickup time directly with them.</div>
+                  <span class="venue-flag flag-book">📅 Book in advance · Confirm 5pm tour + pickup</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~7:30pm · Check-In & Freshen Up</div>
+                <div class="time-desc">Check into the Roosevelt. Change. Take a breath. You've earned it.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~8:30pm · Dinner</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Irene's</div>
+                  <div class="venue-meta">529 Bienville St · <a href="https://irenesnola.com/" target="_blank">irenesnola.com</a></div>
+                  <div class="venue-meta">Moved from Day 2 in this version. Late seating works here — Irene's has a relaxed, lingering atmosphere. Reserve in advance and note your late arrival time.</div>
+                  <span class="venue-flag flag-book">📅 Reserve and note late arrival</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B DAY 2 -->
+          <div class="day-card">
+            <div class="day-number"><div class="day-num">02</div><div class="day-date">Fri · Oct 23</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Voodoo &amp; The Quarter</span>
+                <span class="day-subtitle">Jackson Square · Shopping · Carousel Bar · Haunted Tour</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Morning</div>
+                <div class="time-desc">Jackson Square tarot readers (cash, $20–40). Voodoo Authentica, Earth Odyssey, Boutique du Vampyre. Shop Royal Street at your own pace.</div>
+                <div class="venue-block"><div class="venue-name">Voodoo Authentica</div><div class="venue-meta">612 Dumaine St</div></div>
+                <div class="venue-block"><div class="venue-name">Earth Odyssey</div><div class="venue-meta"><a href="https://www.earthodysseynola.com/" target="_blank">earthodysseynola.com</a></div></div>
+                <div class="venue-block"><div class="venue-name">Boutique du Vampyre</div><div class="venue-meta">709½ St. Ann St · <a href="https://www.feelthebite.com/" target="_blank">feelthebite.com</a></div></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Afternoon</div>
+                <div class="venue-block book-ahead"><div class="venue-name">Carousel Bar · Hotel Monteleone</div><div class="venue-meta">214 Royal St · <a href="https://www.hotelmonteleone.com/dine-drink/carousel-bar/" target="_blank">hotelmonteleone.com</a></div></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">6:00pm · Haunted Tour</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Haunted History Tours — French Quarter Ghosts &amp; Legends</div>
+                  <div class="venue-meta"><a href="https://hauntedhistorytours.com/" target="_blank">hauntedhistorytours.com</a> · ~$25/person · 2 hours</div>
+                  <span class="venue-flag flag-book">📅 Book ahead online</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~8:30pm · Post-Tour Drinks</div>
+                <div class="venue-block">
+                  <div class="venue-name">Potions Lounge (via Boutique du Vampyre)</div>
+                  <div class="venue-meta">709½ St. Ann St · Ask in-store for access</div>
+                  <div class="venue-meta">Hidden speakeasy through the vampire boutique. Handcrafted cocktails, secret entrance, intimate atmosphere.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B DAY 3 -->
+          <div class="day-card">
+            <div class="day-number"><div class="day-num">03</div><div class="day-date">Sat · Oct 24</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Commander's, Cemeteries &amp; Speakeasy</span>
+                <span class="day-subtitle">Garden District Day · Evening Speakeasy Tour</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">10:00am</div>
+                <div class="venue-block book-ahead"><div class="venue-name">Commander's Palace</div><div class="venue-meta"><a href="https://www.commanderspalace.com/" target="_blank">commanderspalace.com</a> · Book via <a href="https://www.exploretock.com/commanderspalace" target="_blank">Tock</a></div></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~Noon · Cemetery</div>
+                <div class="venue-block"><div class="venue-name">Lafayette Cemetery No. 1</div><div class="venue-meta">Free · Right next to Commander's · Walk out and turn left</div></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Afternoon · Streetcar</div>
+                <div class="time-desc">Take the St. Charles streetcar to Uptown for Halloween decorations. Ride back toward the Quarter and get off at Magazine Street for shopping.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Evening · Speakeasy Tour</div>
+                <div class="venue-block book-ahead"><div class="venue-name">No Secrets Tours — Cocktail Tour</div><div class="venue-meta"><a href="https://nosecretstours.com/product/new-orleans-cocktail-tour/" target="_blank">nosecretstours.com</a></div><span class="venue-flag flag-book">📅 Book ahead</span></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Late Dinner</div>
+                <div class="venue-block book-ahead"><div class="venue-name">Sylvain</div><div class="venue-meta">625 Chartres St · <a href="https://www.sylvainnola.com/" target="_blank">sylvainnola.com</a> · Kitchen open until midnight Sat</div><span class="venue-flag flag-book">📅 Reserve or walk in after 9pm</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B DAY 4 -->
+          <div class="day-card">
+            <div class="day-number"><div class="day-num">04</div><div class="day-date">Sun · Oct 25</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Free Sunday</span>
+                <span class="day-subtitle">JAMNOLA · Magazine St · Last Dinner</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Morning · Brunch</div>
+                <div class="venue-block">
+                  <div class="venue-name">Brennan's</div>
+                  <div class="venue-meta">417 Royal St · French Quarter · <a href="https://www.brennansneworleans.com/" target="_blank">brennansneworleans.com</a></div>
+                  <div class="venue-meta">New Orleans institution (80 years in 2026). Jazz brunch, Bananas Foster tableside, spirited atmosphere. A proper splurge. Book in advance for Sunday.</div>
+                  <span class="venue-flag flag-book">📅 Reserve in advance</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~11:30am · JAMNOLA</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">JAMNOLA</div>
+                  <div class="venue-meta">940 Frenchmen St · Marigny · <a href="https://jamnola.com/" target="_blank">jamnola.com</a> · 5-min Uber from French Quarter (~$7)</div>
+                  <div class="venue-meta">Joy · Art · Music · New Orleans. Immersive art installation experience. Open Sunday 10am–6pm. $35.99/person. You've been wanting to go — this is the perfect day with nothing competing. Timed entry, book ahead online.</div>
+                  <span class="venue-flag flag-book">📅 Book timed tickets at <a href="https://tickets.jamnola.com/jamnola" target="_blank" style="color:var(--navy);">tickets.jamnola.com</a></span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Afternoon</div>
+                <div class="time-desc">Magazine Street is 5 min from JAMNOLA by Uber. Six miles of boutiques — Trashy Diva, Hemline, Monomin, Joseph. Or Uber back to the Quarter for last-minute shopping.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner · Last Night</div>
+                <div class="venue-block book-ahead"><div class="venue-name">Bayona</div><div class="venue-meta">430 Dauphine St · <a href="https://www.bayona.com/" target="_blank">bayona.com</a></div><span class="venue-flag flag-book">📅 Reserve ahead</span></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Tonight</div>
+                <div class="time-desc">Arrange Uber for 4:15am tomorrow.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B DAY 5 -->
+          <div class="day-card">
+            <div class="day-number"><div class="day-num">05</div><div class="day-date">Mon · Oct 26</div></div>
+            <div>
+              <div class="day-header"><span class="day-title">Departure</span><span class="day-subtitle">WN 3133 · MSY 6:20am → PHX 7:45am</span></div>
+              <div class="time-block"><div class="time-label">4:15am</div><div class="time-desc">Pre-arranged Uber to MSY. ~25 min.</div></div>
+              <div class="time-block"><div class="time-label">6:20am</div><div class="time-desc">WN 3133 departs. Arrives PHX 7:45am.</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /#opt-b -->
+
+    <!-- ─── OPTION C (RECOMMENDED) ─── -->
+    <div id="opt-c" class="option-content">
+      <div class="option-panel">
+        <div class="option-meta" style="grid-template-columns:repeat(2,1fr);">
+          <div class="option-meta-item"><div class="label">JAMNOLA</div><div class="value">Friday afternoon</div></div>
+          <div class="option-meta-item"><div class="label">Pace</div><div class="value">Geographic + logical</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros"><h5>Works Well</h5><p>Each day has a geographic anchor. Day 2 stays French Quarter + Marigny. Day 3 is a full Garden District corridor. Sunday has the swamp tour + relaxed FQ evening. JAMNOLA is woven in naturally on Friday.</p></div>
+          <div class="cons"><h5>Trade-off</h5><p>Day 2 is a full day — Jackson Square → JAMNOLA → Carousel Bar → Speakeasy → Irene's. Could feel like a lot if the energy is low. Skip JAMNOLA and add it to another day if needed.</p></div>
+        </div>
+        <div class="verdict"><strong>How it flows:</strong> Days are organized geographically. JAMNOLA fits on Friday (5-min Uber from Jackson Square). Saturday is a full Garden District corridor. Sunday stays relaxed after the swamp tour. Each day has a natural anchor rather than bouncing between neighborhoods.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Option C — Explore NOLA</div>
+        <div class="section-title">Day-by-Day Itinerary</div>
+        <div class="days-list">
+
+          <!-- C DAY 1 -->
+          <div class="day-card" id="c-day1">
+            <div class="day-number"><div class="day-num">01</div><div class="day-date">Thu · Oct 22</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Arrival Day</span>
+                <span class="day-subtitle">Land · Lunch · Quarter · Sazerac Bar · Haunted Tour</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">1:10pm</div>
+                <div class="time-desc">Land MSY. Bags, Uber to Roosevelt (~$25–35, 25 min). Drop bags with bell staff.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~2:00pm · Lunch</div>
+                <div class="venue-block call-ahead">
+                  <div class="venue-name">Café Amelie</div>
+                  <div class="venue-meta">900 Royal St · French Quarter · <a href="https://cafeamelie.com/" target="_blank">cafeamelie.com</a></div>
+                  <div class="venue-meta">Beautiful courtyard, cocktails, seasonal plates. The best first-impression lunch in the Quarter. Thursday service until 3pm — aim to arrive by 2pm sharp. If running late from the airport, pivot to Napoleon House instead.</div>
+                  <span class="venue-flag flag-call">📞 Confirm Thursday hours</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">3:00pm–4:00pm</div>
+                <div class="time-desc">Walk Royal and Chartres. Dip into whatever looks interesting. This is the most concentrated stretch of boutiques, galleries, and antique shops in the Quarter. No agenda, just wander.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">4:00pm · Check-In</div>
+                <div class="time-desc">The Roosevelt. King Suite. Freshen up, change into something you want to be in all evening.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">4:30pm · Sazerac Bar</div>
+                <div class="venue-block">
+                  <div class="venue-name">Sazerac Bar · The Roosevelt</div>
+                  <div class="venue-meta">123 Baronne St (hotel lobby) · Opens 4pm Thursday</div>
+                  <div class="venue-meta">You're already here. The birthplace of the Sazerac cocktail. Beautiful Art Deco bar. Order the namesake drink and a charcuterie board before heading to the tour. You can walk right out the front door to the French Quarter.</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">6:00pm · Haunted Tour</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Haunted History Tours — French Quarter Ghosts &amp; Legends</div>
+                  <div class="venue-meta"><a href="https://hauntedhistorytours.com/" target="_blank">hauntedhistorytours.com</a> · ~$25/person · 2 hours</div>
+                  <div class="venue-meta">Departs from near St. Louis Cathedral / Jackson Square. The Roosevelt is about a 10-minute walk.</div>
+                  <span class="venue-flag flag-book">📅 Book ahead online</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~8:30pm</div>
+                <div class="time-desc">Post-tour wander. You'll be near Chartres/Royal. Grab a nightcap wherever looks good — no plan needed tonight.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C DAY 2 -->
+          <div class="day-card" id="c-day2">
+            <div class="day-number"><div class="day-num">02</div><div class="day-date">Fri · Oct 23</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Jackson Square → JAMNOLA → Irene's</span>
+                <span class="day-subtitle">Voodoo · Art · Carousel Bar · Speakeasy · Dinner</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Morning</div>
+                <div class="time-desc">Jackson Square: tarot readers on the square (cash, $20–40). Then the nearby voodoo shops.</div>
+                <div class="venue-block"><div class="venue-name">Voodoo Authentica</div><div class="venue-meta">612 Dumaine St · 1 block from Jackson Square</div></div>
+                <div class="venue-block"><div class="venue-name">Earth Odyssey</div><div class="venue-meta"><a href="https://www.earthodysseynola.com/" target="_blank">earthodysseynola.com</a></div></div>
+                <div class="venue-block"><div class="venue-name">Boutique du Vampyre</div><div class="venue-meta">709½ St. Ann St · <a href="https://www.feelthebite.com/" target="_blank">feelthebite.com</a> · Also your entry point to Potions Lounge speakeasy</div></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~12:30pm · Uber to JAMNOLA</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">JAMNOLA</div>
+                  <div class="venue-meta">940 Frenchmen St · Marigny · 5-min Uber (~$7) · <a href="https://jamnola.com/" target="_blank">jamnola.com</a></div>
+                  <div class="venue-meta">Immersive art installation experience celebrating New Orleans culture. Open Friday 10am–8pm. $35.99/person. Timed entry — book online in advance. The Frenchmen Street corridor is worth exploring after — it's where actual New Orleans musicians play. Grab lunch/snack in the neighborhood before the 1pm entry slot if you book that time.</div>
+                  <span class="venue-flag flag-book">📅 Timed tickets required — <a href="https://tickets.jamnola.com/jamnola" target="_blank" style="color:var(--navy);">tickets.jamnola.com</a></span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~3:00pm · Uber Back to Quarter</div>
+                <div class="time-desc">Carousel Bar for a cocktail before you freshen up for the evening.</div>
+                <div class="venue-block book-ahead"><div class="venue-name">The Carousel Bar · Hotel Monteleone</div><div class="venue-meta">214 Royal St · <a href="https://www.hotelmonteleone.com/dine-drink/carousel-bar/" target="_blank">hotelmonteleone.com</a> · Go before 5pm to beat the crowd</div></div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Evening · Speakeasy Tour</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">No Secrets Tours — Cocktail Tour</div>
+                  <div class="venue-meta"><a href="https://nosecretstours.com/product/new-orleans-cocktail-tour/" target="_blank">nosecretstours.com</a></div>
+                  <span class="venue-flag flag-book">📅 Book ahead</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Irene's</div>
+                  <div class="venue-meta">529 Bienville St · <a href="https://irenesnola.com/" target="_blank">irenesnola.com</a></div>
+                  <div class="venue-meta">Sicilian-Creole Italian in a dimly lit, piano bar setting. This is one of the most NOLA-authentic dinners you can have in the Quarter. Reserve ahead — it fills on Friday nights.</div>
+                  <span class="venue-flag flag-book">📅 Reserve in advance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C DAY 3 -->
+          <div class="day-card" id="c-day3">
+            <div class="day-number"><div class="day-num">03</div><div class="day-date">Sat · Oct 24</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Garden District Day</span>
+                <span class="day-subtitle">Commander's · Cemetery · Streetcar · Magazine St · Bayona</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">10:00am · Brunch</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Commander's Palace</div>
+                  <div class="venue-meta">1403 Washington Ave · Garden District · <a href="https://www.commanderspalace.com/" target="_blank">commanderspalace.com</a></div>
+                  <div class="venue-meta">Saturday jazz brunch. Dress code. The 25¢ martinis are real. Book early — this is among the hardest tables to get on a Saturday in NOLA.</div>
+                  <span class="venue-flag flag-book">📅 <a href="https://www.exploretock.com/commanderspalace" target="_blank" style="color:var(--navy);">exploretock.com/commanderspalace</a></span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~Noon · Cemetery Walk</div>
+                <div class="venue-block">
+                  <div class="venue-name">Lafayette Cemetery No. 1</div>
+                  <div class="venue-meta">1400 Washington Ave · Free · Walk out of Commander's and turn left</div>
+                  <div class="venue-meta">Beautiful shaded cemetery right next door. Self-guided. Oak trees, above-ground tombs, film location for Interview with the Vampire. 20–30 min is enough.</div>
+                  <span class="venue-flag flag-cash">💵 Free · Tips appreciated</span>
+                </div>
+                <div class="venue-block book-ahead" style="margin-top:10px;">
+                  <div class="venue-name">Upgrade Option: St. Louis Cemetery No. 1</div>
+                  <div class="venue-meta"><a href="https://cemeterytourneworleans.com/" target="_blank">cemeterytourneworleans.com</a> · $25/pp · 45 min · 9-min drive</div>
+                  <div class="venue-meta">If you want the guided tour and Marie Laveau's tomb, book this instead. Requires advance booking and an Uber over.</div>
+                  <span class="venue-flag flag-book">📅 Must book in advance</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Afternoon · St. Charles Streetcar</div>
+                <div class="time-desc">The St. Charles line stops right at Washington Ave (Commander's/Lafayette Cemetery). Take it toward Uptown for Halloween decorations on the mansions — October is spectacular. Ride back toward Canal and get off at Magazine Street to browse boutiques on the way home. ~$1.25/ride.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Late Afternoon</div>
+                <div class="time-desc">Return to hotel. Rest. This has been a full day.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Bayona</div>
+                  <div class="venue-meta">430 Dauphine St · French Quarter · <a href="https://www.bayona.com/" target="_blank">bayona.com</a></div>
+                  <div class="venue-meta">Historic cottage, romantic courtyard, daily-changing seasonal menu. One of the most consistently excellent restaurants in the Quarter for 30 years. Reserve 2–3 weeks out.</div>
+                  <span class="venue-flag flag-book">📅 bayona.com or 504-525-4455</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C DAY 4 -->
+          <div class="day-card" id="c-day4">
+            <div class="day-number"><div class="day-num">04</div><div class="day-date">Sun · Oct 25</div></div>
+            <div>
+              <div class="day-header">
+                <span class="day-title">Swamp Tour &amp; Last Evening</span>
+                <span class="day-subtitle">Breakfast · Swamp · Quarter · Sylvain</span>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Morning · Breakfast</div>
+                <div class="venue-block">
+                  <div class="venue-name">Stanley</div>
+                  <div class="venue-meta">Jackson Square · <a href="https://www.google.com/maps/search/Stanley+Restaurant+New+Orleans+Jackson+Square" target="_blank">Google Maps</a></div>
+                  <div class="venue-meta">Neighborhood breakfast spot facing the square. Eggs Sardou, local ingredients, reasonable prices. Open early — go before your pickup.</div>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">10:15am · Hotel Pickup</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Swamp Tour (with transportation)</div>
+                  <div class="venue-meta">Pickup 10:15am · Tour 12:15pm · 2 hours · Return ~3pm</div>
+                  <div class="venue-meta"><a href="https://www.cajunprideswamptours.com/" target="_blank">cajunprideswamptours.com</a> · Transportation from hotel included · Alligators, cypress, wildlife</div>
+                  <span class="venue-flag flag-book">📅 Book ahead · Confirm Roosevelt Hotel pickup</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">~3:00pm · Back in the Quarter</div>
+                <div class="time-desc">Last afternoon. Anything you didn't get to — more shopping, a café, wandering. No agenda. This is the winding-down time.</div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Dinner · Last Night</div>
+                <div class="venue-block book-ahead">
+                  <div class="venue-name">Sylvain</div>
+                  <div class="venue-meta">625 Chartres St · French Quarter · <a href="https://www.sylvainnola.com/" target="_blank">sylvainnola.com</a></div>
+                  <div class="venue-meta">Perfect closer. Carriage house from the 1790s, moody lighting, great cocktails, legendary burger. Kitchen open until midnight Sunday. Easy, no rush.</div>
+                  <span class="venue-flag flag-book">📅 Reserve or arrive by 6pm</span>
+                </div>
+              </div>
+              <div class="time-block">
+                <div class="time-label">Tonight</div>
+                <div class="time-desc">Arrange Uber for 4:15am tomorrow before you go to sleep.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C DAY 5 -->
+          <div class="day-card" id="c-day5">
+            <div class="day-number"><div class="day-num">05</div><div class="day-date">Mon · Oct 26</div></div>
+            <div>
+              <div class="day-header"><span class="day-title">Departure</span><span class="day-subtitle">WN 3133 · MSY 6:20am → PHX 7:45am</span></div>
+              <div class="time-block"><div class="time-label">4:15am</div><div class="time-desc">Pre-arranged Uber to MSY. ~25 min to airport.</div></div>
+              <div class="time-block"><div class="time-label">5:00am</div><div class="time-desc">MSY. TSA PreCheck. Gate.</div></div>
+              <div class="time-block"><div class="time-label">6:20am</div><div class="time-desc">WN 3133 departs. Arrives PHX 7:45am.</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /#opt-c -->
+
+  </div><!-- /#page-itinerary -->
+
+  <!-- ═══════════════════════ FLIGHTS PAGE ═══════════════════════ -->
+  <div id="page-flights" style="display:none;padding:32px 0;">
+
+    <div class="section-label">Your Flights — Confirmed</div>
+    <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:28px;">Jess's Booking Details</div>
+
+    <table class="flights-table" style="margin-bottom:28px;">
+      <thead><tr><th>Flight</th><th>Date</th><th>Departs</th><th>Arrives</th><th>Duration</th><th>Airline</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td><strong>WN 3819</strong></td><td>Thu Oct 22</td><td>PHX 8:15am</td><td>MSY 1:10pm</td><td>2h 55m</td><td><span class="airline-badge badge-sw">Southwest</span></td></tr>
+        <tr><td><strong>WN 3133</strong></td><td>Mon Oct 26</td><td>MSY 6:20am</td><td>PHX 7:45am</td><td>3h 25m</td><td><span class="airline-badge badge-sw">Southwest</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-label" style="margin-top:40px;">Friends' Flights — Options</div>
+    <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:16px;">What to Share With the Group</div>
+
+    <p style="font-size:13.5px;color:var(--muted);margin-bottom:24px;">Three airlines fly direct PHX → MSY. The easiest option is <strong>Southwest</strong> — if they match Jess's exact flights they'll all land together. American and Breeze are solid alternatives if Southwest doesn't work timing/price wise.</p>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+
+      <div style="background:var(--white);border-radius:12px;padding:22px 26px;border-left:4px solid var(--navy);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Easiest Option — Match Jess's Flights</div>
+            <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:6px;">Southwest Airlines</div>
+            <div style="font-size:13.5px;color:var(--muted);line-height:1.6;">Book the same WN 3819 (PHX 8:15am → MSY 1:10pm) and WN 3133 (MSY 6:20am → PHX 7:45am). You'll all arrive and leave together. Southwest uses Rapid Rewards points at ~1.5¢/pt on Wanna Get Away fares.</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.southwest.com/en/flights/flights-from-phoenix-to-new-orleans" target="_blank" style="display:inline-block;background:var(--navy);color:var(--white);padding:9px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;">Book at southwest.com →</a>
+        </div>
+        <div class="warning" style="margin-top:14px;"><strong>Note for friends with Southwest points:</strong> Search Wanna Get Away fares first. PHX→MSY is a Southwest stronghold route and points availability is usually good.</div>
+      </div>
+
+      <div style="background:var(--white);border-radius:12px;padding:22px 26px;border-left:4px solid var(--terracotta);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Alt Option</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:6px;">American Airlines</div>
+        <div style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:14px;">Also flies PHX → MSY nonstop. Timing may differ from Jess's WN flights — coordinate so everyone arrives within a window of each other. Check same-day options on Oct 22.</div>
+        <a href="https://www.aa.com/en-us/flights-from-phoenix-to-new-orleans" target="_blank" style="display:inline-block;background:var(--terracotta);color:var(--white);padding:9px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;">Book at aa.com →</a>
+      </div>
+
+      <div style="background:var(--white);border-radius:12px;padding:22px 26px;border-left:4px solid var(--gold);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Budget Option</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:6px;">Breeze Airways</div>
+        <div style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:14px;">Budget carrier with direct PHX → MSY service. Fewer daily departures than Southwest or AA. Check timing before recommending — frequency is lower. Best if they're price-sensitive and flexible on exact timing.</div>
+        <a href="https://www.flybreeze.com/" target="_blank" style="display:inline-block;background:var(--gold);color:var(--white);padding:9px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;">Check flybreeze.com →</a>
+      </div>
+
+    </div>
+
+    <div style="background:var(--navy);border-radius:12px;padding:20px 24px;color:var(--white);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">What to Send the Group</div>
+      <p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.85);">Share Jess's flight numbers (WN 3819 outbound, WN 3133 return) and suggest they try to match on Southwest. Tell them to book Wanna Get Away fares, and to search Oct 22 → Oct 26. Once flights are booked, coordinate Uber timing so you all arrive at the Roosevelt close together.</p>
+    </div>
+
+  </div><!-- /#page-flights -->
+
+  <!-- ═══════════════════════ SHOPS PAGE ═══════════════════════ -->
+  <div id="page-shops" style="display:none;padding:32px 0;">
+
+    <div class="section-label">Not Your Typical Tourist Stops</div>
+    <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:28px;">Voodoo, Boutiques &amp; Bourbon Street Worth Noting</div>
+
+    <div class="section-label">Voodoo, Tarot &amp; the Mystical</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">Jackson Square and surrounding blocks — this is your territory.</div>
+    <div class="shops-grid">
+      <div class="shop-card">
+        <div class="shop-name">Voodoo Authentica</div>
+        <div class="shop-meta">612 Dumaine St · French Quarter<br>The most legitimate voodoo shop in the city. In-house practitioners, authentic gris-gris, readings, potions. Not a gift shop. They take it seriously — you should too or don't go in.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Earth Odyssey</div>
+        <div class="shop-meta">Near Jackson Square · <a href="https://www.earthodysseynola.com/" target="_blank">earthodysseynola.com</a><br>Crystals, healing jewelry, psychic readings. Welcoming vibe, good energy. Great for readings if the Jackson Square readers are busy.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Boutique du Vampyre</div>
+        <div class="shop-meta">709½ St. Ann St · <a href="https://www.feelthebite.com/" target="_blank">feelthebite.com</a><br>World-class vampire boutique. Fortune candles (pewter charms inside), handmade jewelry, capes, curiosities. Also your gateway to the Potions Lounge speakeasy hidden inside.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Jackson Square Tarot Readers</div>
+        <div class="shop-meta">In front of St. Louis Cathedral · Cash<br>The readers set up daily along the fence. Quality varies — if one doesn't feel right, walk to the next. $20–40. Genevieve Fynnyx is consistently recommended if she's there.</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:32px;">Clothing &amp; Boutiques</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">Royal Street (French Quarter) and Magazine Street (Uptown) are the two best shopping corridors.</div>
+    <div class="shops-grid">
+      <div class="shop-card">
+        <div class="shop-name">Trashy Diva</div>
+        <div class="shop-meta">Royal St (French Quarter) + Magazine St locations<br>NOLA's most iconic women's boutique. Retro-inspired pieces, dramatic silhouettes, perfect for the group's aesthetic.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Hemline</div>
+        <div class="shop-meta">Magazine Street<br>Curated women's clothing and accessories. Trendy but wearable. Local favorite with solid seasonal stock.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Monomin</div>
+        <div class="shop-meta">Lower Magazine St<br>Elevated neutrals — Third Form, AG Jeans, Grown Alchemist. Quieter vibe, quality-focused. Worth it if you're on Magazine anyway.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Joseph</div>
+        <div class="shop-meta">Magazine Street<br>High-end: Valentino, Saint Laurent, Louboutin, Bottega Veneta. Browse even if you don't buy — best luxury edit in the city outside of Canal Place.</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:32px;">Bourbon Street — Yes, There Are Actually Shops</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;margin-top:6px;">Worth a daylight stroll even if nighttime Bourbon isn't your thing. These are the non-bar stops worth noting.</div>
+    <div class="shops-grid">
+      <div class="shop-card">
+        <div class="shop-name">Bourbon French Parfums</div>
+        <div class="shop-meta">Bourbon St · French Quarter<br>Custom fragrances and skincare inspired by New Orleans history. One of the oldest perfumeries in America. Worth 20 minutes regardless of whether you buy anything.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Goorin Bros. Hat Shop</div>
+        <div class="shop-meta">Bourbon St · French Quarter<br>Excellent hat selection — fedoras, vintage styles, very wearable. If you've been looking for a great hat, this is the place.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">KREWE Eyewear</div>
+        <div class="shop-meta">Bourbon St · French Quarter<br>Local NOLA brand. Genuinely stylish, unlike most tourist-area eyewear shops. Great for sunglasses.</div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-name">Southern Candymakers</div>
+        <div class="shop-meta">Bourbon St · French Quarter<br>Old-school pralines, chocolates, confections made on-site. Watch them make pralines through the window. Good gift option if you're bringing anything home.</div>
+      </div>
+    </div>
+
+    <div class="alert-block" style="margin-top:20px;">
+      <strong>Note on Bourbon Street timing:</strong> Daylight only for shopping. The vibe shifts around 6pm. If you want to pop into any of these shops, do it mid-afternoon, not at night.
+    </div>
+
+  </div><!-- /#page-shops -->
+
+  <!-- ═══════════════════════ LOGISTICS PAGE ═══════════════════════ -->
+  <div id="page-logistics" style="display:none;padding:32px 0;">
+
+    <div class="jump-nav">
+      <a href="#log-bookings" class="jump-btn">📅 What to Book</a>
+      <a href="#log-dresscode" class="jump-btn">👗 Commander's Dress Code</a>
+      <a href="#log-transport" class="jump-btn">🚋 Getting Around</a>
+      <a href="#log-departure" class="jump-btn">🛫 Early Departure</a>
+    </div>
+
+    <div id="log-bookings" style="margin-top:24px;">
+      <div class="section-label">Book These Now</div>
+      <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:20px;">Reservation Checklist</div>
+      <div class="checklist">
+        <div class="checklist-header"><span>What</span><span>When to Book</span><span>How</span></div>
+        <div class="checklist-item checklist-urgent">
+          <div class="checklist-name">Commander's Palace — Saturday Brunch</div>
+          <div class="checklist-when">ASAP — fills weeks out</div>
+          <div class="checklist-how"><a href="https://www.exploretock.com/commanderspalace" target="_blank">exploretock.com/commanderspalace</a></div>
+        </div>
+        <div class="checklist-item checklist-urgent">
+          <div class="checklist-name">Irene's — Dinner (Day 2 or Day 1 in Option B)</div>
+          <div class="checklist-when">2–3 weeks ahead</div>
+          <div class="checklist-how"><a href="https://irenesnola.com/" target="_blank">irenesnola.com</a></div>
+        </div>
+        <div class="checklist-item checklist-urgent">
+          <div class="checklist-name">Bayona — Saturday or Sunday Dinner</div>
+          <div class="checklist-when">2–3 weeks ahead</div>
+          <div class="checklist-how"><a href="https://www.bayona.com/reservation/" target="_blank">bayona.com/reservation</a></div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">Haunted History Tour — 6pm Thursday</div>
+          <div class="checklist-when">A week or two out</div>
+          <div class="checklist-how"><a href="https://hauntedhistorytours.com/" target="_blank">hauntedhistorytours.com</a></div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">Swamp Tour — with hotel pickup</div>
+          <div class="checklist-when">Book early — confirm Roosevelt pickup</div>
+          <div class="checklist-how"><a href="https://www.cajunprideswamptours.com/" target="_blank">cajunprideswamptours.com</a></div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">JAMNOLA — Timed Entry Tickets</div>
+          <div class="checklist-when">A week ahead</div>
+          <div class="checklist-how"><a href="https://tickets.jamnola.com/jamnola" target="_blank">tickets.jamnola.com</a> · $35.99/pp</div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">St. Louis Cemetery No. 1 Tour (if choosing paid option)</div>
+          <div class="checklist-when">A week ahead</div>
+          <div class="checklist-how"><a href="https://cemeterytourneworleans.com/" target="_blank">cemeterytourneworleans.com</a> · $25/pp</div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">No Secrets Tours — Cocktail/Speakeasy Tour</div>
+          <div class="checklist-when">A week ahead</div>
+          <div class="checklist-how"><a href="https://nosecretstours.com/product/new-orleans-cocktail-tour/" target="_blank">nosecretstours.com</a></div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">Sylvain — Last Night Dinner (Option A/C)</div>
+          <div class="checklist-when">1–2 weeks ahead or walk in by 6pm</div>
+          <div class="checklist-how"><a href="https://resy.com/cities/new-orleans-la/venues/sylvain" target="_blank">Resy</a> or call</div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-name">Monday Uber (4:15am departure)</div>
+          <div class="checklist-when">Night before — schedule in the app</div>
+          <div class="checklist-how">Schedule ahead in Uber or Lyft app Sunday night</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="log-dresscode" style="margin-top:40px;">
+      <div class="section-label">Dress Code</div>
+      <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:20px;">Commander's Palace</div>
+      <div class="logistics-grid">
+        <div class="logistics-item">
+          <div class="logistics-label">For Women (Brunch)</div>
+          <div class="logistics-value">Sundresses, skirts, dressy tops, tailored pants, nice sandals or flats all work. Business casual is the floor. Avoid athletic wear, tanks, flip-flops, and anything too casual.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">For Men (If Applicable)</div>
+          <div class="logistics-value">Jacket preferred. Collared shirt and closed-toe shoes required. No jeans, shorts, t-shirts, or sweatshirts.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">The 25¢ Martinis</div>
+          <div class="logistics-value">Real. Limit 3 per person per visit. Order them — this is one of NOLA's great restaurant traditions.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">Reservation Timing</div>
+          <div class="logistics-value">Book via Tock as soon as possible. Saturday brunch is among the hardest reservations in the city. 10am slot is ideal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="log-transport" style="margin-top:40px;">
+      <div class="section-label">Getting Around</div>
+      <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:20px;">Transportation in New Orleans</div>
+      <div class="logistics-grid">
+        <div class="logistics-item">
+          <div class="logistics-label">Rideshare</div>
+          <div class="logistics-value">Uber and Lyft both work well in NOLA. French Quarter → MSY: ~$25–35, 25 min. French Quarter → JAMNOLA: ~$7, 5 min. Keep the app ready — surge can hit weekend nights on Bourbon Street.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">St. Charles Streetcar</div>
+          <div class="logistics-value">$1.25/ride or $3/day Jazzy Pass. Runs from Canal St through the CBD and Garden District to Uptown. Washington Ave stop = Commander's Palace. Takes 20–30 min end to end.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">The French Quarter on Foot</div>
+          <div class="logistics-value">Almost everything in your itinerary is walkable from The Roosevelt. The hotel is at the edge of the FQ at the CBD border — most venues are 5–20 min on foot.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">JAMNOLA (Frenchmen St)</div>
+          <div class="logistics-value">~5-min Uber from the French Quarter. 10-min walk if you feel like it. The Marigny is the neighborhood east of the Quarter — worth exploring around Frenchmen St for live music and local bars while you're there.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">Magazine Street</div>
+          <div class="logistics-value">~15-min Uber from the French Quarter OR take the St. Charles streetcar toward Uptown and get off near Magazine. Street runs parallel to the river in the Garden District/Uptown — 6 miles of boutiques.</div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-label">Airport (MSY)</div>
+          <div class="logistics-value">Louis Armstrong New Orleans International. ~25–30 min from French Quarter by rideshare. For the 6:20am Monday departure, allow 25 min and add buffer — pre-schedule Uber for 4:15am the night before.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="log-departure" style="margin-top:40px;">
+      <div class="section-label">Early Departure</div>
+      <div class="section-title" style="border-bottom:1px solid var(--divider);padding-bottom:20px;margin-bottom:20px;">Monday Morning Logistics</div>
+      <div style="background:var(--white);border-radius:12px;padding:24px 28px;border-left:4px solid var(--navy);">
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px;">WN 3133 · MSY 6:20am</h4>
+        <div style="font-size:13.5px;color:var(--muted);line-height:1.8;">
+          <strong style="color:var(--text);">Leave hotel:</strong> 4:15am at the latest — 4:00am to be comfortable<br>
+          <strong style="color:var(--text);">Uber schedule:</strong> Set a scheduled pickup Sunday night before bed. Don't rely on on-demand at 4am.<br>
+          <strong style="color:var(--text);">At MSY:</strong> TSA PreCheck helps enormously at this hour. Should be through security in under 15 minutes.<br>
+          <strong style="color:var(--text);">Check out:</strong> The Roosevelt allows express checkout — leave your key in the room. Or do it through the app the night before.<br>
+          <strong style="color:var(--text);">Southwest boarding:</strong> Check in exactly 24 hours before departure (Monday 6:20am = check in Sunday 6:20am).
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <div class="section-label">No Passport Needed</div>
+      <div style="background:var(--white);border-radius:12px;padding:20px 24px;border-left:4px solid var(--gold);">
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;">✅ Domestic Trip — No Document Requirements</h4>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.6;">This is domestic US travel. No passport, visa, or health documentation required. Standard US government ID (driver's license or passport) for TSA. REAL ID compliant ID required from TSA if your state's license isn't REAL ID — check the star on your AZ license.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div style="background:var(--white);border-radius:12px;padding:20px 24px;border-left:4px solid var(--gold);">
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;">🎃 October in New Orleans</h4>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.6;">October is one of the best months to visit — cooler than summer (highs 75–80°F, lows 60–65°F), lower humidity, Halloween decorations citywide. Uptown mansions go over the top. Occasional light rain possible — one umbrella between you is enough. Fall weather in NOLA is genuinely pleasant, not brutal.</p>
+      </div>
+    </div>
+
+  </div><!-- /#page-logistics -->
+
+</div><!-- /.container -->
+
+<div class="footer">
+  Generated by your travel agent &nbsp;·&nbsp; <strong>New Orleans</strong> &nbsp;·&nbsp; June 2026
+</div>
+
+<script>
+function switchPage(page, btn) {
+  document.querySelectorAll('[id^="page-"]').forEach(p => p.style.display = 'none');
+  document.getElementById('page-' + page).style.display = 'block';
+  document.querySelectorAll('.page-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function switchOption(opt, btn) {
+  document.querySelectorAll('.option-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('opt-' + opt).classList.add('active');
+  document.querySelectorAll('.option-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
